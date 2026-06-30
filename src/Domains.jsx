@@ -29,9 +29,9 @@ const commits = [
   {
     branch: 'branch/teaching',
     hash: '21bb6c0',
-    title: 'Teacher, archived',
+    title: 'Teacher, part-time',
     body:
-      'No longer in front of a class, but the branch never got deleted. Former students still reach out — sometimes a joke, sometimes something they actually need to talk through — and I still show up for both.',
+      'Once full-time, now part-time, never fully off duty. The bond with former students outlasts the classroom.',
     accent: 'border-slate/60 text-slate',
     dot: 'bg-slate',
   },
@@ -55,7 +55,7 @@ export default function Domains() {
             Domains
           </h2>
           <p className="text-paper/65 max-w-xl leading-relaxed">
-            Four branches, one history. Here's how the rest of the roles sit
+            Five branches, one history. Here's how the rest of the roles sit
             alongside the backend work.
           </p>
         </div>
@@ -97,8 +97,8 @@ export default function Domains() {
               className="absolute left-0 top-9 w-3.5 h-3.5 rounded-full ring-4 ring-ink bg-paper"
             />
             <span className="font-mono text-xs text-paper/50">
-              merge branch/songwriting, branch/teaching, branch/family →
-              main
+              merge branch/faith, branch/songwriting, branch/teaching,
+              branch/family → main
             </span>
             <p className="mt-3 font-display text-xl text-paper/90 italic leading-relaxed max-w-2xl">
               "Don't make a case against yourself, because God won't make a

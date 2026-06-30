@@ -1,40 +1,34 @@
 const projects = [
   {
-    status: 'shipped',
-    statusColor: 'bg-sage/15 text-sage border-sage/30',
-    title: 'Project name here',
-    stack: ['Laravel', 'Livewire', 'MySQL'],
-    summary:
-      'One or two sentences on the problem this solved and the part you owned — replace with a real case study when ready.',
-    pr: '#01',
+    "status": "shipped",
+    "statusColor": "bg-sage/15 text-sage border-sage/30",
+    "title": "Qset",
+    "href": "https://qset.amowogbaje.com",
+    "linkLabel": "qset.amowogbaje.com",
+    "stack": ["Laravel", "Reactjs", "MySQL", "TailwindCSS"],
+    "summary": "A platform for teachers to generate exams in minutes. Users can search a question bank, select questions, add them to new or existing exam sets, review and reorder, then export to Word (docx)",
+    "pr": "#01"
   },
   {
-    status: 'in review',
-    statusColor: 'bg-goldsoft/15 text-goldsoft border-goldsoft/30',
-    title: 'Project name here',
-    stack: ['NestJS', 'PostgreSQL', 'Redis'],
-    summary:
-      'Describe the system design decision you are proudest of on this one. Swap this card for a real screenshot + link.',
-    pr: '#02',
+    "status": "shipped",
+    "statusColor": "bg-sage/15 text-sage border-sage/30",
+    "title": "Tax",
+    "href": "https://tax.amowogbaje.com",
+    "linkLabel": "tax.amowogbaje.com",
+    "stack": ["Laravel", "Reactjs", "MySQL", "TailwindCSS"],
+    "summary": "Live personal income tax calculator for Nigeria (NGN). Users input annual income, rent, and optional deductions (pension, health, life insurance) to estimate tax liability.",
+    "pr": "#02"
   },
   {
-    status: 'shipped',
-    statusColor: 'bg-sage/15 text-sage border-sage/30',
-    title: 'Project name here',
-    stack: ['Next.js', 'Vue', 'Tailwind'],
-    summary:
-      'A short note on scale, users, or constraints. This is a placeholder slot — drop in your strongest work first.',
-    pr: '#03',
-  },
-  {
-    status: 'draft',
-    statusColor: 'bg-paper/10 text-paper/50 border-paper/20',
-    title: 'Project name here',
-    stack: ['NestJS', 'Docker', 'CI/CD'],
-    summary:
-      'Reserve this slot for something still in progress, or remove it if four feels like too many.',
-    pr: '#04',
-  },
+    "status": "draft",
+    "statusColor": "bg-paper/10 text-paper/50 border-paper/20",
+    "title": "AI Video Generator",
+    "href": "https://github.com/amowogbaje/aivideogenerator",
+    "linkLabel": "github.com/amowogbaje/aivideogenerator",
+    "stack": ["FastApi", "AI/ML"],
+    "summary": "In-progress AI video generation tool built with FastAPI and ML. Actively developed with recent commits on story text and prompt features.",
+    "pr": "#03"
+  }
 ]
 
 export default function Work() {
@@ -46,7 +40,7 @@ export default function Work() {
             Work
           </h2>
           <p className="font-mono text-xs text-slate uppercase tracking-widebit">
-            4 pull requests · open to review
+            3 pull requests · open to review
           </p>
         </div>
 
@@ -71,23 +65,34 @@ export default function Work() {
 
               <p className="text-paper/65 leading-relaxed mb-5">{p.summary}</p>
 
-              <ul className="flex flex-wrap gap-2 font-mono text-[11px] text-sage">
-                {p.stack.map((s) => (
-                  <li
-                    key={s}
-                    className="border border-sage/25 rounded-full px-2.5 py-1"
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <ul className="flex flex-wrap gap-2 font-mono text-[11px] text-sage">
+                  {p.stack.map((s) => (
+                    <li
+                      key={s}
+                      className="border border-sage/25 rounded-full px-2.5 py-1"
+                    >
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+
+                {p.href && (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-mono text-[11px] text-gold hover:text-goldsoft transition-colors whitespace-nowrap"
                   >
-                    {s}
-                  </li>
-                ))}
-              </ul>
+                    {p.linkLabel} ↗
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>
 
-        <p className="mt-10 font-mono text-xs text-slate">
-          // replace these four cards with real projects, screenshots, and links whenever you're ready
-        </p>
+        
       </div>
     </section>
   )
