@@ -92,6 +92,30 @@ export default function Work() {
           ))}
         </div>
 
+<div className="mt-14 pt-10 border-t border-paper/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="font-mono text-xs text-slate uppercase tracking-widebit">
+            Want the full picture?
+          </p>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-xs uppercase tracking-widebit border border-gold/40 text-gold rounded-full px-5 py-2.5 hover:bg-gold/10 hover:border-gold transition-colors"
+            >
+              Download résumé ↓
+            </a>
+            <a
+              href="https://www.linkedin.com/in/amowogbaje"
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-xs uppercase tracking-widebit border border-paper/20 text-paper/80 rounded-full px-5 py-2.5 hover:border-sage/40 hover:text-sage transition-colors"
+            >
+              LinkedIn profile ↗
+            </a>
+          </div>
+        </div>
         
       </div>
     </section>

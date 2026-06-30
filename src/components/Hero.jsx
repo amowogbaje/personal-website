@@ -53,15 +53,22 @@ export default function Hero() {
         <div className="relative mx-auto md:mx-0 w-48 md:w-full max-w-xs">
           <div className="absolute -inset-3 rounded-3xl border border-gold/25 hidden md:block" />
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-paper/15 bg-inkdeep">
-            <img
-              src="/profile.png"
-              alt="Gideon Amowogbaje"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-                e.currentTarget.nextElementSibling.style.display = 'flex'
-              }}
-            />
+            <picture>
+              <source srcSet="/profile.webp" type="image/webp" />
+              <img
+                src="/profile-fallback.jpg"
+                alt="Gideon Amowogbaje"
+                width="640"
+                height="640"
+                fetchpriority="high"
+                decoding="async"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                  e.currentTarget.parentElement.nextElementSibling.style.display = 'flex'
+                }}
+              />
+            </picture>
             <div className="hidden absolute inset-0 flex-col items-center justify-center gap-2 text-slate">
               <span className="font-mono text-[10px] uppercase tracking-widebit">
                 public/profile.png

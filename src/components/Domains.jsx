@@ -55,7 +55,7 @@ export default function Domains() {
             Domains
           </h2>
           <p className="text-paper/65 max-w-xl leading-relaxed">
-            Four branches, one history. Here's how the rest of the roles sit
+            Five branches, one history. Here's how the rest of the roles sit
             alongside the backend work.
           </p>
         </div>
