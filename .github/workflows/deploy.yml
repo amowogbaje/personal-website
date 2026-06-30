@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: NAMECHEAP
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,25 +29,15 @@ jobs:
           HOST: ${{ vars.HOST }}
           USERNAME: ${{ vars.USERNAME }}
           PORT: ${{ vars.PORT }}
-          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+          # Folder on the server that amowogbaje.com points to.
+          # On most Namecheap shared hosting this is public_html for the
+          # primary domain. Override via repo/environment variable DEPLOY_PATH
+          # if your account is set up differently.
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH || 'public_html' }}
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          set -e
-
-          if [ -z "$PORT" ]; then
-            echo "ERROR: PORT is not set"
-            exit 1
-          fi
-
-          if [ -z "$DEPLOY_PATH" ]; then
-            DEPLOY_PATH="public_html"
-          fi
-
-          echo "Deploying to /home/$USERNAME/$DEPLOY_PATH"
-
           echo "$SSH_KEY" > /tmp/private_key
           chmod 600 /tmp/private_key
-
           rsync -avz --delete \
             -e "ssh -i /tmp/private_key -o StrictHostKeyChecking=no -p $PORT" \
             --exclude='.git' \
