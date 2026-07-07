@@ -33,8 +33,8 @@ const projects = [
     "status": "in-development",
     "statusColor": "bg-amber-500/10 text-amber-500 border-amber-500/20",
     "title": "CraftProfessor Story Engine",
-    "href": "https://github.com/amowogbaje/aivideogenerator",
-    "linkLabel": "github.com/amowogbaje/aivideogenerator",
+    "href": "https://craftprofessor.amowogbaje.com/",
+    "linkLabel": "Craft Professor",
     "stack": ["Laravel", "Vertex AI", "Pinterest API"],
     "summary": "The core engine behind CraftProfessor. An automated publishing pipeline built in Laravel that orchestrates generative AI to produce and sync narrative content across Pinterest and LinkedIn.",
     "pr": "#04"
