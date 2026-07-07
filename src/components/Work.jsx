@@ -28,6 +28,16 @@ const projects = [
     "stack": ["FastApi", "AI/ML"],
     "summary": "In-progress AI video generation tool built with FastAPI and ML. Actively developed with recent commits on story text and prompt features.",
     "pr": "#03"
+  },
+  {
+    "status": "in-development",
+    "statusColor": "bg-amber-500/10 text-amber-500 border-amber-500/20",
+    "title": "CraftProfessor Story Engine",
+    "href": "https://github.com/amowogbaje/aivideogenerator",
+    "linkLabel": "github.com/amowogbaje/aivideogenerator",
+    "stack": ["Laravel", "Vertex AI", "Pinterest API"],
+    "summary": "The core engine behind CraftProfessor. An automated publishing pipeline built in Laravel that orchestrates generative AI to produce and sync narrative content across Pinterest and LinkedIn.",
+    "pr": "#04"
   }
 ]
 
@@ -92,7 +102,7 @@ export default function Work() {
           ))}
         </div>
 
-<div className="mt-14 pt-10 border-t border-paper/10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-14 pt-10 border-t border-paper/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="font-mono text-xs text-slate uppercase tracking-widebit">
             Want the full picture?
           </p>
@@ -116,7 +126,7 @@ export default function Work() {
             </a>
           </div>
         </div>
-        
+
       </div>
     </section>
   )
