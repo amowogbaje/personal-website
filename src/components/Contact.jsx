@@ -14,6 +14,18 @@ export default function Contact() {
           Open to backend roles, freelance builds, and conversations about any project. Let's build something together.
         </p>
 
+        <a
+          href="/fundme"
+          className="block mb-6 p-5 rounded-2xl border border-rust/40 bg-rust/5 hover:border-rust hover:bg-rust/10 transition-all duration-300 group"
+        >
+          <p className="text-xs font-medium uppercase tracking-wider text-rust mb-1">
+            Currently fundraising
+          </p>
+          <p className="text-paper/90 font-medium">
+            My hosting renewal is due and I could use a hand — see the details and chip in →
+          </p>
+        </a>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Direct Communication Channels */}
           <div className="space-y-4">

@@ -23,12 +23,20 @@ export default function Nav() {
             </li>
           ))}
         </ul>
-        <a
-          href="#contact"
-          className="font-mono text-xs uppercase tracking-widebit border border-gold/40 text-gold px-3 py-1.5 rounded-full hover:bg-gold hover:text-ink transition-colors"
-        >
-          say hi
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="/fundme"
+            className="hidden sm:inline font-mono text-xs uppercase tracking-widebit text-rust hover:text-gold transition-colors"
+          >
+            support
+          </a>
+          <a
+            href="#contact"
+            className="font-mono text-xs uppercase tracking-widebit border border-gold/40 text-gold px-3 py-1.5 rounded-full hover:bg-gold hover:text-ink transition-colors"
+          >
+            say hi
+          </a>
+        </div>
       </nav>
     </header>
   )
