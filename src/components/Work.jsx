@@ -40,8 +40,8 @@ const projects = [
     "pr": "#04"
   },
   {
-    "status": "in-development",
-    "statusColor": "bg-amber-500/10 text-amber-500 border-amber-500/20",
+   "status": "in-testing",
+    "statusColor": "bg-sky-500/10 text-sky-500 border-sky-500/20",
     "title": "Storyverse",
     "href": "https://storyverse.amowogbaje.com",
     "linkLabel": "storyverse.amowogbaje.com",
