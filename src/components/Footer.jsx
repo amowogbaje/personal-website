@@ -3,8 +3,8 @@ export default function Footer() {
     <footer className="px-6 md:px-10 py-10 bg-ink border-t border-paper/10">
       <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-slate">
         <span>© {new Date().getFullYear()} Gideon Amowogbaje</span>
-        <a href="/fundme" className="hover:text-gold transition-colors">
-          support this work
+        <a href="/support" className="hover:text-gold transition-colors">
+          support the apps on this server
         </a>
         <span>built with React, Tailwind, and a little faith</span>
       </div>

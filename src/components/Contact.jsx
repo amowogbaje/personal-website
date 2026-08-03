@@ -15,14 +15,14 @@ export default function Contact() {
         </p>
 
         <a
-          href="/fundme"
+          href="/support"
           className="block mb-6 p-5 rounded-2xl border border-rust/40 bg-rust/5 hover:border-rust hover:bg-rust/10 transition-all duration-300 group"
         >
           <p className="text-xs font-medium uppercase tracking-wider text-rust mb-1">
-            Currently fundraising
+            Support the server
           </p>
           <p className="text-paper/90 font-medium">
-            My hosting renewal is due and I could use a hand — see the details and chip in →
+            Storyverse, Qset, and my other live apps share one hosting bill — see the details and chip in →
           </p>
         </a>
 
@@ -79,7 +79,7 @@ export default function Contact() {
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-paper/40 mb-3">Schedule a Meeting</p>
               <a 
-                href="https://calendly.com/amowogbajegideon"
+                href="https://calendly.com/amowogbajegideon/30min"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gold text-inkdeep font-medium hover:bg-goldsoft transition-colors w-full sm:w-auto justify-center"

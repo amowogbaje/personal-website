@@ -25,7 +25,7 @@ export default function Nav() {
         </ul>
         <div className="flex items-center gap-3">
           <a
-            href="/fundme"
+            href="/support"
             className="hidden sm:inline font-mono text-xs uppercase tracking-widebit text-rust hover:text-gold transition-colors"
           >
             support
