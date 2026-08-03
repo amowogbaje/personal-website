@@ -9,7 +9,7 @@ const GOAL = 87.76
 // amount: leave null to hide the amount and just show a message (won't count toward total)
 // note: optional short message from them
 const SUPPORTERS = [
-  { name: 'Anonymous', amount: 20, note: 'Rooting for Qset 🚀' },
+  { name: 'Tochukwu C ', amount: 6.95, note: 'Rooting for Qset 🚀' },
   // { name: 'Tunde A.', amount: 10, note: null },
 ]
 // ------------------------------------------------------
