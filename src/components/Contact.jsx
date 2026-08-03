@@ -11,7 +11,7 @@ export default function Contact() {
           Contact
         </h2>
         <p className="text-paper/65 max-w-xl leading-relaxed mb-12">
-          Open to backend roles, freelance builds, and conversations about any project. Let's build something together.
+          Open to remote roles and freelance builds — especially API/CRM integrations, e-commerce, admin tools, and AI-powered automation. Reach out any way below; I usually reply within a day.
         </p>
 
         <a

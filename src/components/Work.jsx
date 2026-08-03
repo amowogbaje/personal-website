@@ -60,7 +60,7 @@ export default function Work() {
             Work
           </h2>
           <p className="font-mono text-xs text-slate uppercase tracking-widebit">
-            3 pull requests · open to review
+            5 pull requests · open to review
           </p>
         </div>
 

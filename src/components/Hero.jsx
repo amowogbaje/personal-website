@@ -22,16 +22,26 @@ export default function Hero() {
             <span className="text-gold">Amowogbaje</span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
-            Backend developer fluent in Laravel and NestJS — and, off the clock,
-            in hymns, lesson plans, and a marriage. I build systems that hold up
-            under load, on the server and in life.
+          <p className="mt-5 font-mono text-sm md:text-base uppercase tracking-widebit text-sage">
+            Laravel Developer — API, E-Commerce &amp; AI Integrations
+          </p>
+
+          <p className="mt-6 max-w-xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
+            I build Laravel systems that connect your business to the tools it
+            depends on — CRMs, e-commerce platforms, payment gateways, and AI
+            services. Available now for remote contract and freelance work.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="#work"
+              href="#contact"
               className="font-mono text-xs uppercase tracking-widebit bg-gold text-ink px-5 py-3 rounded-full hover:bg-goldsoft transition-colors"
+            >
+              hire me
+            </a>
+            <a
+              href="#work"
+              className="font-mono text-xs uppercase tracking-widebit text-paper/70 px-5 py-3 rounded-full border border-paper/15 hover:border-paper/40 hover:text-paper transition-colors"
             >
               see the work
             </a>
@@ -44,9 +54,11 @@ export default function Hero() {
           </div>
 
           <div className="mt-16 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-slate">
-            <span>stack: Laravel · FastApi · Go · NestJS · Livewire · Reactjs · Next.js</span>
+            <span>focus: API integrations · WooCommerce · CRM automation · AI pipelines</span>
             <span className="hidden sm:inline">·</span>
-            <span>based: Nigeria</span>
+            <span>stack: Laravel · Livewire · Filament · Reactjs · Next.js · NestJS</span>
+            <span className="hidden sm:inline">·</span>
+            <span>based: Nigeria, remote-first</span>
           </div>
         </div>
 
