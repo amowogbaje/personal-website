@@ -9,7 +9,7 @@ const GOAL = 87.76
 // amount: leave null to hide the amount and just show a message (won't count toward total)
 // note: optional short message from them
 const SUPPORTERS = [
-  { name: 'Tochukwu C ', amount: 6.95, note: 'Rooting for Qset 🚀' },
+  { name: 'Anonymous', amount: 20, note: 'Rooting for Qset 🚀' },
   // { name: 'Tunde A.', amount: 10, note: null },
 ]
 // ------------------------------------------------------
@@ -39,21 +39,21 @@ export default function FundMe() {
       <main className="grain px-6 md:px-10 py-16 md:py-24">
         <div className="max-w-3xl mx-auto">
           <p className="font-mono text-xs uppercase tracking-widebit text-rust mb-4">
-            $ ./keep-it-running.sh
+            $ ./keep-the-server-running.sh
           </p>
           <h1 className="font-display text-4xl md:text-6xl font-medium text-paper leading-[1.05] mb-6">
-            Help me keep the lights on —{' '}
-            <span className="text-gold">hosting is due, funds aren't.</span>
+            Storyverse, Qset, the Tax Calculator, and CraftProfessor all live on one server —{' '}
+            <span className="text-gold">help me keep it running.</span>
           </h1>
           <p className="text-paper/75 text-lg leading-relaxed max-w-2xl mb-12">
-            My hosting (cPanel) renewal is coming due and I don't have it
-            covered right now. I'm a backend developer building projects I
-            genuinely believe in — a few are already live, more are in
-            progress — and I'd rather ask honestly for help than let any of
-            it lapse. If you can spare something, it goes straight to keeping
-            the servers on. If you'd rather structure it as an interest-free
-            loan, I'm completely open to that — reach out and we can work out
-            a repayment plan that's fair for both of us.
+            Every project on my site — Storyverse, Qset, the Nigeria Tax
+            Calculator, CraftProfessor — runs on the same hosting, and the
+            renewal is coming due before I've got it fully covered. I'd rather
+            ask honestly for help than let any of these apps go down. If you
+            can spare something, it goes straight to keeping the servers on.
+            If you'd rather structure it as an interest-free loan, I'm
+            completely open to that — reach out and we can work out a
+            repayment plan that's fair for both of us.
           </p>
 
           {/* Progress */}

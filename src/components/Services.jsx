@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import {
   Plug, Sparkles, LayoutDashboard, ShoppingCart, Layers, Wrench,
   ArrowLeft, Bug, GitBranch, Database, ShieldCheck, Boxes, Server, FlaskConical, ClipboardCheck,
@@ -55,6 +56,15 @@ const more = [
 ]
 
 export default function Services() {
+  useEffect(() => {
+    document.title = 'Services — Laravel, API, E-Commerce & AI Integrations | Gideon Amowogbaje'
+    const desc = document.querySelector('meta[name="description"]')
+    if (desc) desc.setAttribute(
+      'content',
+      'API integrations, CRM automation, WooCommerce, AI-powered automation, admin panels, and full-stack Laravel/FastAPI/Go builds — hire Gideon Amowogbaje for remote contract work.'
+    )
+  }, [])
+
   return (
     <div className="min-h-screen bg-ink">
       <header className="sticky top-0 z-50 backdrop-blur-md bg-ink/80 border-b border-paper/10">

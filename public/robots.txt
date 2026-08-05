@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /fundme
 
 Sitemap: https://www.amowogbaje.com/sitemap.xml
