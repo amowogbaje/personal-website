@@ -40,10 +40,10 @@ export default function Hero() {
               hire me
             </a>
             <a
-              href="#work"
+              href="#services"
               className="font-mono text-xs uppercase tracking-widebit text-paper/70 px-5 py-3 rounded-full border border-paper/15 hover:border-paper/40 hover:text-paper transition-colors"
             >
-              see the work
+              see services
             </a>
             <a
               href="#domains"
@@ -97,8 +97,8 @@ export default function Hero() {
       </div>
           
       <a
-        href="#work"
-        aria-label="Scroll to work"
+        href="#services"
+        aria-label="Scroll to services"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-widebit text-slate hover:text-paper transition-colors animate-bounce motion-reduce:animate-none"
       >
         scroll ↓
