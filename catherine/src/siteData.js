@@ -14,3 +14,57 @@ export const NAV_LINKS = [
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ]
+
+// Rate card data for the /french page. Nigeria-based students pay monthly
+// in Naira (the rates Catherine already advertises). Everyone paying in a
+// foreign currency is billed hourly instead — flat monthly packages don't
+// translate well across timezones/currencies, and hourly is the easier
+// ask for a first-time international student. $10/hr is the advertised
+// floor rate; GBP/EUR figures are set directly (not a live FX feed) and
+// kept in the same rough proportion as the NGN monthly tiers.
+export const FRENCH_RATES = {
+  NGN: {
+    label: 'Naira',
+    symbol: '₦',
+    unit: '/ month',
+    note: 'Monthly package · Nigeria-based students',
+    tiers: [
+      { name: 'Beginner', price: '30,000', desc: 'Perfect for new learners. Build a strong foundation in French.' },
+      { name: 'Intermediate', price: '50,000', desc: 'Strengthen your skills and communicate with more confidence.' },
+      { name: 'Advanced', price: '80,000', desc: 'Refine your fluency and master French at an advanced level.' },
+    ],
+  },
+  USD: {
+    label: 'US Dollar',
+    symbol: '$',
+    unit: '/ hour',
+    note: 'Hourly rate · billed per session',
+    tiers: [
+      { name: 'Beginner', price: '10', desc: 'Perfect for new learners. Build a strong foundation in French.' },
+      { name: 'Intermediate', price: '17', desc: 'Strengthen your skills and communicate with more confidence.' },
+      { name: 'Advanced', price: '27', desc: 'Refine your fluency and master French at an advanced level.' },
+    ],
+  },
+  GBP: {
+    label: 'British Pound',
+    symbol: '£',
+    unit: '/ hour',
+    note: 'Hourly rate · billed per session',
+    tiers: [
+      { name: 'Beginner', price: '8', desc: 'Perfect for new learners. Build a strong foundation in French.' },
+      { name: 'Intermediate', price: '14', desc: 'Strengthen your skills and communicate with more confidence.' },
+      { name: 'Advanced', price: '22', desc: 'Refine your fluency and master French at an advanced level.' },
+    ],
+  },
+  EUR: {
+    label: 'Euro',
+    symbol: '€',
+    unit: '/ hour',
+    note: 'Hourly rate · billed per session',
+    tiers: [
+      { name: 'Beginner', price: '9', desc: 'Perfect for new learners. Build a strong foundation in French.' },
+      { name: 'Intermediate', price: '16', desc: 'Strengthen your skills and communicate with more confidence.' },
+      { name: 'Advanced', price: '25', desc: 'Refine your fluency and master French at an advanced level.' },
+    ],
+  },
+}

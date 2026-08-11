@@ -292,6 +292,61 @@ section{padding:88px 0;}
 .wa-note{font-size:12.5px; color:var(--ivory-dim);}
 .wa-note strong{color:var(--gold-soft); font-weight:600;}
 
+/* ---------- French page ---------- */
+.back-link{display:inline-flex; align-items:center; gap:8px;}
+.btn-small{padding:9px 18px; font-size:12.5px;}
+
+.feature-strip{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:34px;
+}
+@media (max-width:900px){.feature-strip{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.feature-strip{grid-template-columns:1fr;}}
+.feature-item{display:flex; flex-direction:column; gap:10px;}
+.feature-item .service-icon{width:32px; height:32px;}
+.feature-item h3{font-size:16.5px; font-weight:500;}
+.feature-item p{color:var(--ivory-dim); font-size:14px; margin:0;}
+
+.audience-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--indigo-line); border:1px solid var(--indigo-line);}
+@media (max-width:700px){.audience-grid{grid-template-columns:1fr;}}
+.audience-card{background:var(--indigo-deep); padding:32px 30px;}
+.audience-card h3{font-size:19px; font-weight:500; margin-bottom:16px;}
+.audience-card ul{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
+.audience-card li{
+  color:var(--ivory-dim); font-size:14.5px; padding-left:22px; position:relative;
+}
+.audience-card li::before{
+  content:"✓"; position:absolute; left:0; color:var(--gold-soft); font-size:13px;
+}
+
+.currency-toggle{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;}
+.currency-btn{
+  border:1px solid var(--indigo-line);
+  background:transparent;
+  color:var(--ivory-dim);
+  font-family:'Karla', sans-serif;
+  font-size:13px; font-weight:600; letter-spacing:0.03em;
+  padding:9px 18px; border-radius:999px;
+  cursor:pointer;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+.currency-btn:hover{border-color:var(--gold-soft); color:var(--gold-soft);}
+.currency-btn.active{background:var(--gold); border-color:var(--gold); color:var(--ink);}
+
+.rate-note{color:var(--gold-soft); font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:24px;}
+
+.rate-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--indigo-line); border:1px solid var(--indigo-line);}
+@media (max-width:760px){.rate-grid{grid-template-columns:1fr;}}
+.rate-card{background:var(--indigo-panel); padding:28px 26px; display:flex; flex-direction:column; gap:10px;}
+.rate-tier{font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--gold-soft);}
+.rate-price{font-family:'Fraunces', serif; font-size:34px; color:var(--ivory);}
+.rate-symbol{font-size:22px; margin-right:2px; vertical-align:5px;}
+.rate-unit{font-family:'Karla', sans-serif; font-size:13px; color:var(--ivory-dim); margin-left:4px;}
+.rate-desc{color:var(--ivory-dim); font-size:14px; margin:0;}
+
+.rate-fx-note{color:var(--ivory-dim); font-size:13px; margin-top:18px; max-width:560px;}
+
 /* ---------- Footer ---------- */
 footer{
   border-top:1px solid var(--indigo-line);
