@@ -39,7 +39,7 @@ jobs:
           # Namecheap shared hosting this is public_html for the primary
           # domain. Override via the `amowogbaje` environment's DEPLOY_PATH
           # variable if your account is set up differently.
-          DEPLOY_PATH: ${{ vars.DEPLOY_PATH || 'public_html' }}
+          DEPLOY_PATH: 'public_html'
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           echo "$SSH_KEY" > /tmp/private_key
