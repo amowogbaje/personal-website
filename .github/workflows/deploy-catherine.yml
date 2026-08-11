@@ -1,0 +1,53 @@
+name: Deploy · catherine
+
+# Reusable workflow — builds and deploys the /catherine app.
+# Never triggers on its own; it's only called by deploy.yml.
+on:
+  workflow_call:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: catherine
+    defaults:
+      run:
+        working-directory: catherine
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: catherine/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Deploy build via rsync
+        env:
+          HOST: ${{ vars.HOST }}
+          USERNAME: ${{ vars.USERNAME }}
+          PORT: ${{ vars.PORT }}
+          # Folder on the server that catherine.amowogbaje.com points to.
+          # For a subdomain on Namecheap/cPanel shared hosting this is
+          # usually public_html/catherine (or wherever you pointed the
+          # subdomain's document root when you created it). Set this via
+          # the `catherine` environment's DEPLOY_PATH variable.
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH || 'public_html/catherine' }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "$SSH_KEY" > /tmp/private_key
+          chmod 600 /tmp/private_key
+          rsync -avz --delete \
+            -e "ssh -i /tmp/private_key -o StrictHostKeyChecking=no -p $PORT" \
+            --exclude='.git' \
+            --exclude='.env' \
+            ./dist/ \
+            "$USERNAME@$HOST:/home/$USERNAME/$DEPLOY_PATH/"

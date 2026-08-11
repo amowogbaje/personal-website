@@ -1,46 +1,72 @@
-name: Deploy to Namecheap
+name: Deploy
+
+# Single entry point for all site deployments. This is the ONLY workflow that
+# triggers on push — it never runs the actual build/rsync itself. Instead it
+# figures out which site folder(s) changed and calls that site's own
+# reusable workflow file (deploy-<site>.yml). That keeps deployment logic
+# for each site in its own file (easy to read, easy to touch one site
+# without risking another) while guaranteeing only ONE workflow run happens
+# per push, instead of several independent workflows firing off in parallel.
+#
+# To add a new site later:
+#   1. Add its folder, e.g. `new-site/`.
+#   2. Add a `new-site: 'new-site/**'` line to the filters below.
+#   3. Copy deploy-catherine.yml -> deploy-new-site.yml and adjust the
+#      working-directory / environment name.
+#   4. Add a `deploy-new-site` job below, following the existing pattern.
 
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      site:
+        description: 'Force a deploy regardless of which files changed'
+        type: choice
+        default: auto
+        options:
+          - auto
+          - all
+          - amowogbaje
+          - catherine
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  detect-changes:
     runs-on: ubuntu-latest
-    
+    outputs:
+      amowogbaje: ${{ steps.filter.outputs.amowogbaje }}
+      catherine: ${{ steps.filter.outputs.catherine }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
         with:
-          node-version: '20'
-          cache: 'npm'
+          filters: |
+            amowogbaje:
+              - 'amowogbaje/**'
+            catherine:
+              - 'catherine/**'
 
-      - name: Install dependencies
-        run: npm install
+  deploy-amowogbaje:
+    name: Deploy amowogbaje.com
+    needs: detect-changes
+    if: >-
+      needs.detect-changes.outputs.amowogbaje == 'true' ||
+      github.event.inputs.site == 'all' ||
+      github.event.inputs.site == 'amowogbaje'
+    uses: ./.github/workflows/deploy-amowogbaje.yml
+    secrets: inherit
 
-      - name: Build static site
-        run: npm run build
-
-      - name: Deploy build via rsync
-        env:
-          HOST: ${{ vars.HOST }}
-          USERNAME: ${{ vars.USERNAME }}
-          PORT: ${{ vars.PORT }}
-          # Folder on the server that amowogbaje.com points to.
-          # On most Namecheap shared hosting this is public_html for the
-          # primary domain. Override via repo/environment variable DEPLOY_PATH
-          # if your account is set up differently.
-          DEPLOY_PATH: ${{ vars.DEPLOY_PATH || 'public_html' }}
-          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          echo "$SSH_KEY" > /tmp/private_key
-          chmod 600 /tmp/private_key
-          rsync -avz --delete \
-            -e "ssh -i /tmp/private_key -o StrictHostKeyChecking=no -p $PORT" \
-            --exclude='.git' \
-            --exclude='.env' \
-            ./dist/ \
-            "$USERNAME@$HOST:/home/$USERNAME/$DEPLOY_PATH/"
+  deploy-catherine:
+    name: Deploy catherine.amowogbaje.com
+    needs: detect-changes
+    if: >-
+      needs.detect-changes.outputs.catherine == 'true' ||
+      github.event.inputs.site == 'all' ||
+      github.event.inputs.site == 'catherine'
+    uses: ./.github/workflows/deploy-catherine.yml
+    secrets: inherit
