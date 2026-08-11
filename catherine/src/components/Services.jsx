@@ -18,19 +18,6 @@ const SERVICES = [
     ),
   },
   {
-    title: 'Teaching',
-    description:
-      'Classroom and small-group instruction across core subjects, with a steady, encouraging style built for students who learn best with patience and structure.',
-    cta: "Enquire about teaching →",
-    text: "Hi Catherine, I'm interested in your teaching services. Could you tell me more?",
-    icon: (
-      <>
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2z" />
-      </>
-    ),
-  },
-  {
     title: 'Guidance & Counselling',
     description:
       'One-on-one academic and life counselling for students and young adults — orientation, placement support, and a confidential space to think things through.',
