@@ -41,8 +41,8 @@ export const FRENCH_RATES = {
     note: 'Hourly rate · billed per session',
     tiers: [
       { name: 'Beginner', price: '10', desc: 'Perfect for new learners. Build a strong foundation in French.' },
-      { name: 'Intermediate', price: '17', desc: 'Strengthen your skills and communicate with more confidence.' },
-      { name: 'Advanced', price: '27', desc: 'Refine your fluency and master French at an advanced level.' },
+      { name: 'Intermediate', price: '15', desc: 'Strengthen your skills and communicate with more confidence.' },
+      { name: 'Advanced', price: '25', desc: 'Refine your fluency and master French at an advanced level.' },
     ],
   },
   GBP: {
