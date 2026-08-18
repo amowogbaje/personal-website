@@ -1,5 +1,5 @@
-export const WHATSAPP_NUMBER = '2348111468652'
-export const EMAIL = 'ogwochinyere9@gmail.com'
+export const WHATSAPP_NUMBER = '2347026305945'
+export const EMAIL = 'amowogbajegideon@gmail.com'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/chinyere-amowogbaje-62030b225/'
 
 export function waLink(text) {
