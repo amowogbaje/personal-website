@@ -48,6 +48,16 @@ const projects = [
     "stack": ["Laravel", "Reactjs", "PostgreSQL/MySQL", "TailwindCSS"],
     "summary": "A serialized-fiction reading platform with a full author studio — episode-based access tiers, AI-assisted search, a badge/reward system, and multi-gateway subscriptions (Stripe, Paystack, Flutterwave) with per-country pricing.",
     "pr": "#05"
+  },
+  {
+    "status": "draft",
+    "statusColor": "bg-paper/10 text-paper/50 border-paper/20",
+    "title": "HelpBoard",
+    "href": "https://github.com/amowogbaje/HelpBoardFullstackAmowogbaje",
+    "linkLabel": "github.com/amowogbaje/HelpBoardFullstackAmowogbaje",
+    "stack": ["Express.js", "React + Vite"],
+    "summary": "Full-stack support board built with Express.js and React + Vite, designed to help users raise, track, and manage support requests through a centralized platform.",
+    "pr": "#06"
   }
 ]
 
