@@ -23,13 +23,19 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 font-mono text-sm md:text-base uppercase tracking-widebit text-sage">
-            Laravel Developer — API, E-Commerce &amp; AI Integrations
+            Full-Stack Product Engineer — AI, APIs &amp; Automation
           </p>
 
           <p className="mt-6 max-w-xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
-            I build Laravel systems that connect your business to the tools it
-            depends on — CRMs, e-commerce platforms, payment gateways, and AI
-            services. Available now for remote contract and freelance work.
+            I build and integrate the technology behind modern digital
+            products — from full-stack web applications and APIs to AI-powered
+            workflows, automation, payments, and third-party integrations.
+          </p>
+
+          <p className="mt-4 max-w-xl text-base md:text-lg text-paper/60 leading-relaxed font-light">
+            Whether you are validating an idea, building an MVP, or improving
+            an existing product, I can take it from concept to a working,
+            production-ready system.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -37,14 +43,16 @@ export default function Hero() {
               href="#contact"
               className="font-mono text-xs uppercase tracking-widebit bg-gold text-ink px-5 py-3 rounded-full hover:bg-goldsoft transition-colors"
             >
-              hire me
+              build with me
             </a>
+
             <a
-              href="#services"
+              href="#projects"
               className="font-mono text-xs uppercase tracking-widebit text-paper/70 px-5 py-3 rounded-full border border-paper/15 hover:border-paper/40 hover:text-paper transition-colors"
             >
-              see services
+              see my work
             </a>
+
             <a
               href="#domains"
               className="font-mono text-xs uppercase tracking-widebit text-paper/70 px-5 py-3 rounded-full border border-paper/15 hover:border-paper/40 hover:text-paper transition-colors"
@@ -54,19 +62,29 @@ export default function Hero() {
           </div>
 
           <div className="mt-16 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-slate">
-            <span>focus: API integrations · WooCommerce · CRM automation · AI pipelines</span>
+            <span>
+              focus: Full-stack products · AI integration · APIs · automation
+            </span>
+
             <span className="hidden sm:inline">·</span>
-            <span>stack: Laravel · Livewire · Filament · Reactjs · Next.js · NestJS</span>
+
+            <span>
+              stack: Laravel · React · Next.js · Express.js · FastAPI · AI/ML
+            </span>
+
             <span className="hidden sm:inline">·</span>
+
             <span>based: Nigeria, remote-first</span>
           </div>
         </div>
 
         <div className="relative mx-auto md:mx-0 w-48 md:w-full max-w-xs">
           <div className="absolute -inset-3 rounded-3xl border border-gold/25 hidden md:block" />
+
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-paper/15 bg-inkdeep">
             <picture>
               <source srcSet="/profile.webp" type="image/webp" />
+
               <img
                 src="/profile-fallback.jpg"
                 alt="Gideon Amowogbaje"
@@ -77,28 +95,32 @@ export default function Hero() {
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'
-                  e.currentTarget.parentElement.nextElementSibling.style.display = 'flex'
+                  e.currentTarget.parentElement.nextElementSibling.style.display =
+                    'flex'
                 }}
               />
             </picture>
+
             <div className="hidden absolute inset-0 flex-col items-center justify-center gap-2 text-slate">
               <span className="font-mono text-[10px] uppercase tracking-widebit">
                 public/profile.png
               </span>
+
               <span className="font-mono text-[10px] text-slate/70">
                 drop your photo here
               </span>
             </div>
           </div>
+
           <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-widebit text-slate bg-ink px-3 py-1 rounded-full border border-paper/10 whitespace-nowrap">
             commit 0001 · origin
           </span>
         </div>
       </div>
-          
+
       <a
-        href="#services"
-        aria-label="Scroll to services"
+        href="#projects"
+        aria-label="Scroll to projects"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-widebit text-slate hover:text-paper transition-colors animate-bounce motion-reduce:animate-none"
       >
         scroll ↓
