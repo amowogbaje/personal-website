@@ -7,13 +7,6 @@ name: Deploy
 # for each site in its own file (easy to read, easy to touch one site
 # without risking another) while guaranteeing only ONE workflow run happens
 # per push, instead of several independent workflows firing off in parallel.
-#
-# To add a new site later:
-#   1. Add its folder, e.g. `new-site/`.
-#   2. Add a `new-site: 'new-site/**'` line to the filters below.
-#   3. Copy deploy-catherine.yml -> deploy-new-site.yml and adjust the
-#      working-directory / environment name.
-#   4. Add a `deploy-new-site` job below, following the existing pattern.
 
 on:
   push:
@@ -29,6 +22,7 @@ on:
           - all
           - amowogbaje
           - catherine
+          - demos
 
 concurrency:
   group: deploy-${{ github.ref }}
@@ -40,6 +34,7 @@ jobs:
     outputs:
       amowogbaje: ${{ steps.filter.outputs.amowogbaje }}
       catherine: ${{ steps.filter.outputs.catherine }}
+      demos: ${{ steps.filter.outputs.demos }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
@@ -50,6 +45,8 @@ jobs:
               - 'amowogbaje/**'
             catherine:
               - 'catherine/**'
+            demos:
+              - 'demos/**'
 
   deploy-amowogbaje:
     name: Deploy amowogbaje.com
@@ -69,4 +66,14 @@ jobs:
       github.event.inputs.site == 'all' ||
       github.event.inputs.site == 'catherine'
     uses: ./.github/workflows/deploy-catherine.yml
+    secrets: inherit
+
+  deploy-demos:
+    name: Deploy demos.amowogbaje.com
+    needs: detect-changes
+    if: >-
+      needs.detect-changes.outputs.demos == 'true' ||
+      github.event.inputs.site == 'all' ||
+      github.event.inputs.site == 'demos'
+    uses: ./.github/workflows/deploy-demos.yml
     secrets: inherit
