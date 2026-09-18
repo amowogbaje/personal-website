@@ -1,0 +1,34 @@
+name: Deploy · demo
+
+# Reusable workflow — deploys the HTML/static /demo directory.
+# Called by your main deploy.yml workflow.
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: demo
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy static site via rsync
+        env:
+          HOST: ${{ vars.HOST }}
+          USERNAME: ${{ vars.USERNAME }}
+          PORT: ${{ vars.PORT }}
+          # Folder on the server where your demo portal is hosted.
+          DEPLOY_PATH: 'demos.amowogbaje.com'
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "$SSH_KEY" > /tmp/private_key
+          chmod 600 /tmp/private_key
+          rsync -avz --delete \
+            -e "ssh -i /tmp/private_key -o StrictHostKeyChecking=no -p $PORT" \
+            --exclude='.git' \
+            --exclude='.env' \
+            --exclude='.github' \
+            ./demos \
+            "$USERNAME@$HOST:/home/$USERNAME/$DEPLOY_PATH/"

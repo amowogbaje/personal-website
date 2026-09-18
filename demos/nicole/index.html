@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicole Marie Salon — Palm Harbor, FL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15110d;
+    --ink-soft:#221b15;
+    --paper:#f4eee2;
+    --paper-dim:#e7ddc9;
+    --copper:#c1662f;
+    --copper-bright:#e0854a;
+    --merlot:#6e1f2a;
+    --sand:#a99574;
+    --line-dark:rgba(244,238,226,0.16);
+    --line-light:rgba(21,17,13,0.14);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Work Sans', -apple-system, sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  button{ font-family:inherit; cursor:pointer; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 32px;
+    mix-blend-mode:difference;
+  }
+  @media (max-width:640px){ nav{ padding:18px 20px; } }
+  .nav-mark{ font-family:'Fraunces', serif; font-size:18px; letter-spacing:0.02em; color:var(--paper); text-decoration:none; }
+  .nav-links{ display:flex; align-items:center; gap:28px; }
+  .nav-links a{ color:var(--paper); text-decoration:none; font-size:14px; letter-spacing:0.02em; }
+  .nav-book{
+    border:1px solid var(--paper); padding:8px 16px; border-radius:2px;
+    font-size:13px; background:transparent; color:var(--paper);
+  }
+  @media (max-width:760px){ .nav-links a:not(.nav-book){ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:150px 0 72px;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute; inset:0;
+    background-image:url('assets/img/merlot-color-melt.jpg');
+    background-size:cover;
+    background-position:60% 20%;
+    filter:saturate(0.9);
+  }
+  .hero-bg::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(21,17,13,0.55) 0%, rgba(21,17,13,0.35) 38%, rgba(21,17,13,0.92) 92%),
+      linear-gradient(90deg, rgba(21,17,13,0.88) 0%, rgba(21,17,13,0.2) 55%);
+  }
+  .hero-inner{ position:relative; z-index:2; }
+  .hero-eyebrow{ font-size:14px; color:var(--sand); margin-bottom:22px; }
+  .hero h1{ font-size:clamp(52px, 9vw, 122px); line-height:0.96; color:var(--paper); }
+  .hero h1 em{ font-style:italic; color:var(--copper-bright); font-weight:400; }
+  .hero-foot{
+    margin-top:56px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    border-top:1px solid var(--line-dark);
+    padding-top:28px;
+  }
+  .hero-note{ max-width:360px; font-size:16px; line-height:1.55; color:var(--paper-dim); }
+  .hero-cta{ display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+  @media (max-width:720px){
+    .hero-foot{ flex-direction:column; align-items:flex-start; }
+    .hero-cta{ align-items:flex-start; }
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 26px; background:var(--copper); color:var(--ink);
+    text-decoration:none; font-size:15px; font-weight:500;
+    border-radius:2px; transition:background .2s ease;
+    border:none;
+  }
+  .btn:hover{ background:var(--copper-bright); }
+  .btn-ghost{ background:transparent; color:var(--paper); border:1px solid var(--line-dark); }
+  .btn-ghost:hover{ background:rgba(244,238,226,0.06); }
+  .tel{ font-family:'Fraunces', serif; font-size:15px; color:var(--paper-dim); text-decoration:none; letter-spacing:0.02em; }
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{ padding:120px 0; }
+  @media (max-width:720px){ section{ padding:80px 0; } }
+  .section-light{ background:var(--paper); color:var(--ink); }
+  .kicker{ font-size:13px; color:var(--merlot); margin-bottom:18px; }
+  .dark .kicker{ color:var(--sand); }
+
+  /* ---------- PHILOSOPHY ---------- */
+  .philosophy{ display:grid; grid-template-columns:1fr 1.4fr; gap:64px; align-items:start; }
+  @media (max-width:820px){ .philosophy{ grid-template-columns:1fr; gap:32px; } }
+  .philosophy h2{ font-size:clamp(30px,4vw,44px); line-height:1.12; }
+  .philosophy p{ font-size:19px; line-height:1.65; color:var(--ink-soft); max-width:52ch; }
+  .philosophy p + p{ margin-top:18px; }
+
+  /* ---------- MENU (services) ---------- */
+  .menu-section{ background:var(--ink); }
+  .menu-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; gap:24px; flex-wrap:wrap; }
+  .menu-head h2{ font-size:clamp(32px,4.4vw,52px); color:var(--paper); }
+  .menu-head p{ color:var(--sand); max-width:34ch; font-size:15px; line-height:1.5; margin:0; }
+  .menu-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:0 48px; }
+  @media (max-width:900px){ .menu-grid{ grid-template-columns:1fr; gap:48px; } }
+  .menu-cat{ border-top:1px solid var(--line-dark); padding-top:20px; }
+  .menu-cat-title{ font-family:'Fraunces', serif; font-style:italic; font-size:22px; color:var(--copper-bright); margin-bottom:22px; }
+  .menu-row{ padding:14px 0; border-bottom:1px solid var(--line-dark); }
+  .menu-row-top{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .menu-row .name{ font-size:15.5px; color:var(--paper); }
+  .menu-row .price{ font-size:14px; color:var(--sand); white-space:nowrap; }
+  .menu-row .desc{ font-size:13px; color:var(--sand); margin-top:4px; line-height:1.4; }
+  .menu-fine{ margin-top:32px; font-size:13px; color:var(--sand); max-width:60ch; }
+
+  /* ---------- UNFILTERED GALLERY (real photos) ---------- */
+  .unfiltered{ background:var(--ink-soft); }
+  .unfiltered-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:44px; }
+  .unfiltered-head h2{ font-size:clamp(32px,4.4vw,52px); color:var(--paper); max-width:16ch; }
+  .unfiltered-head a{ font-size:14px; color:var(--copper-bright); text-decoration:none; border-bottom:1px solid var(--copper-bright); padding-bottom:2px; white-space:nowrap; }
+
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:190px;
+    gap:6px;
+  }
+  @media (max-width:900px){ .gallery-grid{ grid-template-columns:repeat(2, 1fr); grid-auto-rows:200px; } }
+  @media (max-width:520px){ .gallery-grid{ grid-template-columns:repeat(2, 1fr); grid-auto-rows:160px; } }
+
+  .g-item{ position:relative; overflow:hidden; grid-column:span 1; grid-row:span 1; }
+  .g-tall{ grid-row:span 2; }
+  .g-wide{ grid-column:span 2; }
+
+  .g-item img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; filter:saturate(1.02); }
+  .g-item:hover img{ transform:scale(1.045); }
+  .g-caption{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:14px 16px 12px;
+    background:linear-gradient(0deg, rgba(21,17,13,0.85) 0%, rgba(21,17,13,0) 100%);
+    font-size:12.5px; color:var(--paper-dim); letter-spacing:0.01em;
+    opacity:0; transform:translateY(6px);
+    transition:opacity .3s ease, transform .3s ease;
+  }
+  .g-item:hover .g-caption{ opacity:1; transform:translateY(0); }
+
+  /* ---------- HOURS + GIFT CARDS ---------- */
+  .info-band{ background:var(--paper); }
+  .info-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; }
+  @media (max-width:820px){ .info-grid{ grid-template-columns:1fr; gap:56px; } }
+  .info-grid h2{ font-size:clamp(26px,3.2vw,36px); margin-bottom:24px; }
+  .hours-table{ width:100%; border-collapse:collapse; }
+  .hours-table tr{ border-bottom:1px solid var(--line-light); }
+  .hours-table td{ padding:11px 0; font-size:15px; color:var(--ink-soft); }
+  .hours-table td:last-child{ text-align:right; color:var(--ink); font-weight:500; }
+  .hours-note{ margin-top:18px; font-size:13px; color:var(--sand); }
+  .gift-copy{ font-size:16px; line-height:1.65; color:var(--ink-soft); max-width:44ch; }
+  .gift-copy p + p{ margin-top:14px; }
+  .gift-copy a{ color:var(--merlot); text-decoration:none; }
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--ink); }
+  .about-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center; }
+  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; gap:40px; } }
+  .about-photo img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:2px; }
+  .about-quote{ font-family:'Fraunces', serif; font-style:italic; font-size:clamp(21px,2.4vw,27px); line-height:1.35; color:var(--copper-bright); margin-top:24px; max-width:34ch; }
+  .about-body h2{ color:var(--paper); font-size:clamp(28px,3.6vw,42px); margin-bottom:20px; }
+  .about-body p{ font-size:17px; line-height:1.7; color:var(--paper-dim); max-width:48ch; }
+  .about-body p + p{ margin-top:16px; }
+  .about-signoff{ margin-top:28px; font-size:14px; color:var(--sand); letter-spacing:0.02em; }
+
+  /* ---------- FAQ ---------- */
+  .faq{ background:var(--paper); }
+  .faq-head{ max-width:44ch; margin-bottom:48px; }
+  .faq-head h2{ font-size:clamp(30px,4vw,44px); }
+  .faq-list{ max-width:760px; }
+  .faq-item{ border-top:1px solid var(--line-light); }
+  .faq-item:last-child{ border-bottom:1px solid var(--line-light); }
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none;
+    padding:22px 0; display:flex; justify-content:space-between; align-items:center;
+    gap:16px; font-size:17px; color:var(--ink); font-family:'Fraunces', serif;
+  }
+  .faq-q .plus{ font-size:20px; color:var(--merlot); transition:transform .25s ease; flex-shrink:0; }
+  .faq-item[data-open="true"] .plus{ transform:rotate(45deg); }
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    font-size:15.5px; line-height:1.65; color:var(--ink-soft);
+  }
+  .faq-a-inner{ padding-bottom:22px; max-width:62ch; }
+
+  /* ---------- BOOK / CALENDLY ---------- */
+  .book{ background:var(--ink); }
+  .book-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:40px; }
+  .book-head h2{ font-size:clamp(38px,6vw,68px); color:var(--paper); line-height:1.02; max-width:14ch; }
+  .book-alt{ display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
+  .book-alt .label{ font-size:12px; color:var(--sand); letter-spacing:0.02em; }
+  .book-alt .value{ font-size:16px; color:var(--paper); }
+  .book-alt .value a{ text-decoration:none; color:var(--copper-bright); }
+  .calendly-wrap{
+    background:var(--paper);
+    border-radius:3px;
+    overflow:hidden;
+    min-height:700px;
+    position:relative;
+  }
+  .calendly-inline-widget{ min-width:320px; height:700px; }
+  .calendly-loading{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    color:var(--ink-soft); font-size:14px; text-align:center; padding:20px;
+  }
+
+  footer{ padding-top:56px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; font-size:13px; color:var(--sand); }
+  footer a{ color:var(--sand); text-decoration:none; }
+  footer a:hover{ color:var(--copper-bright); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-mark" href="#top">Nicole Marie Salon</a>
+  <div class="nav-links">
+    <a href="#menu">Services</a>
+    <a href="#unfiltered">Gallery</a>
+    <a href="#hours">Hours</a>
+    <a href="#about">About</a>
+    <a class="nav-book" href="#book" onclick="openCalendlyPopup(event)">Book now</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-eyebrow">Palm Harbor, Florida</div>
+    <h1>Hair,<br><em>unfiltered.</em></h1>
+    <div class="hero-foot">
+      <p class="hero-note">Color, cuts, and styling built around what actually grows out of your head — no filters on the photos, no exaggerating what a color will do. Just good work, shown honestly.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#book" onclick="openCalendlyPopup(event)">Book an appointment</a>
+        <a class="tel" href="tel:7277717755">(727) 771-7755</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section-light">
+  <div class="wrap philosophy">
+    <div>
+      <div class="kicker">The approach</div>
+      <h2>Real color, shown in real light.</h2>
+    </div>
+    <div>
+      <p>Nicole Marie Salon was built on a simple idea: every photo posted is unfiltered, so what you see booking an appointment is what you'll actually leave with. No ring-light color correction, no editing a brassy tone into something it isn't.</p>
+      <p>It's a small-salon approach to a big-salon industry — one chair, one client at a time, and enough attention paid to get the tone, the cut, and the finish right the first time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section dark" id="menu">
+  <div class="wrap">
+    <div class="menu-head">
+      <h2>Services</h2>
+      <p class="kicker">A starting menu — exact pricing depends on hair length, density, and the look you're after, and is confirmed at booking.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <div class="menu-cat-title">Color</div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">All-over color</span><span class="price">from $110</span></div>
+          <div class="desc">Single-process color, root to end.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Root touch-up</span><span class="price">from $85</span></div>
+          <div class="desc">Regrowth blended to match your existing color.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Balayage / highlights</span><span class="price">from $175</span></div>
+          <div class="desc">Hand-painted or foiled dimension, tailored to your base.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Fashion &amp; fantasy tones</span><span class="price">from $150</span></div>
+          <div class="desc">Merlot, plum, copper — bold color done right.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Toner &amp; gloss</span><span class="price">from $45</span></div>
+          <div class="desc">Neutralizes brass and adds shine between colors.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Color correction</span><span class="price">consult</span></div>
+          <div class="desc">Fixing box color or a color gone wrong — quoted after a look in person.</div>
+        </div>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-title">Cut &amp; style</div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Women's haircut</span><span class="price">from $65</span></div>
+          <div class="desc">Consultation, cut, and style finish included.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Men's haircut</span><span class="price">from $40</span></div>
+          <div class="desc">Clipper or scissor cut, styled to finish.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Blowout</span><span class="price">from $45</span></div>
+          <div class="desc">Wash and full-body blow-dry styling.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Special-occasion style</span><span class="price">from $75</span></div>
+          <div class="desc">Updos and event styling — book ahead for weekends.</div>
+        </div>
+      </div>
+      <div class="menu-cat">
+        <div class="menu-cat-title">Treatments</div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Deep conditioning</span><span class="price">from $35</span></div>
+          <div class="desc">Add-on moisture treatment for dry or colored hair.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Keratin / smoothing</span><span class="price">from $200</span></div>
+          <div class="desc">Reduces frizz and cuts down blow-dry time for months.</div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-row-top"><span class="name">Scalp treatment</span><span class="price">from $30</span></div>
+          <div class="desc">Exfoliating treatment for a healthier scalp.</div>
+        </div>
+      </div>
+    </div>
+    <p class="menu-fine">Full, current pricing and stylist availability are confirmed when you book.</p>
+  </div>
+</section>
+
+<section class="unfiltered dark" id="unfiltered">
+  <div class="wrap">
+    <div class="unfiltered-head">
+      <h2>Every color, exactly as it came out of the chair.</h2>
+      <a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">Follow @nicolemariesalonllc for more →</a>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item g-tall">
+        <img src="assets/img/brunette-balayage-waves.jpg" alt="Dimensional brunette balayage with soft waves">
+        <div class="g-caption">Dimensional balayage, dark root to honey ends</div>
+      </div>
+      <div class="g-item">
+        <img src="assets/img/blonde-side-profile.jpg" alt="Sleek all-over blonde">
+        <div class="g-caption">All-over blonde, glossed and blown out straight</div>
+      </div>
+      <div class="g-item">
+        <img src="assets/img/merlot-color-melt.jpg" alt="Deep merlot color melt">
+        <div class="g-caption">Merlot color melt with soft curled ends</div>
+      </div>
+      <div class="g-item g-tall">
+        <img src="assets/img/dimensional-blonde-curls.jpg" alt="Layered dimensional blonde with curled flip">
+        <div class="g-caption">Money-piece blonde over a natural base, curled flip</div>
+      </div>
+      <div class="g-item">
+        <img src="assets/img/silver-pixie-cut.jpg" alt="Textured platinum pixie cut">
+        <div class="g-caption">Textured platinum pixie</div>
+      </div>
+      <div class="g-item">
+        <img src="assets/img/caramel-balayage-waves.jpg" alt="Warm caramel balayage waves">
+        <div class="g-caption">Warm caramel balayage on long layers</div>
+      </div>
+      <div class="g-item g-wide">
+        <img src="assets/img/beachy-wave-balayage.jpg" alt="Beachy wave balayage, full head">
+        <div class="g-caption">Full-head balayage, styled in loose beach waves</div>
+      </div>
+      <div class="g-item">
+        <img src="assets/img/silver-mens-cut.jpg" alt="Men's textured silver toned cut">
+        <div class="g-caption">Men's cut with a cool silver tone</div>
+      </div>
+      <div class="g-item">
+        <img src="assets/img/dimensional-blonde-flip.jpg" alt="Dimensional blonde with a flipped-out finish">
+        <div class="g-caption">Dimensional blonde, flipped-out finish</div>
+      </div>
+      <div class="g-item">
+        <img src="assets/img/highlight-closeup.jpg" alt="Close up of fine dimensional highlights">
+        <div class="g-caption">Fine, hand-placed highlight detail</div>
+      </div>
+      <div class="g-item">
+        <img src="assets/img/blonde-back-view.jpg" alt="Blonde haircut, back view">
+        <div class="g-caption">Blonde base, cut into soft layers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-band" id="hours">
+  <div class="wrap info-grid">
+    <div>
+      <div class="kicker">Hours</div>
+      <h2>When to find us</h2>
+      <table class="hours-table">
+        <tr><td>Monday</td><td>Closed</td></tr>
+        <tr><td>Tuesday</td><td>9:00 AM – 6:00 PM</td></tr>
+        <tr><td>Wednesday</td><td>9:00 AM – 6:00 PM</td></tr>
+        <tr><td>Thursday</td><td>9:00 AM – 7:00 PM</td></tr>
+        <tr><td>Friday</td><td>9:00 AM – 7:00 PM</td></tr>
+        <tr><td>Saturday</td><td>9:00 AM – 4:00 PM</td></tr>
+        <tr><td>Sunday</td><td>Closed</td></tr>
+      </table>
+      <p class="hours-note">Sample hours — confirm current hours and holiday closures when you book. Palm Harbor, Florida.</p>
+    </div>
+    <div>
+      <div class="kicker">Gift certificates</div>
+      <h2>Give the chair.</h2>
+      <div class="gift-copy">
+        <p>Gift certificates are available for any service or dollar amount — a haircut, a full color day, or just a little "treat yourself."</p>
+        <p>To purchase one, call or text <a href="tel:7277717755">(727) 771-7755</a>, or send a message on <a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">Instagram</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="assets/img/nicole-portrait.jpg" alt="Nicole, stylist and owner of Nicole Marie Salon">
+      <div class="about-quote">"I'd rather show you the color in daylight than sell it to you under a ring light."</div>
+    </div>
+    <div class="about-body">
+      <h2>Meet Nicole</h2>
+      <p>Nicole Marie Salon is run by Nicole — stylist, colorist, and the person behind the chair for every appointment booked here. The salon's whole identity started from a habit: posting every result exactly as it came out, unedited.</p>
+      <p>That standard carries into the work itself. Consultations are honest about what your hair can do in one sitting versus over a few visits, and the goal on every appointment is a result that still looks right a week later, not just walking out the door.</p>
+      <div class="about-signoff">— Nicole, @nicolehairboss</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <div class="kicker">Good to know</div>
+      <h2>A few common questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How far ahead should I book?</span><span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Color services, especially balayage and correction work, tend to fill up 1–2 weeks out, particularly on Fridays and Saturdays. Cuts and blowouts can usually be booked with less notice.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do you require a consultation before color?</span><span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">For a first-time color correction, a big change in tone, or fantasy colors, yes — a short in-person or photo consultation helps set realistic expectations and timing before you're in the chair.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What's the cancellation policy?</span><span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Please give at least 24 hours' notice if you need to reschedule or cancel, so the time can be offered to someone else. Late cancellations and no-shows may be subject to a fee.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Can I bring in a reference photo?</span><span class="plus">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Always — reference photos are the easiest way to get on the same page before any cutting or color starts. Bring a few if you can, including one of your current color or cut.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="book-head">
+      <h2>Let's get you in the chair.</h2>
+      <div class="book-alt">
+        <div>
+          <div class="label">Prefer to call or text?</div>
+          <div class="value"><a href="tel:7277717755">(727) 771-7755</a></div>
+        </div>
+        <div>
+          <div class="label">Follow along</div>
+          <div class="value"><a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">@nicolemariesalonllc</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calendly-wrap">
+      <div class="calendly-loading" id="calendly-fallback">Loading the booking calendar — if it doesn't appear, call or text (727) 771-7755 to book.</div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/amowogbajegideon/30min" style="min-width:320px;height:700px;"></div>
+    </div>
+
+    <footer>
+      <span>© Nicole Marie Salon, LLC</span>
+      <span><a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">@nicolemariesalonllc</a></span>
+    </footer>
+  </div>
+</section>
+
+<script src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script>
+  // ── CALENDLY SETUP ──────────────────────────────────────────────
+  // Replace this one line with your real Calendly event link
+  // (e.g. "https://calendly.com/nicole-marie-salon/haircut"),
+  // and it updates both the embedded calendar and the "Book now"
+  // popup button automatically — no other edits needed.
+  var CALENDLY_URL = "https://calendly.com/amowogbajegideon/30min";
+  // ─────────────────────────────────────────────────────────────
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var widget = document.querySelector('.calendly-inline-widget');
+    if (widget) widget.setAttribute('data-url', CALENDLY_URL);
+
+    // Hide the loading/fallback message once Calendly's iframe mounts.
+    var fallback = document.getElementById('calendly-fallback');
+    var check = setInterval(function () {
+      if (widget && widget.querySelector('iframe')) {
+        fallback.style.display = 'none';
+        clearInterval(check);
+      }
+    }, 400);
+    // If Calendly hasn't loaded after 8s (blocked script, offline, bad
+    // link), leave the fallback message showing so people still know
+    // to call instead of staring at a blank box.
+    setTimeout(function () { clearInterval(check); }, 8000);
+  });
+
+  function openCalendlyPopup(e) {
+    if (e) e.preventDefault();
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function toggleFaq(btn) {
+    var item = btn.parentElement;
+    var answer = item.querySelector('.faq-a');
+    var isOpen = item.getAttribute('data-open') === 'true';
+    document.querySelectorAll('.faq-item').forEach(function (el) {
+      el.setAttribute('data-open', 'false');
+      el.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!isOpen) {
+      item.setAttribute('data-open', 'true');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+</script>
+
+</body>
+</html>
