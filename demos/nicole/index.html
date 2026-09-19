@@ -6,27 +6,30 @@
 <title>Nicole Marie Salon — Palm Harbor, FL</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#15110d;
-    --ink-soft:#221b15;
-    --paper:#f4eee2;
-    --paper-dim:#e7ddc9;
-    --copper:#c1662f;
-    --copper-bright:#e0854a;
-    --merlot:#6e1f2a;
-    --sand:#a99574;
-    --line-dark:rgba(244,238,226,0.16);
-    --line-light:rgba(21,17,13,0.14);
+    --blush:#fbeee7;       /* main light background */
+    --cream:#fffaf5;       /* card background, slightly lighter */
+    --burgundy:#5c2438;    /* deep section background */
+    --burgundy-soft:#7a3752;
+    --rose:#c96b7c;        /* primary accent / buttons */
+    --rose-bright:#dd8b9a;
+    --rose-deep:#93314a;   /* kicker / link text on light bg */
+    --gold:#c9a06a;        /* hairline accent */
+    --ink:#3d2430;         /* body text on light bg */
+    --ink-soft:#5a3a45;
+    --cream-text:#f8e9e0;  /* text on dark bg */
+    --cream-dim:#e3c9c2;
+    --line-dark:rgba(248,233,224,0.18);
+    --line-light:rgba(61,36,48,0.12);
   }
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   body{
     margin:0;
-    background:var(--ink);
-    color:var(--paper);
+    background:var(--blush);
+    color:var(--ink);
     font-family:'Work Sans', -apple-system, sans-serif;
     font-weight:400;
     -webkit-font-smoothing:antialiased;
@@ -45,21 +48,30 @@
     letter-spacing:-0.01em;
   }
 
+  /* small ornament used between sections */
+  .ornament{ display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:20px; }
+  .ornament::before, .ornament::after{ content:""; width:34px; height:1px; background:var(--gold); }
+  .ornament span{ width:6px; height:6px; background:var(--gold); transform:rotate(45deg); display:inline-block; }
+  .dark .ornament::before, .dark .ornament::after{ background:var(--gold); }
+
   /* ---------- NAV ---------- */
   nav{
     position:fixed; top:0; left:0; right:0; z-index:50;
     display:flex; align-items:center; justify-content:space-between;
-    padding:22px 32px;
-    mix-blend-mode:difference;
+    padding:20px 32px;
+    background:rgba(251,238,231,0.86);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-light);
   }
-  @media (max-width:640px){ nav{ padding:18px 20px; } }
-  .nav-mark{ font-family:'Fraunces', serif; font-size:18px; letter-spacing:0.02em; color:var(--paper); text-decoration:none; }
-  .nav-links{ display:flex; align-items:center; gap:28px; }
-  .nav-links a{ color:var(--paper); text-decoration:none; font-size:14px; letter-spacing:0.02em; }
+  @media (max-width:640px){ nav{ padding:16px 20px; } }
+  .nav-mark{ font-family:'Fraunces', serif; font-style:italic; font-size:19px; letter-spacing:0.01em; color:var(--rose-deep); text-decoration:none; }
+  .nav-links{ display:flex; align-items:center; gap:26px; }
+  .nav-links a{ color:var(--ink); text-decoration:none; font-size:14px; letter-spacing:0.01em; }
   .nav-book{
-    border:1px solid var(--paper); padding:8px 16px; border-radius:2px;
-    font-size:13px; background:transparent; color:var(--paper);
+    background:var(--rose); color:#fff; padding:9px 20px; border-radius:999px;
+    font-size:13px; font-weight:500;
   }
+  .nav-book:hover{ background:var(--rose-deep); }
   @media (max-width:760px){ .nav-links a:not(.nav-book){ display:none; } }
 
   /* ---------- HERO ---------- */
@@ -77,29 +89,29 @@
     background-image:url('assets/img/merlot-color-melt.jpg');
     background-size:cover;
     background-position:60% 20%;
-    filter:saturate(0.9);
+    filter:saturate(0.92);
   }
   .hero-bg::after{
     content:"";
     position:absolute; inset:0;
     background:
-      linear-gradient(180deg, rgba(21,17,13,0.55) 0%, rgba(21,17,13,0.35) 38%, rgba(21,17,13,0.92) 92%),
-      linear-gradient(90deg, rgba(21,17,13,0.88) 0%, rgba(21,17,13,0.2) 55%);
+      linear-gradient(180deg, rgba(92,36,56,0.45) 0%, rgba(92,36,56,0.35) 38%, rgba(92,36,56,0.92) 94%),
+      linear-gradient(90deg, rgba(92,36,56,0.82) 0%, rgba(92,36,56,0.18) 58%);
   }
   .hero-inner{ position:relative; z-index:2; }
-  .hero-eyebrow{ font-size:14px; color:var(--sand); margin-bottom:22px; }
-  .hero h1{ font-size:clamp(52px, 9vw, 122px); line-height:0.96; color:var(--paper); }
-  .hero h1 em{ font-style:italic; color:var(--copper-bright); font-weight:400; }
+  .hero-eyebrow{ font-size:14px; color:var(--cream-dim); letter-spacing:0.03em; margin-bottom:20px; }
+  .hero h1{ font-size:clamp(50px, 8.6vw, 112px); line-height:1.0; color:var(--cream-text); }
+  .hero h1 em{ font-style:italic; color:var(--rose-bright); font-weight:400; }
   .hero-foot{
-    margin-top:56px;
+    margin-top:52px;
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
     gap:40px;
     border-top:1px solid var(--line-dark);
-    padding-top:28px;
+    padding-top:26px;
   }
-  .hero-note{ max-width:360px; font-size:16px; line-height:1.55; color:var(--paper-dim); }
+  .hero-note{ max-width:360px; font-size:16px; line-height:1.6; color:var(--cream-dim); }
   .hero-cta{ display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
   @media (max-width:720px){
     .hero-foot{ flex-direction:column; align-items:flex-start; }
@@ -108,146 +120,150 @@
 
   .btn{
     display:inline-flex; align-items:center; gap:10px;
-    padding:14px 26px; background:var(--copper); color:var(--ink);
+    padding:15px 28px; background:var(--rose); color:#fff;
     text-decoration:none; font-size:15px; font-weight:500;
-    border-radius:2px; transition:background .2s ease;
+    border-radius:999px; transition:background .2s ease;
     border:none;
   }
-  .btn:hover{ background:var(--copper-bright); }
-  .btn-ghost{ background:transparent; color:var(--paper); border:1px solid var(--line-dark); }
-  .btn-ghost:hover{ background:rgba(244,238,226,0.06); }
-  .tel{ font-family:'Fraunces', serif; font-size:15px; color:var(--paper-dim); text-decoration:none; letter-spacing:0.02em; }
+  .btn:hover{ background:var(--rose-deep); }
+  .btn-ghost{ background:transparent; color:var(--cream-text); border:1px solid var(--line-dark); }
+  .btn-ghost:hover{ background:rgba(248,233,224,0.08); }
+  .btn-ghost-light{ background:transparent; color:var(--ink); border:1px solid var(--line-light); }
+  .btn-ghost-light:hover{ background:rgba(61,36,48,0.05); }
+  .tel{ font-family:'Fraunces', serif; font-style:italic; font-size:16px; color:var(--cream-dim); text-decoration:none; letter-spacing:0.01em; }
 
   /* ---------- SECTION SCAFFOLD ---------- */
-  section{ padding:120px 0; }
-  @media (max-width:720px){ section{ padding:80px 0; } }
-  .section-light{ background:var(--paper); color:var(--ink); }
-  .kicker{ font-size:13px; color:var(--merlot); margin-bottom:18px; }
-  .dark .kicker{ color:var(--sand); }
+  section{ padding:110px 0; }
+  @media (max-width:720px){ section{ padding:76px 0; } }
+  .dark{ background:var(--burgundy); color:var(--cream-text); }
+  .kicker{ font-size:13px; letter-spacing:0.03em; color:var(--rose-deep); margin-bottom:16px; text-align:center; }
+  .dark .kicker{ color:var(--rose-bright); }
 
   /* ---------- PHILOSOPHY ---------- */
-  .philosophy{ display:grid; grid-template-columns:1fr 1.4fr; gap:64px; align-items:start; }
-  @media (max-width:820px){ .philosophy{ grid-template-columns:1fr; gap:32px; } }
-  .philosophy h2{ font-size:clamp(30px,4vw,44px); line-height:1.12; }
-  .philosophy p{ font-size:19px; line-height:1.65; color:var(--ink-soft); max-width:52ch; }
-  .philosophy p + p{ margin-top:18px; }
+  .philosophy{ text-align:center; max-width:680px; margin:0 auto; }
+  .philosophy h2{ font-size:clamp(28px,3.6vw,40px); line-height:1.2; font-style:italic; color:var(--rose-deep); }
+  .philosophy p{ font-size:18px; line-height:1.7; color:var(--ink-soft); margin-top:22px; }
 
   /* ---------- MENU (services) ---------- */
-  .menu-section{ background:var(--ink); }
-  .menu-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; gap:24px; flex-wrap:wrap; }
-  .menu-head h2{ font-size:clamp(32px,4.4vw,52px); color:var(--paper); }
-  .menu-head p{ color:var(--sand); max-width:34ch; font-size:15px; line-height:1.5; margin:0; }
+  .menu-head{ text-align:center; margin-bottom:52px; }
+  .menu-head h2{ font-size:clamp(32px,4.2vw,48px); color:var(--cream-text); font-style:italic; }
+  .menu-head p{ color:var(--cream-dim); max-width:40ch; font-size:15px; line-height:1.5; margin:14px auto 0; }
   .menu-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:0 48px; }
   @media (max-width:900px){ .menu-grid{ grid-template-columns:1fr; gap:48px; } }
-  .menu-cat{ border-top:1px solid var(--line-dark); padding-top:20px; }
-  .menu-cat-title{ font-family:'Fraunces', serif; font-style:italic; font-size:22px; color:var(--copper-bright); margin-bottom:22px; }
+  .menu-cat{ border-top:1px solid var(--gold); padding-top:20px; }
+  .menu-cat-title{ font-family:'Fraunces', serif; font-style:italic; font-size:22px; color:var(--rose-bright); margin-bottom:20px; }
   .menu-row{ padding:14px 0; border-bottom:1px solid var(--line-dark); }
   .menu-row-top{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
-  .menu-row .name{ font-size:15.5px; color:var(--paper); }
-  .menu-row .price{ font-size:14px; color:var(--sand); white-space:nowrap; }
-  .menu-row .desc{ font-size:13px; color:var(--sand); margin-top:4px; line-height:1.4; }
-  .menu-fine{ margin-top:32px; font-size:13px; color:var(--sand); max-width:60ch; }
+  .menu-row .name{ font-size:15.5px; color:var(--cream-text); }
+  .menu-row .price{ font-size:14px; color:var(--cream-dim); white-space:nowrap; }
+  .menu-row .desc{ font-size:13px; color:var(--cream-dim); margin-top:4px; line-height:1.4; opacity:0.85; }
+  .menu-fine{ margin-top:32px; font-size:13px; color:var(--cream-dim); text-align:center; }
 
   /* ---------- UNFILTERED GALLERY (real photos) ---------- */
-  .unfiltered{ background:var(--ink-soft); }
-  .unfiltered-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:44px; }
-  .unfiltered-head h2{ font-size:clamp(32px,4.4vw,52px); color:var(--paper); max-width:16ch; }
-  .unfiltered-head a{ font-size:14px; color:var(--copper-bright); text-decoration:none; border-bottom:1px solid var(--copper-bright); padding-bottom:2px; white-space:nowrap; }
+  .unfiltered-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:40px; }
+  .unfiltered-head h2{ font-size:clamp(30px,4.2vw,46px); color:var(--rose-deep); font-style:italic; max-width:16ch; }
+  .unfiltered-head a{ font-size:14px; color:var(--rose-deep); text-decoration:none; border-bottom:1px solid var(--rose-deep); padding-bottom:2px; white-space:nowrap; }
 
   .gallery-grid{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
     grid-auto-rows:190px;
-    gap:6px;
+    gap:10px;
   }
   @media (max-width:900px){ .gallery-grid{ grid-template-columns:repeat(2, 1fr); grid-auto-rows:200px; } }
   @media (max-width:520px){ .gallery-grid{ grid-template-columns:repeat(2, 1fr); grid-auto-rows:160px; } }
 
-  .g-item{ position:relative; overflow:hidden; grid-column:span 1; grid-row:span 1; }
+  .g-item{ position:relative; overflow:hidden; grid-column:span 1; grid-row:span 1; border-radius:14px; box-shadow:0 6px 18px rgba(92,36,56,0.12); }
   .g-tall{ grid-row:span 2; }
   .g-wide{ grid-column:span 2; }
 
-  .g-item img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; filter:saturate(1.02); }
+  .g-item img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
   .g-item:hover img{ transform:scale(1.045); }
   .g-caption{
     position:absolute; left:0; right:0; bottom:0;
     padding:14px 16px 12px;
-    background:linear-gradient(0deg, rgba(21,17,13,0.85) 0%, rgba(21,17,13,0) 100%);
-    font-size:12.5px; color:var(--paper-dim); letter-spacing:0.01em;
+    background:linear-gradient(0deg, rgba(92,36,56,0.85) 0%, rgba(92,36,56,0) 100%);
+    font-size:12.5px; color:var(--cream-text); letter-spacing:0.01em;
     opacity:0; transform:translateY(6px);
     transition:opacity .3s ease, transform .3s ease;
   }
   .g-item:hover .g-caption{ opacity:1; transform:translateY(0); }
 
+  /* ---------- REVIEWS ---------- */
+  .reviews-head{ text-align:center; margin-bottom:16px; }
+  .reviews-head h2{ font-size:clamp(30px,4vw,44px); color:var(--rose-deep); font-style:italic; }
+  .rating-badges{ display:flex; justify-content:center; gap:36px; flex-wrap:wrap; margin:28px 0 52px; }
+  .rating-badge{ text-align:center; }
+  .rating-badge .stars{ color:var(--gold); font-size:18px; letter-spacing:2px; }
+  .rating-badge .score{ font-family:'Fraunces', serif; font-size:26px; color:var(--ink); margin-top:6px; }
+  .rating-badge .src{ font-size:12.5px; color:var(--ink-soft); margin-top:2px; }
+
+  .review-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
+  @media (max-width:900px){ .review-grid{ grid-template-columns:1fr; max-width:480px; margin:0 auto; } }
+  .review-card{
+    background:var(--cream); border-radius:18px; padding:30px 26px;
+    box-shadow:0 8px 24px rgba(92,36,56,0.08);
+  }
+  .review-card .quote-mark{ font-family:'Fraunces', serif; font-style:italic; font-size:40px; color:var(--rose-bright); line-height:1; margin-bottom:6px; display:block; }
+  .review-card .stars{ color:var(--gold); font-size:14px; letter-spacing:2px; margin-bottom:12px; }
+  .review-card p{ font-size:15px; line-height:1.6; color:var(--ink-soft); font-style:italic; }
+  .review-card .who{ margin-top:16px; font-size:13px; color:var(--rose-deep); letter-spacing:0.01em; }
+  .review-source{ text-align:center; margin-top:36px; font-size:13px; color:var(--ink-soft); }
+  .review-source a{ color:var(--rose-deep); text-decoration:none; border-bottom:1px solid var(--rose-deep); }
+
   /* ---------- HOURS + GIFT CARDS ---------- */
-  .info-band{ background:var(--paper); }
   .info-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; }
-  @media (max-width:820px){ .info-grid{ grid-template-columns:1fr; gap:56px; } }
-  .info-grid h2{ font-size:clamp(26px,3.2vw,36px); margin-bottom:24px; }
-  .hours-table{ width:100%; border-collapse:collapse; }
+  @media (max-width:820px){ .info-grid{ grid-template-columns:1fr; gap:52px; } }
+  .info-grid .block{ text-align:center; }
+  .info-grid h2{ font-size:clamp(26px,3vw,34px); margin-bottom:22px; font-style:italic; color:var(--rose-deep); }
+  .hours-table{ width:100%; max-width:340px; margin:0 auto; border-collapse:collapse; }
   .hours-table tr{ border-bottom:1px solid var(--line-light); }
-  .hours-table td{ padding:11px 0; font-size:15px; color:var(--ink-soft); }
+  .hours-table td{ padding:10px 0; font-size:15px; color:var(--ink-soft); }
   .hours-table td:last-child{ text-align:right; color:var(--ink); font-weight:500; }
-  .hours-note{ margin-top:18px; font-size:13px; color:var(--sand); }
-  .gift-copy{ font-size:16px; line-height:1.65; color:var(--ink-soft); max-width:44ch; }
+  .hours-note{ margin-top:16px; font-size:13px; color:var(--ink-soft); }
+  .gift-copy{ font-size:16px; line-height:1.7; color:var(--ink-soft); max-width:40ch; margin:0 auto; }
   .gift-copy p + p{ margin-top:14px; }
-  .gift-copy a{ color:var(--merlot); text-decoration:none; }
+  .gift-copy a{ color:var(--rose-deep); text-decoration:none; border-bottom:1px solid var(--rose-deep); }
 
   /* ---------- ABOUT ---------- */
-  .about{ background:var(--ink); }
   .about-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center; }
-  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; gap:40px; } }
-  .about-photo img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:2px; }
-  .about-quote{ font-family:'Fraunces', serif; font-style:italic; font-size:clamp(21px,2.4vw,27px); line-height:1.35; color:var(--copper-bright); margin-top:24px; max-width:34ch; }
-  .about-body h2{ color:var(--paper); font-size:clamp(28px,3.6vw,42px); margin-bottom:20px; }
-  .about-body p{ font-size:17px; line-height:1.7; color:var(--paper-dim); max-width:48ch; }
+  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; gap:36px; } }
+  .about-photo{ position:relative; }
+  .about-photo img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:50% / 42%; box-shadow:0 16px 40px rgba(92,36,56,0.18); }
+  .about-quote{ font-family:'Fraunces', serif; font-style:italic; font-size:clamp(19px,2.2vw,24px); line-height:1.4; color:var(--rose-bright); margin-top:26px; text-align:center; }
+  .about-body h2{ color:var(--cream-text); font-size:clamp(28px,3.6vw,42px); margin-bottom:20px; font-style:italic; }
+  .about-body p{ font-size:17px; line-height:1.75; color:var(--cream-dim); max-width:48ch; }
   .about-body p + p{ margin-top:16px; }
-  .about-signoff{ margin-top:28px; font-size:14px; color:var(--sand); letter-spacing:0.02em; }
+  .about-signoff{ margin-top:26px; font-size:14px; color:var(--rose-bright); letter-spacing:0.01em; }
 
   /* ---------- FAQ ---------- */
-  .faq{ background:var(--paper); }
-  .faq-head{ max-width:44ch; margin-bottom:48px; }
-  .faq-head h2{ font-size:clamp(30px,4vw,44px); }
-  .faq-list{ max-width:760px; }
+  .faq-head{ max-width:44ch; margin:0 auto 44px; text-align:center; }
+  .faq-head h2{ font-size:clamp(30px,4vw,42px); font-style:italic; color:var(--rose-deep); }
+  .faq-list{ max-width:720px; margin:0 auto; }
   .faq-item{ border-top:1px solid var(--line-light); }
   .faq-item:last-child{ border-bottom:1px solid var(--line-light); }
   .faq-q{
     width:100%; text-align:left; background:none; border:none;
-    padding:22px 0; display:flex; justify-content:space-between; align-items:center;
-    gap:16px; font-size:17px; color:var(--ink); font-family:'Fraunces', serif;
+    padding:20px 0; display:flex; justify-content:space-between; align-items:center;
+    gap:16px; font-size:16.5px; color:var(--ink); font-family:'Fraunces', serif; font-style:italic;
   }
-  .faq-q .plus{ font-size:20px; color:var(--merlot); transition:transform .25s ease; flex-shrink:0; }
+  .faq-q .plus{ font-size:20px; color:var(--rose-deep); transition:transform .25s ease; flex-shrink:0; font-style:normal; }
   .faq-item[data-open="true"] .plus{ transform:rotate(45deg); }
-  .faq-a{
-    max-height:0; overflow:hidden; transition:max-height .3s ease;
-    font-size:15.5px; line-height:1.65; color:var(--ink-soft);
-  }
-  .faq-a-inner{ padding-bottom:22px; max-width:62ch; }
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height .3s ease; font-size:15.5px; line-height:1.65; color:var(--ink-soft); }
+  .faq-a-inner{ padding-bottom:20px; max-width:60ch; }
 
-  /* ---------- BOOK / CALENDLY ---------- */
-  .book{ background:var(--ink); }
-  .book-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:40px; }
-  .book-head h2{ font-size:clamp(38px,6vw,68px); color:var(--paper); line-height:1.02; max-width:14ch; }
-  .book-alt{ display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
-  .book-alt .label{ font-size:12px; color:var(--sand); letter-spacing:0.02em; }
-  .book-alt .value{ font-size:16px; color:var(--paper); }
-  .book-alt .value a{ text-decoration:none; color:var(--copper-bright); }
-  .calendly-wrap{
-    background:var(--paper);
-    border-radius:3px;
-    overflow:hidden;
-    min-height:700px;
-    position:relative;
-  }
-  .calendly-inline-widget{ min-width:320px; height:700px; }
-  .calendly-loading{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    color:var(--ink-soft); font-size:14px; text-align:center; padding:20px;
-  }
+  /* ---------- BOOK / VAGARO ---------- */
+  .book-inner{ text-align:center; }
+  .book h2{ font-size:clamp(36px,5.6vw,60px); color:var(--cream-text); line-height:1.05; font-style:italic; }
+  .book-sub{ color:var(--cream-dim); max-width:44ch; margin:18px auto 40px; font-size:16px; line-height:1.6; }
+  .book-actions{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .book-alt{ display:flex; justify-content:center; gap:48px; flex-wrap:wrap; margin-top:52px; padding-top:36px; border-top:1px solid var(--line-dark); }
+  .book-alt .label{ font-size:12px; color:var(--rose-bright); letter-spacing:0.02em; margin-bottom:6px; }
+  .book-alt .value{ font-size:16px; color:var(--cream-text); }
+  .book-alt .value a{ text-decoration:none; color:var(--cream-text); }
 
-  footer{ padding-top:56px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; font-size:13px; color:var(--sand); }
-  footer a{ color:var(--sand); text-decoration:none; }
-  footer a:hover{ color:var(--copper-bright); }
+  footer{ padding-top:48px; display:flex; justify-content:center; gap:6px; font-size:13px; color:var(--cream-dim); }
+  footer a{ color:var(--cream-dim); text-decoration:none; }
 </style>
 </head>
 <body>
@@ -257,9 +273,9 @@
   <div class="nav-links">
     <a href="#menu">Services</a>
     <a href="#unfiltered">Gallery</a>
-    <a href="#hours">Hours</a>
+    <a href="#reviews">Reviews</a>
     <a href="#about">About</a>
-    <a class="nav-book" href="#book" onclick="openCalendlyPopup(event)">Book now</a>
+    <a class="nav-book" href="https://www.vagaro.com/nicolemariesalonllc" target="_blank" rel="noopener">Book now</a>
   </div>
 </nav>
 
@@ -271,31 +287,27 @@
     <div class="hero-foot">
       <p class="hero-note">Color, cuts, and styling built around what actually grows out of your head — no filters on the photos, no exaggerating what a color will do. Just good work, shown honestly.</p>
       <div class="hero-cta">
-        <a class="btn" href="#book" onclick="openCalendlyPopup(event)">Book an appointment</a>
+        <a class="btn" href="https://www.vagaro.com/nicolemariesalonllc" target="_blank" rel="noopener">Book an appointment</a>
         <a class="tel" href="tel:7277717755">(727) 771-7755</a>
       </div>
     </div>
   </div>
 </header>
 
-<section class="section-light">
+<section>
   <div class="wrap philosophy">
-    <div>
-      <div class="kicker">The approach</div>
-      <h2>Real color, shown in real light.</h2>
-    </div>
-    <div>
-      <p>Nicole Marie Salon was built on a simple idea: every photo posted is unfiltered, so what you see booking an appointment is what you'll actually leave with. No ring-light color correction, no editing a brassy tone into something it isn't.</p>
-      <p>It's a small-salon approach to a big-salon industry — one chair, one client at a time, and enough attention paid to get the tone, the cut, and the finish right the first time.</p>
-    </div>
+    <div class="ornament"><span></span></div>
+    <h2>Real color, shown in real light.</h2>
+    <p>Nicole Marie Salon was built on a simple idea: every photo posted is unfiltered, so what you see booking an appointment is what you'll actually leave with. It's a small-salon approach to a big-salon industry — one chair, one client at a time, with enough attention paid to get the tone, the cut, and the finish right the first time.</p>
   </div>
 </section>
 
-<section class="menu-section dark" id="menu">
+<section class="dark" id="menu">
   <div class="wrap">
     <div class="menu-head">
+      <div class="ornament"><span></span></div>
       <h2>Services</h2>
-      <p class="kicker">A starting menu — exact pricing depends on hair length, density, and the look you're after, and is confirmed at booking.</p>
+      <p>A starting menu — exact pricing depends on hair length, density, and the look you're after, and is confirmed at booking.</p>
     </div>
     <div class="menu-grid">
       <div class="menu-cat">
@@ -322,7 +334,7 @@
         </div>
         <div class="menu-row">
           <div class="menu-row-top"><span class="name">Color correction</span><span class="price">consult</span></div>
-          <div class="desc">Fixing box color or a color gone wrong — quoted after a look in person.</div>
+          <div class="desc">Fixing box color or a color gone wrong — quoted in person.</div>
         </div>
       </div>
       <div class="menu-cat">
@@ -364,7 +376,7 @@
   </div>
 </section>
 
-<section class="unfiltered dark" id="unfiltered">
+<section id="unfiltered">
   <div class="wrap">
     <div class="unfiltered-head">
       <h2>Every color, exactly as it came out of the chair.</h2>
@@ -419,52 +431,94 @@
   </div>
 </section>
 
-<section class="info-band" id="hours">
+<section id="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div class="ornament"><span></span></div>
+      <h2>What clients are saying</h2>
+    </div>
+    <div class="rating-badges">
+      <div class="rating-badge">
+        <div class="stars">★★★★★</div>
+        <div class="score">4.5 / 5</div>
+        <div class="src">Yelp</div>
+      </div>
+      <div class="rating-badge">
+        <div class="stars">★★★★★</div>
+        <div class="score">98% recommend</div>
+        <div class="src">Facebook · 39 reviews</div>
+      </div>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <span class="quote-mark">“</span>
+        <div class="stars">★★★★★</div>
+        <p>Called the stylists phenomenal and Nicole herself amazing, calling it her new go-to salon.</p>
+        <div class="who">Patricia L. — Yelp</div>
+      </div>
+      <div class="review-card">
+        <span class="quote-mark">“</span>
+        <div class="stars">★★★★★</div>
+        <p>Says she's been coming for two years and calls Nicole the best stylist she's had, especially for hard-to-match platinum blonde.</p>
+        <div class="who">Samantha L. — Yelp</div>
+      </div>
+      <div class="review-card">
+        <span class="quote-mark">“</span>
+        <div class="stars">★★★★★</div>
+        <p>Neighbors describe Nicole as someone who keeps up with new cuts and styles and is an amazing colorist.</p>
+        <div class="who">Neighborhood review — Nextdoor</div>
+      </div>
+    </div>
+    <div class="review-source">Summarized from public reviews on Yelp, Facebook, and Nextdoor — read them in full on each platform.</div>
+  </div>
+</section>
+
+<section class="dark" id="hours">
   <div class="wrap info-grid">
-    <div>
-      <div class="kicker">Hours</div>
+    <div class="block">
+      <div class="ornament"><span></span></div>
       <h2>When to find us</h2>
       <table class="hours-table">
         <tr><td>Monday</td><td>Closed</td></tr>
-        <tr><td>Tuesday</td><td>9:00 AM – 6:00 PM</td></tr>
-        <tr><td>Wednesday</td><td>9:00 AM – 6:00 PM</td></tr>
-        <tr><td>Thursday</td><td>9:00 AM – 7:00 PM</td></tr>
-        <tr><td>Friday</td><td>9:00 AM – 7:00 PM</td></tr>
-        <tr><td>Saturday</td><td>9:00 AM – 4:00 PM</td></tr>
+        <tr><td>Tuesday</td><td>9:00 AM – 5:00 PM</td></tr>
+        <tr><td>Wednesday</td><td>12:00 PM – 8:00 PM</td></tr>
+        <tr><td>Thursday</td><td>12:00 PM – 8:00 PM</td></tr>
+        <tr><td>Friday</td><td>9:00 AM – 5:00 PM</td></tr>
+        <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
         <tr><td>Sunday</td><td>Closed</td></tr>
       </table>
-      <p class="hours-note">Sample hours — confirm current hours and holiday closures when you book. Palm Harbor, Florida.</p>
+      <p class="hours-note">Please confirm current hours and holiday closures when you book. 36425 US Hwy 19 N, Palm Harbor, FL.</p>
     </div>
-    <div>
-      <div class="kicker">Gift certificates</div>
-      <h2>Give the chair.</h2>
+    <div class="block">
+      <div class="ornament"><span></span></div>
+      <h2>Give the chair</h2>
       <div class="gift-copy">
         <p>Gift certificates are available for any service or dollar amount — a haircut, a full color day, or just a little "treat yourself."</p>
-        <p>To purchase one, call or text <a href="tel:7277717755">(727) 771-7755</a>, or send a message on <a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">Instagram</a>.</p>
+        <p>Purchase one directly through Vagaro, or call/text <a href="tel:7277717755">(727) 771-7755</a>.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="about" id="about">
+<section id="about">
   <div class="wrap about-grid">
     <div class="about-photo">
       <img src="assets/img/nicole-portrait.jpg" alt="Nicole, stylist and owner of Nicole Marie Salon">
       <div class="about-quote">"I'd rather show you the color in daylight than sell it to you under a ring light."</div>
     </div>
-    <div class="about-body">
-      <h2>Meet Nicole</h2>
-      <p>Nicole Marie Salon is run by Nicole — stylist, colorist, and the person behind the chair for every appointment booked here. The salon's whole identity started from a habit: posting every result exactly as it came out, unedited.</p>
-      <p>That standard carries into the work itself. Consultations are honest about what your hair can do in one sitting versus over a few visits, and the goal on every appointment is a result that still looks right a week later, not just walking out the door.</p>
-      <div class="about-signoff">— Nicole, @nicolehairboss</div>
+    <div class="about-body" style="color:var(--ink);">
+      <h2 style="color:var(--rose-deep);">Meet Nicole</h2>
+      <p style="color:var(--ink-soft);">Nicole Marie Salon is run by Nicole — stylist, colorist, and the person behind the chair for every appointment booked here. The salon's whole identity started from a habit: posting every result exactly as it came out, unedited.</p>
+      <p style="color:var(--ink-soft);">That standard carries into the work itself. Consultations are honest about what your hair can do in one sitting versus over a few visits, and the goal on every appointment is a result that still looks right a week later, not just walking out the door.</p>
+      <div class="about-signoff" style="color:var(--rose-deep);">— Nicole, @nicolehairboss</div>
     </div>
   </div>
 </section>
 
-<section class="faq">
+<section>
   <div class="wrap">
     <div class="faq-head">
-      <div class="kicker">Good to know</div>
+      <div class="ornament"><span></span></div>
       <h2>A few common questions</h2>
     </div>
     <div class="faq-list">
@@ -496,71 +550,33 @@
   </div>
 </section>
 
-<section class="book" id="book">
-  <div class="wrap">
-    <div class="book-head">
-      <h2>Let's get you in the chair.</h2>
-      <div class="book-alt">
-        <div>
-          <div class="label">Prefer to call or text?</div>
-          <div class="value"><a href="tel:7277717755">(727) 771-7755</a></div>
-        </div>
-        <div>
-          <div class="label">Follow along</div>
-          <div class="value"><a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">@nicolemariesalonllc</a></div>
-        </div>
+<section class="dark" id="book">
+  <div class="wrap book-inner">
+    <div class="ornament"><span></span></div>
+    <h2>Let's get you in the chair.</h2>
+    <p class="book-sub">Appointments are booked through Vagaro — pick your service, see real-time openings, and reserve your spot in a couple of taps.</p>
+    <div class="book-actions">
+      <a class="btn" href="https://www.vagaro.com/nicolemariesalonllc" target="_blank" rel="noopener">Book on Vagaro</a>
+      <a class="btn btn-ghost" href="tel:7277717755">Call (727) 771-7755</a>
+    </div>
+    <div class="book-alt">
+      <div>
+        <div class="label">Location</div>
+        <div class="value">Palm Harbor, Florida</div>
+      </div>
+      <div>
+        <div class="label">Follow along</div>
+        <div class="value"><a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">@nicolemariesalonllc</a></div>
       </div>
     </div>
-
-    <div class="calendly-wrap">
-      <div class="calendly-loading" id="calendly-fallback">Loading the booking calendar — if it doesn't appear, call or text (727) 771-7755 to book.</div>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/amowogbajegideon/30min" style="min-width:320px;height:700px;"></div>
-    </div>
-
     <footer>
-      <span>© Nicole Marie Salon, LLC</span>
-      <span><a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">@nicolemariesalonllc</a></span>
+      <span>© Nicole Marie Salon, LLC ·</span>
+      <a href="https://www.instagram.com/nicolemariesalonllc/" target="_blank" rel="noopener">@nicolemariesalonllc</a>
     </footer>
   </div>
 </section>
 
-<script src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
-  // ── CALENDLY SETUP ──────────────────────────────────────────────
-  // Replace this one line with your real Calendly event link
-  // (e.g. "https://calendly.com/nicole-marie-salon/haircut"),
-  // and it updates both the embedded calendar and the "Book now"
-  // popup button automatically — no other edits needed.
-  var CALENDLY_URL = "https://calendly.com/amowogbajegideon/30min";
-  // ─────────────────────────────────────────────────────────────
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var widget = document.querySelector('.calendly-inline-widget');
-    if (widget) widget.setAttribute('data-url', CALENDLY_URL);
-
-    // Hide the loading/fallback message once Calendly's iframe mounts.
-    var fallback = document.getElementById('calendly-fallback');
-    var check = setInterval(function () {
-      if (widget && widget.querySelector('iframe')) {
-        fallback.style.display = 'none';
-        clearInterval(check);
-      }
-    }, 400);
-    // If Calendly hasn't loaded after 8s (blocked script, offline, bad
-    // link), leave the fallback message showing so people still know
-    // to call instead of staring at a blank box.
-    setTimeout(function () { clearInterval(check); }, 8000);
-  });
-
-  function openCalendlyPopup(e) {
-    if (e) e.preventDefault();
-    if (window.Calendly) {
-      Calendly.initPopupWidget({ url: CALENDLY_URL });
-    } else {
-      document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   function toggleFaq(btn) {
     var item = btn.parentElement;
     var answer = item.querySelector('.faq-a');

@@ -6,40 +6,36 @@ NICOLE MARIE SALON — WEBSITE SETUP
    Upload the whole "site" folder as-is to any host (Netlify, GoDaddy,
    Squarespace's file hosting, etc). No build step required.
 
-2) CONNECT CALENDLY (booking)
-   - Create a free account at https://calendly.com and set up an event
-     type (e.g. "Haircut Consultation", 30–60 min).
-   - Copy your event link — it looks like:
-       https://calendly.com/your-name/haircut
-   - Open index.html, find this line near the bottom of the file
-     (search for "REPLACE-WITH-YOUR-CALENDLY-LINK"):
+2) BOOKING
+   Every "Book now" / "Book on Vagaro" button links straight to:
+       https://www.vagaro.com/nicolemariesalonllc
+   No setup needed — if that URL ever changes, search index.html for
+   "vagaro.com/nicolemariesalonllc" and replace it everywhere it appears.
 
-       var CALENDLY_URL = "https://calendly.com/REPLACE-WITH-YOUR-CALENDLY-LINK/consultation";
+3) REVIEWS SECTION
+   The quotes and star ratings in the "What clients are saying" section
+   are summarized from real, public reviews on Yelp, Facebook, and
+   Nextdoor as of the site's build date. Review counts and averages on
+   those platforms change over time — refresh the numbers periodically
+   so the page stays accurate, and always keep attributions truthful
+   (only use real reviews, never invented ones).
 
-   - Replace the URL with your real Calendly link and save. That's the
-     only edit needed — both the embedded calendar on the page and the
-     "Book now" popup button use this same line.
-   - Tip: if you want a different Calendly event type per service
-     (e.g. one for color, one for a cut), the simplest approach is a
-     single "General booking / consultation" event type, since
-     Calendly lets clients pick the reason for their visit as a
-     question on the booking form.
-
-3) UPDATE PRICING, HOURS & COPY
+4) UPDATE PRICING, HOURS & COPY
    All service names, prices, and hours in index.html are placeholders
    marked as such on the page. Search the file for the section you
    want to edit — each one is commented with its section name
    (Services, Hours, FAQ, About, etc.) and is plain HTML, so you can
    edit the text directly even without a developer.
 
-4) PHOTOS
+5) PHOTOS
    All photos live in assets/img/. To swap or add one, drop a new
    .jpg into that folder and update the matching <img src="..."> tag
    in index.html.
 
-5) GOING LIVE CHECKLIST
-   [ ] Real Calendly link added
+6) GOING LIVE CHECKLIST
+   [ ] Vagaro link double-checked
    [ ] Hours confirmed
    [ ] Prices confirmed
+   [ ] Review quotes/ratings refreshed against current Yelp/Facebook/Nextdoor
    [ ] Phone number double-checked: (727) 771-7755
    [ ] Instagram handle double-checked: @nicolemariesalonllc
