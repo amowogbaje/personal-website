@@ -36,17 +36,17 @@ const projects = [
     "title": "CraftProfessor Story Engine",
     "href": "https://craftprofessor.amowogbaje.com/",
     "linkLabel": "Craft Professor",
-    "stack": ["Laravel", "Vertex AI", "Pinterest API"],
-    "summary": "The core engine behind CraftProfessor. An automated publishing pipeline built in Laravel that orchestrates generative AI to produce and sync narrative content across Pinterest and LinkedIn.",
+    "stack": ["Laravel", "Generative AI", "Pinterest API"],
+    "summary": "The core engine behind CraftProfessor. An automated publishing pipeline built in Laravel that orchestrates generative AI — text-to-text, text-to-image, and text/image-to-video — to produce and sync narrative content to Pinterest.",
     "metrics": [
-      { "label": "Pinterest · 50 days", "from": "100", "to": "77k+", "diff": "+76,900" },
-      { "label": "LinkedIn · 30 days", "from": "500", "to": "30k+", "diff": "+29,500" }
+      { "label": "Pinterest · Account 1 · 50 days", "from": "100", "to": "77k+", "diff": "+76,900" },
+      { "label": "Pinterest · Account 2 · 30 days", "from": "500", "to": "30k+", "diff": "+29,500" }
     ],
     "pr": "#04"
   },
   {
-   "status": "in-testing",
-    "statusColor": "bg-sky-500/10 text-sky-500 border-sky-500/20",
+   "status": "in-production",
+    "statusColor": "bg-violet-500/10 text-violet-400 border-violet-500/30",
     "title": "Storyverse",
     "href": "https://storyverse.amowogbaje.com",
     "linkLabel": "storyverse.amowogbaje.com",
@@ -111,21 +111,19 @@ export default function Work() {
               <p className="text-paper/65 leading-relaxed mb-5">{p.summary}</p>
 
               {p.metrics && (
-                <div className="mb-5 rounded-lg border border-sage/20 bg-sage/[0.04] px-4 py-3 font-mono text-[11px]">
+                <div className="mb-5 rounded-lg border border-sage/20 bg-sage/[0.04] px-4 py-3 font-mono text-[11px] space-y-2">
                   {p.metrics.map((m) => (
-                    <div
-                      key={m.label}
-                      className="flex items-baseline justify-between gap-3 py-0.5"
-                    >
-                      <span className="text-paper/50">
-                        {m.label}
-                        <span className="text-paper/30">
-                          {' '}· {m.from} → {m.to} views
+                    <div key={m.label}>
+                      <div className="text-paper/45 mb-0.5">{m.label}</div>
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="text-paper/70">
+                          {m.from} <span className="text-paper/30">→</span> {m.to}{' '}
+                          <span className="text-paper/40">views</span>
                         </span>
-                      </span>
-                      <span className="text-sage font-medium whitespace-nowrap">
-                        {m.diff}
-                      </span>
+                        <span className="text-sage font-medium whitespace-nowrap">
+                          {m.diff}
+                        </span>
+                      </div>
                     </div>
                   ))}
                 </div>
