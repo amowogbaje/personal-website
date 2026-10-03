@@ -20,23 +20,28 @@ const projects = [
     "pr": "#02"
   },
   {
-    "status": "draft",
-    "statusColor": "bg-paper/10 text-paper/50 border-paper/20",
-    "title": "AI Video Generator",
-    "href": "https://github.com/amowogbaje/aivideogenerator",
-    "linkLabel": "github.com/amowogbaje/aivideogenerator",
-    "stack": ["FastApi", "AI/ML"],
-    "summary": "In-progress AI video generation tool built with FastAPI and ML. Actively developed with recent commits on story text and prompt features.",
+    "status": "shipped",
+    "statusColor": "bg-sage/15 text-sage border-sage/30",
+    "title": "Jobs",
+    "href": "https://jobs.amowogbaje.com",
+    "linkLabel": "jobs.amowogbaje.com",
+    "stack": ["Laravel", "Reactjs", "MySQL", "TailwindCSS"],
+    // TODO: confirm/replace this summary — placeholder based on the site's existing project pattern.
+    "summary": "A job board and application tracker — browse curated listings, save roles you're watching, and keep every application's status in one place instead of scattered tabs.",
     "pr": "#03"
   },
   {
-    "status": "in-development",
-    "statusColor": "bg-amber-500/10 text-amber-500 border-amber-500/20",
+    "status": "in-production",
+    "statusColor": "bg-violet-500/10 text-violet-400 border-violet-500/30",
     "title": "CraftProfessor Story Engine",
     "href": "https://craftprofessor.amowogbaje.com/",
     "linkLabel": "Craft Professor",
     "stack": ["Laravel", "Vertex AI", "Pinterest API"],
     "summary": "The core engine behind CraftProfessor. An automated publishing pipeline built in Laravel that orchestrates generative AI to produce and sync narrative content across Pinterest and LinkedIn.",
+    "metrics": [
+      { "label": "Pinterest · 50 days", "from": "100", "to": "77k+", "diff": "+76,900" },
+      { "label": "LinkedIn · 30 days", "from": "500", "to": "30k+", "diff": "+29,500" }
+    ],
     "pr": "#04"
   },
   {
@@ -52,12 +57,22 @@ const projects = [
   {
     "status": "draft",
     "statusColor": "bg-paper/10 text-paper/50 border-paper/20",
+    "title": "AI Video Generator",
+    "href": "https://github.com/amowogbaje/aivideogenerator",
+    "linkLabel": "github.com/amowogbaje/aivideogenerator",
+    "stack": ["FastApi", "AI/ML"],
+    "summary": "In-progress AI video generation tool built with FastAPI and ML. Actively developed with recent commits on story text and prompt features.",
+    "pr": "#06"
+  },
+  {
+    "status": "draft",
+    "statusColor": "bg-paper/10 text-paper/50 border-paper/20",
     "title": "HelpBoard",
     "href": "https://github.com/amowogbaje/HelpBoardFullstackAmowogbaje",
     "linkLabel": "github.com/amowogbaje/HelpBoardFullstackAmowogbaje",
     "stack": ["Express.js", "React + Vite"],
     "summary": "Full-stack support board built with Express.js and React + Vite, designed to help users raise, track, and manage support requests through a centralized platform.",
-    "pr": "#06"
+    "pr": "#07"
   }
 ]
 
@@ -70,7 +85,7 @@ export default function Work() {
             Work
           </h2>
           <p className="font-mono text-xs text-slate uppercase tracking-widebit">
-            5 pull requests · open to review
+            {projects.length} pull requests · open to review
           </p>
         </div>
 
@@ -94,6 +109,27 @@ export default function Work() {
               </h3>
 
               <p className="text-paper/65 leading-relaxed mb-5">{p.summary}</p>
+
+              {p.metrics && (
+                <div className="mb-5 rounded-lg border border-sage/20 bg-sage/[0.04] px-4 py-3 font-mono text-[11px]">
+                  {p.metrics.map((m) => (
+                    <div
+                      key={m.label}
+                      className="flex items-baseline justify-between gap-3 py-0.5"
+                    >
+                      <span className="text-paper/50">
+                        {m.label}
+                        <span className="text-paper/30">
+                          {' '}· {m.from} → {m.to} views
+                        </span>
+                      </span>
+                      <span className="text-sage font-medium whitespace-nowrap">
+                        {m.diff}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <ul className="flex flex-wrap gap-2 font-mono text-[11px] text-sage">
