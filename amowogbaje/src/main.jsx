@@ -4,6 +4,7 @@ import App from './App.jsx'
 import Support from './components/Support.jsx'
 import Services from './components/Services.jsx'
 import FundMe from './components/FundMe.jsx'
+import ChatWidget from './components/ChatWidget.jsx'
 import './index.css'
 
 // Simple path-based routing — no router dependency needed for a few pages.
@@ -20,5 +21,6 @@ const Page =
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Page />
+    {(Page === App || Page === Services) && <ChatWidget />}
   </React.StrictMode>,
 )

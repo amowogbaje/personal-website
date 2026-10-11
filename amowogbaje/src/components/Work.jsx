@@ -20,8 +20,8 @@ const projects = [
     "pr": "#02"
   },
   {
-    "status": "shipped",
-    "statusColor": "bg-sage/15 text-sage border-sage/30",
+    "status": "experimenting",
+    "statusColor": "bg-amber-500/10 text-amber-400 border-amber-500/30",
     "title": "Jobs",
     "href": "https://jobs.amowogbaje.com",
     "linkLabel": "jobs.amowogbaje.com",

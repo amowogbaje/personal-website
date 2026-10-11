@@ -1,0 +1,68 @@
+# Gideon Amowogbaje — full profile
+
+Website: https://www.amowogbaje.com/
+Role: Fullstack developer (Laravel, Go, Node.js/NestJS, React/Next.js) specializing in API & CRM integrations, e-commerce, AI-powered automation, admin tools, and full-stack SaaS builds.
+Experience: 8+ years of professional experience.
+Location: Nigeria. Open to fully remote roles and freelance/contract work, and comfortable in cross-timezone teams.
+Education: B.Sc. Computer Engineering, Obafemi Awolowo University, Ile-Ife.
+
+## Contact
+- Email: amowogbajegideon@gmail.com
+- Book a 30-minute call: https://calendly.com/amowogbajegideon/30min
+- LinkedIn: https://www.linkedin.com/in/amowogbaje
+- GitHub: https://github.com/amowogbaje
+- Telegram: https://t.me/amowogbaje
+- Instagram: https://www.instagram.com/amowogbaje/
+- The Contact section of the website also has a phone number and a WhatsApp link. He usually replies within a day.
+- Résumé (PDF): https://www.amowogbaje.com/resume.pdf
+
+## Summary
+Gideon is a full stack developer with production experience across Laravel/PHP, Node.js/NestJS and, currently, Go, plus React, Next.js and Vue.js on the frontend. His track record covers production integration work (webhooks, OAuth token reconciliation, multi-gateway payments), applied AI integration (Gemini, Hugging Face, TogetherAI, Vertex AI) and end-to-end ownership of features from Figma to deployment. He works in fully remote teams.
+
+## Skills
+- Backend: Laravel, PHP 8, Node.js (NestJS, Express.js), Go (production), Python/FastAPI (personal-project level)
+- Frontend: React, Next.js, TypeScript, JavaScript, Vue.js, Tailwind CSS
+- Databases: MySQL, PostgreSQL, MongoDB, Redis
+- APIs and integrations: REST, GraphQL, webhooks, OAuth, RabbitMQ, Stripe, Paystack, Flutterwave, WooCommerce
+- Applied AI: Gemini API, Hugging Face, TogetherAI, Vertex AI, Cloudflare Agents
+- Testing and DevOps: PHPUnit, Pest, Docker, Git, GitHub, GitLab, CI/CD, DigitalOcean, Nginx, Linux
+- Admin tooling: Filament, Laravel Nova
+
+## Services (https://www.amowogbaje.com/services)
+Core services:
+1. API & CRM Integrations — connecting apps to CRMs, WooCommerce, Facebook Lead Ads and payment gateways with reliable webhooks and clean data sync. Example: built the CRM/webhook integration layer at Africred, including automated Facebook access-token refresh.
+2. AI-Powered Automation — automated content pipelines, AI-assisted search and LLM-powered workflows. Example: the AI publishing pipeline behind CraftProfessor.
+3. Admin Panels & Internal Tools — Filament and Nova dashboards with CRUD, reporting and permissions.
+4. E-Commerce & WooCommerce — WooCommerce sync, custom storefronts, Laravel-powered e-commerce backends. Example: WooCommerce syncing in a live production app at KOC.
+5. SaaS & Full-Stack Builds — end-to-end web apps (Laravel, FastAPI or Go backends; React, Vue or Next.js frontends), from Figma to production.
+6. Legacy Rescue & Troubleshooting — taking over stalled, broken or half-finished apps and shipping them. Example: rescued a stalled project at KOC and shipped it from a Figma file under a tight deadline.
+Smaller, clearly scoped jobs: Laravel/PHP bug fixing and production troubleshooting; WordPress to Laravel migration; database design and query optimization; role-based auth and permission systems; Docker, CI/CD and deployment setup; server management (Nginx, DigitalOcean, VPS); automated testing setup (PHPUnit/Pest); technical consulting and code review.
+
+## Professional experience
+- Backend Developer (Laravel to Go), Dayout, United States — Jun 2024 to present. Rewriting core service endpoints (activities, notifications, emails, comments) from Laravel to Go; built a push notification service from scratch in a 3-person backend team; led a study comparing Laravel Eloquent with raw SQL that led to company-wide adoption of Eloquent; contributed to the team's OpenAPI documentation.
+- Full Stack Developer, KOC, Nigeria — Sep 2025 to May 2026. Rescued a stalled project and turned a Figma design into a production-ready product; integrated transactional email and WooCommerce syncing; built role-based permissions with Laravel Policies and Gates; built a Notion-style block-based blogging interface with Editor.js.
+- Backend Developer, Africred, Nigeria — Feb 2025 to Sep 2025. Built webhook ingestion for Facebook Instant Forms into a production CRM; automated OAuth access-token tracking and refresh with a scheduled Laravel command.
+- Backend Developer (NestJS, GraphQL), Televerse, Nigeria — Apr 2023 to Jun 2024. Built search APIs for the ReachMe app (NestJS, GraphQL, MongoDB, Redis, RabbitMQ); designed a simulated payment API with coin-gifting endpoints; worked with Flutter developers on the mobile app.
+- Full Stack Developer, Grace Filled Academy, Nigeria — Apr 2023 to Jun 2024. Designed the full MySQL structure of a school-management system; used Laravel factories and seeders for integration test coverage.
+- Full Stack Developer, Thinkshifts, United Kingdom — Nov 2021 to Jun 2024. Built a real-estate web app on Laravel and Vue.js; worked as a Vue.js developer on the Carelly app for a client.
+- Team Lead / Software Developer, Spokesman Communication Ministries, Nigeria — May 2017 to Aug 2021. Built the ministry website and International Leadership Conference site end to end (Next.js, Laravel, Filament); migrated a legacy WordPress site to a custom Laravel CMS with zero data loss.
+- Software Developer, iQube Labs, Nigeria — Jan 2015 to Nov 2018. Advanced the TradeWorkflow cargo-shipping app from 40% to 80% complete (CakePHP); built and managed RedBank, a Laravel app connecting blood donors with people in need.
+
+## Projects (https://www.amowogbaje.com/#work)
+- Qset (shipped) — https://qset.amowogbaje.com — Laravel, React, MySQL, Tailwind CSS. A platform for teachers to generate exams in minutes: search a question bank, add questions to exam sets, review and reorder, then export to Word (docx).
+- Tax (shipped) — https://tax.amowogbaje.com — Laravel, React, MySQL, Tailwind CSS. A live personal income tax calculator for Nigeria (NGN) that estimates liability from annual income, rent and optional deductions (pension, health, life insurance).
+- Jobs (experimenting) — https://jobs.amowogbaje.com — Laravel, React, MySQL, Tailwind CSS. An experimental job board and application tracker for browsing listings, saving roles and tracking application status.
+- CraftProfessor Story Engine (in production) — https://craftprofessor.amowogbaje.com/ — Laravel, generative AI, Pinterest API. An automated publishing pipeline that orchestrates generative AI (text, image and video) to produce narrative content and sync it to Pinterest. Results he reports: one Pinterest account went from about 100 to 77k+ monthly views in 50 days; another from about 500 to 30k+ in 30 days.
+- Storyverse (in production) — https://storyverse.amowogbaje.com — Laravel, React, PostgreSQL/MySQL, Tailwind CSS. A serialized-fiction reading platform with an author studio, episode-based access tiers, AI-assisted search, a badge/reward system, and multi-gateway subscriptions (Stripe, Paystack, Flutterwave) with per-country pricing.
+- AI Video Generator (in progress) — https://github.com/amowogbaje/aivideogenerator — FastAPI, AI/ML. An in-progress AI video generation tool.
+- HelpBoard (in progress) — https://github.com/amowogbaje/HelpBoardFullstackAmowogbaje — Express.js, React + Vite. A full-stack support board for raising, tracking and managing support requests.
+- database-repository (open-source Packagist package) — PHP/Laravel. A Composer package that automates database backups tied to Laravel's migration lifecycle (amowogbaje/database-repository on Packagist).
+
+## Beyond code
+The website frames Gideon's life as a git history with five branches: backend development (Laravel and NestJS by trade, with a focus on database design, architecture and documentation); faith (he describes himself as a Christ representative, and says faith is the root commit that sets direction for everything else); songwriting (he writes Christian songs); teaching (a former teacher whose former students still reach out); and family (he is a husband). A line from his pastor that he keeps coming back to: "Don't make a case against yourself, because God won't make a case against you. Keep hope alive."
+
+## Support
+Storyverse, Qset and his other live apps share one hosting bill. A page at https://www.amowogbaje.com/support explains how to chip in.
+
+## Not covered on the site
+Hourly or project rates, current availability dates, and detailed references are not published. Direct such questions to Gideon by email or the Calendly link.

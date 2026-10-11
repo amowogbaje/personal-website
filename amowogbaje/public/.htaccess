@@ -5,6 +5,10 @@
 
   RewriteRule ^index\.html$ - [L]
 
+  # Pre-rendered /services page (see scripts/prerender.mjs) so crawlers get real content
+  RewriteCond %{DOCUMENT_ROOT}/services.html -f
+  RewriteRule ^services/?$ /services.html [L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
@@ -35,3 +39,5 @@
     Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
+
+AddType "text/plain; charset=UTF-8" .txt

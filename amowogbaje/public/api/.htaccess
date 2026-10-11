@@ -1,0 +1,6 @@
+# Never serve local config directly
+<IfModule mod_authz_core.c>
+  <Files "config.local.php">
+    Require all denied
+  </Files>
+</IfModule>
