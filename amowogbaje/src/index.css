@@ -6,6 +6,15 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+/* keep section headings clear of the fixed nav when jumping to anchors */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

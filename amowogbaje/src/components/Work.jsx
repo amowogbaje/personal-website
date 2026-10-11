@@ -89,11 +89,11 @@ export default function Work() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {projects.map((p) => (
             <article
               key={p.pr}
-              className="group border border-paper/10 rounded-2xl p-7 hover:border-gold/40 transition-colors bg-ink/60"
+              className="group min-w-0 h-full flex flex-col border border-paper/10 rounded-2xl p-5 sm:p-7 hover:border-gold/40 transition-colors bg-ink/60"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-xs text-slate">{p.pr}</span>
@@ -104,18 +104,18 @@ export default function Work() {
                 </span>
               </div>
 
-              <h3 className="font-display text-2xl text-paper mb-3 group-hover:text-gold transition-colors">
+              <h3 className="font-display text-xl sm:text-2xl text-paper mb-3 break-words group-hover:text-gold transition-colors">
                 {p.title}
               </h3>
 
-              <p className="text-paper/65 leading-relaxed mb-5">{p.summary}</p>
+              <p className="text-paper/65 leading-relaxed mb-5 break-words">{p.summary}</p>
 
               {p.metrics && (
                 <div className="mb-5 rounded-lg border border-sage/20 bg-sage/[0.04] px-4 py-3 font-mono text-[11px] space-y-2">
                   {p.metrics.map((m) => (
                     <div key={m.label}>
-                      <div className="text-paper/45 mb-0.5">{m.label}</div>
-                      <div className="flex items-baseline justify-between gap-3">
+                      <div className="text-paper/45 mb-0.5 break-words">{m.label}</div>
+                      <div className="flex items-baseline justify-between gap-3 flex-wrap">
                         <span className="text-paper/70">
                           {m.from} <span className="text-paper/30">→</span> {m.to}{' '}
                           <span className="text-paper/40">views</span>
@@ -129,7 +129,7 @@ export default function Work() {
                 </div>
               )}
 
-              <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="mt-auto pt-2 flex flex-col gap-4">
                 <ul className="flex flex-wrap gap-2 font-mono text-[11px] text-sage">
                   {p.stack.map((s) => (
                     <li
@@ -146,7 +146,7 @@ export default function Work() {
                     href={p.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-mono text-[11px] text-gold hover:text-goldsoft transition-colors whitespace-nowrap"
+                    className="font-mono text-[11px] text-gold hover:text-goldsoft transition-colors break-all"
                   >
                     {p.linkLabel} ↗
                   </a>

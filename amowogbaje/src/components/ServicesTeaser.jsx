@@ -49,20 +49,20 @@ export default function ServicesTeaser() {
           Tell me the outcome you need — not the tech stack — and I'll figure out how to get you there.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {services.map((s) => (
             <a
               key={s.title}
               href="/services"
-              className="group border border-paper/10 rounded-2xl p-7 hover:border-gold/40 transition-colors bg-inkdeep/60 flex flex-col"
+              className="group min-w-0 h-full border border-paper/10 rounded-2xl p-5 sm:p-7 hover:border-gold/40 transition-colors bg-inkdeep/60 flex flex-col"
             >
               <div className="p-3 rounded-xl bg-paper/5 text-gold w-fit mb-5 group-hover:bg-gold/10 transition-colors">
                 <s.icon className="w-5 h-5" />
               </div>
-              <h3 className="font-display text-xl text-paper mb-3 group-hover:text-gold transition-colors">
+              <h3 className="font-display text-xl text-paper mb-3 break-words group-hover:text-gold transition-colors">
                 {s.title}
               </h3>
-              <p className="text-paper/60 text-sm leading-relaxed">{s.summary}</p>
+              <p className="text-paper/60 text-sm leading-relaxed break-words">{s.summary}</p>
             </a>
           ))}
         </div>

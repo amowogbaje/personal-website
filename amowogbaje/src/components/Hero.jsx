@@ -47,7 +47,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="#projects"
+              href="#work"
               className="font-mono text-xs uppercase tracking-widebit text-paper/70 px-5 py-3 rounded-full border border-paper/15 hover:border-paper/40 hover:text-paper transition-colors"
             >
               see my work
@@ -119,7 +119,7 @@ export default function Hero() {
       </div>
 
       <a
-        href="#projects"
+        href="#work"
         aria-label="Scroll to projects"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-widebit text-slate hover:text-paper transition-colors animate-bounce motion-reduce:animate-none"
       >
