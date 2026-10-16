@@ -50,6 +50,7 @@ const projects = [
     "title": "Storyverse",
     "href": "https://storyverse.amowogbaje.com",
     "linkLabel": "storyverse.amowogbaje.com",
+    "caseStudy": "/work/storyverse-payments",
     "stack": ["Laravel", "Reactjs", "PostgreSQL/MySQL", "TailwindCSS"],
     "summary": "A serialized-fiction reading platform with a full author studio — episode-based access tiers, AI-assisted search, a badge/reward system, and multi-gateway subscriptions (Stripe, Paystack, Flutterwave) with per-country pricing.",
     "pr": "#05"
@@ -140,6 +141,15 @@ export default function Work() {
                     </li>
                   ))}
                 </ul>
+
+                {p.caseStudy && (
+                  <a
+                    href={p.caseStudy}
+                    className="font-mono text-[11px] text-sage hover:text-paper transition-colors block mb-2"
+                  >
+                    read the case study →
+                  </a>
+                )}
 
                 {p.href && (
                   <a

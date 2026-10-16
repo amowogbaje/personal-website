@@ -10,7 +10,7 @@ export default {
         cream: '#FAF8F4',
         gold: '#C9A227',
         goldsoft: '#E0C467',
-        slate: '#5B6472',
+        slate: '#8E97A8',
         sage: '#6B8F71',
         sagedeep: '#4F6E55',
         rust: '#A85B3F',

@@ -1,3 +1,4 @@
+import BriefForm from './BriefForm.jsx'
 import { Mail, Phone, Calendar } from 'lucide-react'
 
 export default function Contact() {
@@ -11,20 +12,11 @@ export default function Contact() {
           Contact
         </h2>
         <p className="text-paper/65 max-w-xl leading-relaxed mb-12">
-          Open to remote roles and freelance builds — especially API/CRM integrations, e-commerce, admin tools, and AI-powered automation. Reach out any way below; I usually reply within a day.
+          Available for remote roles and contract work — especially Laravel backends, API/CRM integrations, payments, and rescuing stalled apps. Book a call or email me what you need; I usually reply within a day.
         </p>
 
-        <a
-          href="/support"
-          className="block mb-6 p-5 rounded-2xl border border-rust/40 bg-rust/5 hover:border-rust hover:bg-rust/10 transition-all duration-300 group"
-        >
-          <p className="text-xs font-medium uppercase tracking-wider text-rust mb-1">
-            Support the server
-          </p>
-          <p className="text-paper/90 font-medium">
-            Storyverse, Qset, and my other live apps share one hosting bill — see the details and chip in →
-          </p>
-        </a>
+
+        <div className="mb-10"><BriefForm /></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Direct Communication Channels */}
@@ -143,19 +135,6 @@ export default function Contact() {
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>
                 </a> */}
-
-                {/* Instagram */}
-                <a 
-                  href="https://www.instagram.com/amowogbaje/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Instagram"
-                  className="p-3 rounded-xl bg-paper/5 text-paper/70 hover:text-gold hover:bg-paper/10 transition-all"
-                >
-                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                  </svg>
-                </a>
               </div>
             </div>
           </div>

@@ -23,53 +23,53 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 font-mono text-sm md:text-base uppercase tracking-widebit text-sage">
-            Full-Stack Product Engineer — AI, APIs &amp; Automation
+            Laravel &amp; API-Integration Engineer
           </p>
 
           <p className="mt-6 max-w-xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
-            I build and integrate the technology behind modern digital
-            products — from full-stack web applications and APIs to AI-powered
-            workflows, automation, payments, and third-party integrations.
+            I connect your product to the CRMs, payment gateways and AI services it depends on — and rescue stalled backends. 8+ years across Laravel, Go and NestJS, in remote teams spanning the US, UK and Nigeria.
           </p>
 
           <p className="mt-4 max-w-xl text-base md:text-lg text-paper/60 leading-relaxed font-light">
-            Whether you are validating an idea, building an MVP, or improving
-            an existing product, I can take it from concept to a working,
-            production-ready system.
+            Available for remote roles and contract work. Recent: rewrote core services from Laravel to Go at Dayout (US); built the webhook layer feeding Facebook leads into a production CRM at Africred.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="#contact"
+              href="https://calendly.com/amowogbajegideon/30min"
+              target="_blank"
+              rel="noreferrer"
               className="font-mono text-xs uppercase tracking-widebit bg-gold text-ink px-5 py-3 rounded-full hover:bg-goldsoft transition-colors"
             >
-              build with me
+              book a 30-min call
             </a>
 
             <a
-              href="#work"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="font-mono text-xs uppercase tracking-widebit text-paper/70 px-5 py-3 rounded-full border border-paper/15 hover:border-paper/40 hover:text-paper transition-colors"
             >
-              see my work
+              download CV
             </a>
 
             <a
-              href="#domains"
+              href="#contact"
               className="font-mono text-xs uppercase tracking-widebit text-paper/70 px-5 py-3 rounded-full border border-paper/15 hover:border-paper/40 hover:text-paper transition-colors"
             >
-              git log --life
+              send a brief
             </a>
           </div>
 
           <div className="mt-16 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-slate">
             <span>
-              focus: Full-stack products · AI integration · APIs · automation
+              focus: APIs · CRM &amp; payment integrations · AI automation
             </span>
 
             <span className="hidden sm:inline">·</span>
 
             <span>
-              stack: Laravel · React · Next.js · Express.js · FastAPI · AI/ML
+              stack: Laravel · Go · NestJS · React · Next.js · FastAPI
             </span>
 
             <span className="hidden sm:inline">·</span>

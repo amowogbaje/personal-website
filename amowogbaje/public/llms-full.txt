@@ -100,10 +100,6 @@ Gideon likes owning problems end to end, communicating clearly in writing, and w
 ## Beyond code
 The website frames Gideon's life as a git history with five branches: backend development (Laravel and NestJS by trade, with a focus on database design, architecture and documentation); faith (he describes himself as a Christ representative, and says faith is the root commit that sets direction for everything else); songwriting (he writes Christian songs and plays guitar); teaching (a former teacher whose former students still reach out); and family (he is a husband). A line from his pastor that he keeps coming back to: "Don't make a case against yourself, because God won't make a case against you. Keep hope alive."
 
-## Personal dates
-- Birthday: September 4 (year intentionally not published)
-- Wedding anniversary: June 26
-
 ## Support
 Storyverse, Qset and his other live apps share one hosting bill. A page at https://www.amowogbaje.com/support explains how to chip in. A personal support page is also available at https://amowogbaje.com/fundme.
 
@@ -119,3 +115,9 @@ Storyverse, Qset and his other live apps share one hosting bill. A page at https
 Hourly or project rates, current availability dates, and detailed references are not published. Direct such questions to Gideon by email or the Calendly link.
 
 Last updated: October 2026
+
+## Case studies and pages
+- Africred CRM integrations (webhook ingestion + automated OAuth token refresh into a production CRM): https://www.amowogbaje.com/work/africred-crm-integrations
+- Storyverse (serialized-fiction platform, Stripe/Paystack/Flutterwave with per-country pricing): https://www.amowogbaje.com/work/storyverse-payments
+- About: https://www.amowogbaje.com/about
+- Project brief form: https://www.amowogbaje.com/#contact

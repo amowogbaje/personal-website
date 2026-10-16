@@ -1,17 +1,22 @@
-// Post-build step: writes dist/services.html with its own title, description,
-// canonical URL and readable fallback content, so crawlers that don't run
-// JavaScript still get a real /services page. public/.htaccess serves it.
-import { readFileSync, writeFileSync } from 'node:fs'
+// Post-build step: writes a pre-rendered HTML file per page (own title, description, canonical,
+// readable fallback content) so crawlers that don't run JavaScript still get real pages.
+// public/.htaccess serves dist/<path>.html for these routes.
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
+import { caseStudies } from '../src/data/caseStudies.js'
+import { ABOUT_DESC } from '../src/components/aboutMeta.js'
 
 const SITE = 'https://www.amowogbaje.com'
-const page = {
-  file: 'dist/services.html',
-  url: `${SITE}/services`,
-  title: 'Services — Laravel, API, E-Commerce & AI Integrations | Gideon Amowogbaje',
-  description:
-    'API integrations, CRM automation, WooCommerce, AI-powered automation, admin panels, and full-stack Laravel/FastAPI/Go builds — hire Gideon Amowogbaje for remote contract work.',
-  body: `<main class="max-w-3xl mx-auto px-6 py-24">
-      <h1 class="font-display text-4xl font-medium">Services — Gideon Amowogbaje, Fullstack Developer</h1>
+const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+const CONTACT = `<p class="mt-10 text-paper/80">Contact: <a href="mailto:amowogbajegideon@gmail.com">amowogbajegideon@gmail.com</a> · <a href="https://calendly.com/amowogbajegideon/30min">Book a call</a> · <a href="/">Back to portfolio</a></p>`
+const wrap = (inner) => `<main class="max-w-3xl mx-auto px-6 py-24">\n      ${inner}\n    </main>`
+
+const pages = [
+  {
+    path: 'services',
+    title: 'Services — Laravel, API, E-Commerce & AI Integrations | Gideon Amowogbaje',
+    description:
+      'API integrations, CRM automation, WooCommerce, AI-powered automation, admin panels, and full-stack Laravel/FastAPI/Go builds — hire Gideon Amowogbaje for remote contract work.',
+    body: wrap(`<h1 class="font-display text-4xl font-medium">Services — Gideon Amowogbaje, Laravel &amp; API-Integration Engineer</h1>
       <p class="mt-4 text-paper/80">Tell me what you need built, not what tech stack it needs. 8+ years shipping Laravel, FastAPI and Go systems for real businesses: CRMs, e-commerce, admin tools and AI pipelines.</p>
       <h2 class="mt-10 font-display text-2xl">Core services</h2>
       <ul class="mt-3 space-y-2 text-paper/80 list-disc pl-5">
@@ -33,29 +38,56 @@ const page = {
         <li>Automated testing setup (PHPUnit / Pest)</li>
         <li>Technical consulting and code review</li>
       </ul>
-      <p class="mt-10 text-paper/80">Contact: <a href="mailto:amowogbajegideon@gmail.com">amowogbajegideon@gmail.com</a> · <a href="https://calendly.com/amowogbajegideon/30min">Book a call</a> · <a href="/">Back to portfolio</a></p>
-    </main>`,
+      ${CONTACT}`),
+  },
+  {
+    path: 'about',
+    title: 'About | Gideon Amowogbaje',
+    description: ABOUT_DESC,
+    body: wrap(`<h1 class="font-display text-4xl font-medium">About Gideon Amowogbaje</h1>
+      <p class="mt-4 text-paper/80">Backend-leaning full-stack developer with 8+ years across Laravel, Go and NestJS, working with remote teams in the US, UK and Nigeria. I connect products to the CRMs, payment gateways and AI services they depend on, and I rescue stalled backends. I also build and run my own products, and I used to teach.</p>
+      ${CONTACT}`),
+  },
+  ...caseStudies.map((c) => ({
+    path: `work/${c.slug}`,
+    title: `${c.title} | Gideon Amowogbaje`,
+    description: c.description,
+    body: wrap(`<h1 class="font-display text-4xl font-medium">${esc(c.title)}</h1>
+      <p class="mt-3 text-paper/70">${esc(c.kind)} · ${esc(c.role)} · ${esc(c.dates)} · ${esc(c.stack.join(', '))}</p>
+      ${c.sections
+        .map(
+          (s) =>
+            `<h2 class="mt-8 font-display text-2xl">${esc(s.h)}</h2>` +
+            (s.p || []).map((t) => `<p class="mt-3 text-paper/80">${esc(t)}</p>`).join('') +
+            (s.ul ? `<ul class="mt-3 space-y-2 text-paper/80 list-disc pl-5">${s.ul.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''),
+        )
+        .join('\n      ')}
+      ${CONTACT}`),
+  })),
+]
+
+const base = readFileSync('dist/index.html', 'utf8')
+
+for (const page of pages) {
+  let html = base
+  const url = `${SITE}/${page.path}`
+  const swap = (re, replacement, label) => {
+    if (!re.test(html)) throw new Error(`prerender: could not find ${label} in dist/index.html`)
+    html = html.replace(re, () => replacement)
+  }
+  swap(/<title>[\s\S]*?<\/title>/, `<title>${esc(page.title)}</title>`, '<title>')
+  swap(/<meta name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${esc(page.description)}" />`, 'meta description')
+  swap(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${url}" />`, 'canonical')
+  swap(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${url}" />`, 'og:url')
+  swap(/<meta property="og:title"\s+content="[^"]*"\s*\/>/, `<meta property="og:title" content="${esc(page.title)}" />`, 'og:title')
+  swap(/<meta property="og:description"\s+content="[^"]*"\s*\/>/, `<meta property="og:description" content="${esc(page.description)}" />`, 'og:description')
+  swap(/<meta name="twitter:title" content="[^"]*"\s*\/>/, `<meta name="twitter:title" content="${esc(page.title)}" />`, 'twitter:title')
+  swap(/<meta name="twitter:description"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${esc(page.description)}" />`, 'twitter:description')
+  swap(/<div id="root">[\s\S]*?<\/div>\s*<noscript>/, `<div id="root">\n    ${page.body}\n  </div>\n  <noscript>`, '#root fallback')
+  // vite uses base './', which breaks asset URLs when served from a different path depth
+  html = html.replace(/(src|href)="\.\/assets\//g, '$1="/assets/')
+  const file = `dist/${page.path}.html`
+  mkdirSync(file.slice(0, file.lastIndexOf('/')), { recursive: true })
+  writeFileSync(file, html)
+  console.log(`prerender: wrote ${file}`)
 }
-
-let html = readFileSync('dist/index.html', 'utf8')
-
-function swap(re, replacement, label) {
-  if (!re.test(html)) throw new Error(`prerender: could not find ${label} in dist/index.html`)
-  html = html.replace(re, () => replacement)
-}
-
-swap(/<title>[\s\S]*?<\/title>/, `<title>${page.title}</title>`, '<title>')
-swap(/<meta name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${page.description}" />`, 'meta description')
-swap(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${page.url}" />`, 'canonical')
-swap(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${page.url}" />`, 'og:url')
-swap(/<meta property="og:title"\s+content="[^"]*"\s*\/>/, `<meta property="og:title" content="${page.title}" />`, 'og:title')
-swap(/<meta property="og:description"\s+content="[^"]*"\s*\/>/, `<meta property="og:description" content="${page.description}" />`, 'og:description')
-swap(/<meta name="twitter:title" content="[^"]*"\s*\/>/, `<meta name="twitter:title" content="${page.title}" />`, 'twitter:title')
-swap(/<meta name="twitter:description"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${page.description}" />`, 'twitter:description')
-swap(/<div id="root">[\s\S]*?<\/div>\s*<noscript>/, `<div id="root">\n    ${page.body}\n  </div>\n  <noscript>`, '#root fallback')
-
-// vite uses base './', which breaks asset URLs when served from a different path depth
-html = html.replace(/(src|href)="\.\/assets\//g, '$1="/assets/')
-
-writeFileSync(page.file, html)
-console.log(`prerender: wrote ${page.file}`)

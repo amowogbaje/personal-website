@@ -4,13 +4,13 @@ import { MessageCircle, X, Send } from 'lucide-react'
 const ENDPOINT = '/api/chat.php'
 const STORAGE_KEY = 'gideon-chat-v1'
 
-// Random invitation: shown once per visit after a random delay. If the visitor
+// Invitation: shown once per visit, after 20s AND once the visitor has scrolled ~35% (or at 60s). If the visitor
 // says "No thanks" we stay quiet for a week.
 const INVITED_KEY = 'gideon-chat-invited' // sessionStorage: already invited this visit
 const DISMISSED_KEY = 'gideon-chat-dismissed' // localStorage: timestamp of "No thanks"
 const COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000
-const MIN_DELAY_MS = 15000
-const MAX_DELAY_MS = 40000
+const MIN_DELAY_MS = 20000 // earliest the invite may appear
+const FALLBACK_MS = 60000 // shown by now even if the visitor hasn't scrolled
 const INVITES = [
   "Hi, I'm Gideon's AI assistant. Curious about his work, or whether he can help with your project?",
   "Looking for a fullstack developer? Ask me anything about Gideon's projects, stack and experience.",
@@ -93,17 +93,36 @@ export default function ChatWidget() {
     } catch {
       /* storage unavailable — fall through and invite anyway */
     }
-    const delay = MIN_DELAY_MS + Math.random() * (MAX_DELAY_MS - MIN_DELAY_MS)
-    const timer = setTimeout(() => {
-      if (openRef.current) return
+    let ready = false
+    let shown = false
+    const cleanup = () => {
+      clearTimeout(readyTimer)
+      clearTimeout(fallbackTimer)
+      window.removeEventListener('scroll', onScroll)
+    }
+    const show = () => {
+      if (shown || openRef.current) return
+      shown = true
       setInvite(INVITES[Math.floor(Math.random() * INVITES.length)])
       try {
         sessionStorage.setItem(INVITED_KEY, '1')
       } catch {
         /* ignore */
       }
-    }, delay)
-    return () => clearTimeout(timer)
+      cleanup()
+    }
+    const onScroll = () => {
+      if (!ready) return
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      if (max > 0 && window.scrollY / max > 0.35) show()
+    }
+    const readyTimer = setTimeout(() => {
+      ready = true
+      onScroll()
+    }, MIN_DELAY_MS)
+    const fallbackTimer = setTimeout(show, FALLBACK_MS)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return cleanup
   }, [])
 
   function dismissInvite() {
