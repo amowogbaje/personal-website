@@ -35,6 +35,13 @@ export default function CaseStudy({ slug }) {
           <div><dt className="text-slate">stack</dt><dd className="mt-1 text-paper/80">{c.stack.join(' · ')}</dd></div>
         </dl>
 
+        {c.stat && (
+          <div className="mt-8 rounded-2xl border border-gold/30 bg-gold/5 p-6">
+            <p className="font-display text-5xl text-gold">{c.stat.value}</p>
+            <p className="mt-2 text-paper/70 leading-relaxed">{c.stat.label}</p>
+          </div>
+        )}
+
         {c.sections.map((s) => (
           <section key={s.h} className="mt-10">
             <h2 className="font-display text-2xl text-paper">{s.h}</h2>
@@ -58,7 +65,7 @@ export default function CaseStudy({ slug }) {
         )}
 
         <div className="mt-14 flex flex-wrap gap-3">
-          <a href="https://calendly.com/amowogbajegideon/30min" target="_blank" rel="noreferrer"
+          <a href="https://calendly.com/amowogbajegideon/30min" data-umami-event="book-call" target="_blank" rel="noreferrer"
             className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widebit bg-gold text-ink px-5 py-3 rounded-full hover:bg-goldsoft transition-colors">
             <Calendar className="w-3.5 h-3.5" /> book a 30-min call
           </a>

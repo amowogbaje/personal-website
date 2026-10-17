@@ -4,7 +4,7 @@ const commits = [
     hash: '7c1a04e',
     title: 'Backend Development',
     body:
-      'Laravel and NestJS by trade. Database design, system architecture, and a stubborn insistence on documentation — the parts of the job that keep the lights on after launch day.',
+      'Laravel, Go and NestJS by trade. Database design, system architecture, and a stubborn insistence on documentation — the parts of the job that keep the lights on after launch day.',
     accent: 'border-gold/50 text-gold',
     dot: 'bg-gold',
   },
@@ -29,9 +29,9 @@ const commits = [
   {
     branch: 'branch/teaching',
     hash: '21bb6c0',
-    title: 'Teacher, archived',
+    title: 'Teacher',
     body:
-      'No longer in front of a class, but the branch never got deleted. Former students still reach out — sometimes a joke, sometimes something they actually need to talk through — and I still show up for both.',
+      'Still in front of a class: Mathematics, Computer Science and Data Processing. Former students still reach out too — sometimes a joke, sometimes something they actually need to talk through — and I still show up for both.',
     accent: 'border-slate/60 text-slate',
     dot: 'bg-slate',
   },

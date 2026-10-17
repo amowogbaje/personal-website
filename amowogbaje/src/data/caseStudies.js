@@ -1,6 +1,6 @@
 // Facts below come from public/llms-full.txt and resume.pdf only.
-// TODO(Gideon): add one measurable result to each "Result" block (e.g. leads synced per week,
-// uptime, active users, revenue processed) — only real numbers. Pages stay honest without them.
+// Add measurable results (active users, leads synced, revenue processed) to a "Result" block when you have
+// real numbers. Pages stay honest without them. Role/dates/bullets mirror src/data/experience.json.
 export const caseStudies = [
   {
     slug: 'africred-crm-integrations',
@@ -8,7 +8,7 @@ export const caseStudies = [
     description:
       'Case study: how Gideon Amowogbaje built webhook ingestion and automated OAuth token refresh to sync Facebook Instant Form leads into a production Laravel CRM at Africred.',
     kind: 'Employer work · Africred',
-    role: 'Backend Developer, one of 3 developers',
+    role: 'Backend Developer (full-time), one of 3 developers',
     dates: 'Feb 2025 – Sep 2025',
     stack: ['Laravel', 'Webhooks', 'OAuth', 'Facebook Instant Forms', 'WhatsApp API'],
     sections: [
@@ -46,6 +46,116 @@ export const caseStudies = [
         ],
       },
     ],
+  },
+  {
+    slug: 'dayout-laravel-to-go-migration',
+    title: 'Moving core backend services from Laravel to Go, and standardising on Eloquent',
+    description:
+      'Case study: Gideon Amowogbaje at Dayout (US) — rewrote core service endpoints from Laravel to Go, built a push notification service, and led the Eloquent-vs-raw-SQL study behind a company-wide decision.',
+    kind: 'Employer work · Dayout (United States)',
+    role: 'Backend Developer (part-time), team of 3 backend developers',
+    dates: 'Jun 2024 – Sep 2026',
+    stack: ['Laravel', 'Go', 'Eloquent', 'OpenAPI'],
+    sections: [
+      {
+        h: 'Context',
+        p: ['Dayout was migrating its backend from Laravel to Go. I joined a team of three backend developers working remotely.'],
+      },
+      {
+        h: 'What I built',
+        ul: [
+          'Rewrote core service endpoints (activities, notifications, emails and comments) from Laravel to Go as part of the migration.',
+          'Built a Push Notification Service from scratch, including three related endpoints.',
+          'Contributed to the OpenAPI documentation used by developers and users.',
+        ],
+      },
+      {
+        h: 'The decision I helped drive',
+        p: [
+          'I led a research study comparing Laravel Eloquent against raw SQL. The result was company-wide adoption of Eloquent. I then built all the resulting database migrations from scratch and helped refactor the codebase around Dependency Injection and Laravel Models.',
+        ],
+      },
+      {
+        h: 'Result',
+        p: ['Core services running in Go, a push notification service in place, and a documented, company-wide decision on data access.'],
+      },
+      {
+        h: 'If you have a similar problem',
+        p: ['A framework migration, a data-access decision that needs evidence, or a service that has to be rebuilt without breaking its consumers: I have done it in a live team.'],
+      },
+    ],
+  },
+  {
+    slug: 'craftprofessor-story-engine',
+    title: 'CraftProfessor: an AI story-to-Pinterest pipeline that grew an account to 115K+ monthly views',
+    description:
+      'Case study: CraftProfessor Story Engine by Gideon Amowogbaje — a Laravel 13 pipeline that turns a story into AI-generated images and video, then publishes to Pinterest. One account grew from about 100 to 115K+ monthly views in roughly 60 days.',
+    kind: 'Own product',
+    role: 'Builder and owner',
+    dates: 'In production',
+    stack: ['Laravel 13', 'Gemini', 'Vertex AI', 'Hugging Face', 'TogetherAI', 'Pinterest API'],
+    stat: {
+      value: '115K+',
+      label: 'monthly Pinterest views on one account, up from about 100 in roughly 60 days, with no manual posting (self-reported, October 2026)',
+    },
+    sections: [
+      {
+        h: 'Context',
+        p: ['CraftProfessor is an AI-assisted content pipeline for writers and bookstores. A story goes in; publishable social content comes out.'],
+      },
+      {
+        h: 'What I built',
+        ul: [
+          'A pipeline that takes a story and generates image and video options across several AI providers (Gemini, Vertex AI, Hugging Face and TogetherAI).',
+          'A review step: I review and approve the options before anything is published.',
+          'Automated publishing to Pinterest, with LinkedIn and Facebook also supported.',
+        ],
+      },
+      {
+        h: 'Result',
+        p: ['One Pinterest account grew from about 100 to 115K+ monthly views in roughly 60 days, with no manual posting. This is a self-reported figure for one account.'],
+      },
+      {
+        h: 'If you have a similar problem',
+        p: ['Content that needs to be generated, reviewed and published across platforms, or any workflow where several AI providers and a third-party API have to work together reliably.'],
+      },
+    ],
+    link: { href: 'https://craftprofessor.amowogbaje.com/', label: 'visit CraftProfessor' },
+  },
+  {
+    slug: 'qset-exam-platform',
+    title: 'Qset: an exam-generation platform for teachers',
+    description:
+      'Case study: Qset, a solo-built exam-generation platform for teachers with a searchable question bank, an exam-set builder, Word export and AI-assisted question generation. Laravel, React, MySQL, Redis.',
+    kind: 'Own product',
+    role: 'Founder, solo',
+    dates: 'Sep 2025 – Present',
+    stack: ['Laravel', 'React', 'MySQL', 'Redis', 'Docker'],
+    sections: [
+      {
+        h: 'Context',
+        p: ['Qset helps teachers build exams without starting from a blank page. I built it alone, and I also teach, so I know the problem first-hand.'],
+      },
+      {
+        h: 'What I built',
+        ul: [
+          'A searchable question bank and an exam-set builder.',
+          'Word (docx) export of finished exams.',
+          'AI-assisted question generation using Laravel\'s AI package.',
+          'A design that also allows a marketplace for exam-question resources.',
+          'An upgrade from Laravel 11 to 13 and containerisation with Docker.',
+        ],
+      },
+      {
+        h: 'Result',
+        p: ['A live product I designed, built, upgraded and operate on my own.'],
+      },
+      {
+        h: 'If you have a similar problem',
+        p: ['A niche tool for a specific profession, from data model to export format to AI assistance: I can take it from idea to a working product.'],
+      },
+    ],
+    link: { href: 'https://qset.amowogbaje.com', label: 'visit Qset' },
   },
   {
     slug: 'storyverse-payments',

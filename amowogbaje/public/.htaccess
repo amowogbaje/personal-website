@@ -1,5 +1,11 @@
 # /public/.htaccess
 
+# /writing is both a pre-rendered page (writing.html) and a folder (writing/<article>.html); without this,
+# Apache would redirect /writing to /writing/ and show a folder listing instead of the page.
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -7,7 +13,7 @@
 
   # Pre-rendered /services page (see scripts/prerender.mjs) so crawlers get real content
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-  RewriteRule ^(services|about|work/[a-z0-9-]+)/?$ /$1.html [L]
+  RewriteRule ^(services|about|experience|writing|work/[a-z0-9-]+|writing/[a-z0-9-]+)/?$ /$1.html [L]
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

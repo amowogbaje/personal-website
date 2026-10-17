@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
 const links = [
-  { href: '#experience', label: 'experience' },
-  { href: '#work', label: 'work' },
   { href: '#services', label: 'services' },
+  { href: '#work', label: 'work' },
+  { href: '/experience', label: 'experience' },
+  { href: '/writing', label: 'writing' },
   { href: '/about', label: 'about' },
   { href: '#contact', label: 'contact' },
 ]
@@ -33,7 +34,7 @@ export default function Nav() {
         </ul>
         <div className="flex items-center gap-3">
           <a
-            href="https://calendly.com/amowogbajegideon/30min"
+            href="https://calendly.com/amowogbajegideon/30min" data-umami-event="book-call"
             target="_blank"
             rel="noreferrer"
             onClick={close}

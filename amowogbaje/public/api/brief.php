@@ -2,7 +2,8 @@
 // Project brief form → email. Validates, honeypots, rate-limits per IP.
 // NOTE: relies on the host's mail(); test delivery after deploying (check spam).
 header('Content-Type: application/json');
-const TO = 'amowogbajegideon@gmail.com';
+const TO = 'hello@amowogbaje.com';
+const BCC = 'amowogbajegideon@gmail.com'; // every brief is also copied here (kept on purpose)
 const MAX_PER_HOUR = 5;
 
 function out(int $code, array $body): void { http_response_code($code); echo json_encode($body); exit; }
@@ -31,6 +32,6 @@ file_put_contents($f, json_encode(array_values($hits)));
 
 $body = "Name: $name\nEmail: $email\nTimeline: " . $clean('timeline', 80) . "\nBudget: " . $clean('budget', 80)
       . "\nLink: " . preg_replace('/[\n]+/', ' ', $clean('link', 300)) . "\n\n$need\n";
-$headers = "From: Website <no-reply@amowogbaje.com>\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8";
+$headers = "From: Website <no-reply@amowogbaje.com>\r\nReply-To: $email\r\nBcc: " . BCC . "\r\nContent-Type: text/plain; charset=UTF-8";
 $sent = mail(TO, 'Project brief from ' . $name, $body, $headers);
 out($sent ? 200 : 500, ['ok' => $sent]);

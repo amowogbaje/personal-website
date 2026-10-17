@@ -162,14 +162,14 @@ export default function Services() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
-                href="mailto:amowogbajegideon@gmail.com"
+                href="mailto:hello@amowogbaje.com" data-umami-event="email-click"
                 className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widebit bg-gold text-inkdeep font-medium rounded-full px-6 py-3 hover:bg-goldsoft transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 Email me
               </a>
               <a
-                href="https://calendly.com/amowogbajegideon/30min"
+                href="https://calendly.com/amowogbajegideon/30min" data-umami-event="book-call"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widebit border border-paper/20 text-paper/80 rounded-full px-6 py-3 hover:border-gold/40 hover:text-gold transition-colors"

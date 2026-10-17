@@ -5,6 +5,7 @@ const projects = [
     "title": "Qset",
     "href": "https://qset.amowogbaje.com",
     "linkLabel": "qset.amowogbaje.com",
+    "caseStudy": "/work/qset-exam-platform",
     "stack": ["Laravel", "Reactjs", "MySQL", "TailwindCSS"],
     "summary": "A platform for teachers to generate exams in minutes. Users can search a question bank, select questions, add them to new or existing exam sets, review and reorder, then export to Word (docx)",
     "pr": "#01"
@@ -36,11 +37,12 @@ const projects = [
     "title": "CraftProfessor Story Engine",
     "href": "https://craftprofessor.amowogbaje.com/",
     "linkLabel": "Craft Professor",
+    "caseStudy": "/work/craftprofessor-story-engine",
     "stack": ["Laravel", "Generative AI", "Pinterest API"],
     "summary": "The core engine behind CraftProfessor. An automated publishing pipeline built in Laravel that orchestrates generative AI — text-to-text, text-to-image, and text/image-to-video — to produce and sync narrative content to Pinterest.",
     "metrics": [
-      { "label": "Pinterest · Account 1 · 50 days", "from": "100", "to": "77k+", "diff": "+76,900" },
-      { "label": "Pinterest · Account 2 · 30 days", "from": "500", "to": "30k+", "diff": "+29,500" }
+      { "label": "Pinterest · Account 1 · monthly views, ~60 days", "from": "100", "to": "115K+", "diff": "+114,900" },
+      { "label": "Pinterest · Account 2 · monthly views", "from": "500", "to": "44K+", "diff": "+43,500" }
     ],
     "pr": "#04"
   },
@@ -173,7 +175,7 @@ export default function Work() {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="/resume.pdf"
+              href="/resume.pdf" data-umami-event="cv-open"
               target="_blank"
               rel="noreferrer"
               className="font-mono text-xs uppercase tracking-widebit border border-gold/40 text-gold rounded-full px-5 py-2.5 hover:bg-gold/10 hover:border-gold transition-colors"

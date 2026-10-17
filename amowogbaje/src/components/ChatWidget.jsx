@@ -31,9 +31,9 @@ const SUGGESTIONS = [
 ]
 
 const ERRORS = {
-  429: "I'm getting a lot of questions right now. Please try again in a minute, or email Gideon at amowogbajegideon@gmail.com.",
+  429: "I'm getting a lot of questions right now. Please try again in a minute, or email Gideon at hello@amowogbaje.com.",
   default:
-    "Sorry, I couldn't answer that just now. You can reach Gideon directly at amowogbajegideon@gmail.com.",
+    "Sorry, I couldn't answer that just now. You can reach Gideon directly at hello@amowogbaje.com.",
 }
 
 // Turn URLs and emails in plain text into links without using innerHTML.

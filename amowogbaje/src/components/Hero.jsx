@@ -31,12 +31,12 @@ export default function Hero() {
           </p>
 
           <p className="mt-4 max-w-xl text-base md:text-lg text-paper/60 leading-relaxed font-light">
-            Available for remote roles and contract work. Recent: rewrote core services from Laravel to Go at Dayout (US); built the webhook layer feeding Facebook leads into a production CRM at Africred.
+            Available for remote roles and contract work: APIs, CRM and payment integrations, AI-assisted workflows, and taking over stalled projects.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="https://calendly.com/amowogbajegideon/30min"
+              href="https://calendly.com/amowogbajegideon/30min" data-umami-event="book-call"
               target="_blank"
               rel="noreferrer"
               className="font-mono text-xs uppercase tracking-widebit bg-gold text-ink px-5 py-3 rounded-full hover:bg-goldsoft transition-colors"
@@ -45,7 +45,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/resume.pdf"
+              href="/resume.pdf" data-umami-event="cv-open"
               target="_blank"
               rel="noreferrer"
               className="font-mono text-xs uppercase tracking-widebit text-paper/70 px-5 py-3 rounded-full border border-paper/15 hover:border-paper/40 hover:text-paper transition-colors"

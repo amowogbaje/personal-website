@@ -163,7 +163,7 @@ export default function Support() {
                 </span>
               </a>
               <a
-                href="mailto:amowogbajegideon@gmail.com"
+                href="mailto:hello@amowogbaje.com" data-umami-event="email-click"
                 className="flex items-center gap-3 p-4 rounded-xl border border-paper/10 bg-ink/70 hover:border-gold/50 transition-colors flex-1"
               >
                 <Mail className="w-5 h-5 text-gold" />

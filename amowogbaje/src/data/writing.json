@@ -1,0 +1,16 @@
+[
+ {
+  "slug": "human-in-the-loop-ai-content-pipeline",
+  "title": "Building a Human-in-the-Loop AI Content Pipeline: Lessons from CraftProfessor",
+  "description": "How to build an AI content pipeline that automates repetitive work without giving up editorial control: provider abstraction, a review stage, and background jobs, with Laravel examples.",
+  "date": "2026-10-17",
+  "tags": [
+   "AI workflows",
+   "Laravel"
+  ],
+  "related": {
+   "href": "/work/craftprofessor-story-engine",
+   "label": "CraftProfessor case study"
+  }
+ }
+]

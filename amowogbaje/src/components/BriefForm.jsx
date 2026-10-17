@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { track } from '../analytics.js'
 
 const field =
   'w-full bg-inkdeep border border-paper/15 rounded-lg px-4 py-3 text-paper placeholder:text-paper/40 focus:border-gold outline-none'
@@ -18,6 +19,7 @@ export default function BriefForm() {
         body: JSON.stringify(v),
       })
       setState(res.ok ? 'sent' : 'error')
+      if (res.ok) track('brief-sent')
     } catch {
       setState('error')
     }

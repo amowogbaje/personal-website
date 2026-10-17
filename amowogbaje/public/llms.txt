@@ -1,11 +1,14 @@
 # Gideon Amowogbaje
 
-> Fullstack developer with 8+ years of experience (Laravel, Go, Node.js/NestJS, React/Next.js) specializing in API & CRM integrations, e-commerce/WooCommerce, AI-powered automation, admin panels and full-stack SaaS builds. Based in Nigeria and available for remote roles and freelance work.
+> Laravel and API-integration engineer (full-stack developer) with 8+ years of experience (Laravel, Go, Node.js/NestJS, React/Next.js) specializing in API & CRM integrations, e-commerce/WooCommerce, AI-powered automation, admin panels and full-stack SaaS builds. Based in Nigeria and available for remote roles and freelance work.
 
 ## Key pages
 - [Home / portfolio](https://www.amowogbaje.com/): projects, services overview, background and contact.
 - [Services](https://www.amowogbaje.com/services): the six core services and eight smaller scoped jobs, each with proof of past work.
-- [Résumé (PDF)](https://www.amowogbaje.com/resume.pdf): full work history and skills.
+- [CV — backend (PDF)](https://www.amowogbaje.com/cv/Gideon-Amowogbaje-CV-Backend.pdf), [full-stack](https://www.amowogbaje.com/cv/Gideon-Amowogbaje-CV-Fullstack.pdf), [teaching](https://www.amowogbaje.com/cv/Gideon-Amowogbaje-CV-Teaching.pdf), [complete](https://www.amowogbaje.com/cv/Gideon-Amowogbaje-CV-Complete.pdf): work history and skills, filtered by focus.
+- [Experience](https://www.amowogbaje.com/experience): roles filtered by backend, full-stack and teaching, with a CV for each.
+- [Writing](https://www.amowogbaje.com/writing): articles on AI workflows and backend engineering, e.g. [Human-in-the-loop AI content pipelines](https://www.amowogbaje.com/writing/human-in-the-loop-ai-content-pipeline).
+- Case studies: [Africred CRM](https://www.amowogbaje.com/work/africred-crm-integrations), [Dayout Laravel-to-Go](https://www.amowogbaje.com/work/dayout-laravel-to-go-migration), [CraftProfessor](https://www.amowogbaje.com/work/craftprofessor-story-engine), [Storyverse](https://www.amowogbaje.com/work/storyverse-payments), [Qset](https://www.amowogbaje.com/work/qset-exam-platform).
 - [Full profile in plain text](https://www.amowogbaje.com/llms-full.txt): skills, experience, projects and contact details in one document.
 
 ## Live projects
@@ -16,7 +19,7 @@
 - [Jobs](https://jobs.amowogbaje.com): experimental job board and application tracker.
 
 ## Contact
-- Email: amowogbajegideon@gmail.com
+- Email: hello@amowogbaje.com
 - Book a call: https://calendly.com/amowogbajegideon/30min
 - [LinkedIn](https://www.linkedin.com/in/amowogbaje) · [GitHub](https://github.com/amowogbaje)
 

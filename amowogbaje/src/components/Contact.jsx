@@ -22,7 +22,7 @@ export default function Contact() {
           {/* Direct Communication Channels */}
           <div className="space-y-4">
             <a 
-              href="mailto:amowogbajegideon@gmail.com"
+              href="mailto:hello@amowogbaje.com" data-umami-event="email-click"
               className="flex items-center gap-4 p-5 rounded-2xl border border-paper/10 bg-ink/70 hover:border-gold/50 transition-all duration-300 group"
             >
               <div className="p-3 rounded-xl bg-paper/5 text-gold group-hover:bg-gold/10 transition-colors">
@@ -30,7 +30,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-xs font-medium uppercase tracking-wider text-paper/40">Email Me</p>
-                <p className="text-paper/90 font-medium break-all">amowogbajegideon@gmail.com</p>
+                <p className="text-paper/90 font-medium break-all">hello@amowogbaje.com</p>
               </div>
             </a>
 
@@ -71,7 +71,7 @@ export default function Contact() {
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-paper/40 mb-3">Schedule a Meeting</p>
               <a 
-                href="https://calendly.com/amowogbajegideon/30min"
+                href="https://calendly.com/amowogbajegideon/30min" data-umami-event="book-call"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gold text-inkdeep font-medium hover:bg-goldsoft transition-colors w-full sm:w-auto justify-center"

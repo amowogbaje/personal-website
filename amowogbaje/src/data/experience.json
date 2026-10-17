@@ -1,0 +1,487 @@
+{
+ "entries": [
+  {
+   "id": "soulsper",
+   "kind": "software",
+   "company": "Soulsper (fintech startup)",
+   "place": "Remote",
+   "title": "Software Engineer",
+   "dates": "Jun 2026 – Sep 2026",
+   "tags": [
+    "backend"
+   ],
+   "points": [
+    "Built internal tooling and infrastructure using FastAPI and Docker."
+   ],
+   "engagement": "Part-time"
+  },
+  {
+   "id": "dayout",
+   "kind": "software",
+   "company": "Dayout",
+   "place": "United States",
+   "title": "Backend Developer (Laravel → Go)",
+   "dates": "Jun 2024 – Sep 2026",
+   "tags": [
+    "backend"
+   ],
+   "points": [
+    "Rewrote core service endpoints — activities, notifications, emails, and comments — from Laravel to Go as part of the company's backend migration.",
+    "Built a Push Notification Service from scratch, including three related endpoints, in a team of 3 backend developers.",
+    "Led a research study comparing Laravel Eloquent against raw SQL that resulted in company-wide adoption of Eloquent; built all resulting database migrations from scratch and helped refactor the codebase around Dependency Injection and Laravel Models.",
+    "Contributed to the OpenAPI documentation used by developers and users."
+   ],
+   "caseStudy": "/work/dayout-laravel-to-go-migration",
+   "highlight": [
+    0,
+    1,
+    2
+   ],
+   "engagement": "Part-time"
+  },
+  {
+   "id": "koc",
+   "kind": "software",
+   "company": "KOC",
+   "place": "Nigeria",
+   "title": "Full Stack Developer",
+   "dates": "Sep 2025 – May 2026",
+   "tags": [
+    "fullstack"
+   ],
+   "points": [
+    "Rescued a stalled project, turning a Figma design into a working, production-ready product from scratch under a tight deadline, then iterated to final delivery.",
+    "Integrated transactional email and WooCommerce syncing, and built role-based permissions with Laravel Policies and Gates.",
+    "Built a Notion-style, block-based blogging interface with Editor.js, improving content flexibility and the admin publishing workflow."
+   ],
+   "engagement": "Contract"
+  },
+  {
+   "id": "africred",
+   "kind": "software",
+   "company": "Africred",
+   "place": "Nigeria",
+   "title": "Backend Developer",
+   "dates": "Feb 2025 – Sep 2025",
+   "tags": [
+    "backend"
+   ],
+   "points": [
+    "Worked in a team of 3 developers; contributed to the structure of the company CRM and helped onboard the service team onto it.",
+    "Built webhook ingestion for Facebook Instant Forms into the production CRM, importing prospective-client data for sales follow-up.",
+    "Automated Facebook access-token expiry tracking and refresh with a scheduled Laravel command.",
+    "Set up the company's official WhatsApp helpline, and led a research study to select the CRM's WhatsApp messaging provider.",
+    "Maintained multiple interconnected repositories, writing integration code so separate applications could communicate reliably.",
+    "Worked within a CRM database already in production and not designed for these integrations, using additive changes rather than a risky rewrite."
+   ],
+   "caseStudy": "/work/africred-crm-integrations",
+   "highlight": [
+    1,
+    2,
+    5
+   ],
+   "engagement": "Full-time"
+  },
+  {
+   "id": "televerse",
+   "kind": "software",
+   "company": "Televerse",
+   "place": "Nigeria",
+   "title": "Backend Developer (NestJS, GraphQL)",
+   "dates": "Apr 2023 – Jun 2024",
+   "tags": [
+    "backend"
+   ],
+   "points": [
+    "Developed optimized search APIs for the ReachMe app using NestJS, GraphQL, MongoDB, Redis, and RabbitMQ.",
+    "Designed and implemented a simulated payment API with GraphQL, including secure coin-gifting endpoints.",
+    "Built and optimized Lingo language endpoints for multilingual support.",
+    "Collaborated closely with Flutter developers to integrate each feature into the mobile app."
+   ],
+   "highlight": [
+    0,
+    1,
+    3
+   ],
+   "engagement": "Part-time"
+  },
+  {
+   "id": "gracefilled",
+   "kind": "software",
+   "company": "Grace Filled Academy",
+   "place": "Nigeria",
+   "title": "Full Stack Developer",
+   "dates": "Apr 2023 – Jun 2024",
+   "tags": [
+    "fullstack"
+   ],
+   "points": [
+    "Architected the full MySQL database structure from scratch for a scalable school-management system.",
+    "Built a report-card system end to end with Laravel Livewire, JavaScript, HTML, Bootstrap, and CSS.",
+    "Shipped a self-serve score-upload tool for teachers that automates calculations and cuts manual workload.",
+    "Delivered a responsive Livewire portal for parents to view their children's academic reports remotely.",
+    "Used Laravel factories and seeders for full integration test coverage."
+   ],
+   "highlight": [
+    0,
+    1,
+    2
+   ],
+   "engagement": "Part-time"
+  },
+  {
+   "id": "zerodip",
+   "kind": "software",
+   "company": "Zerodip",
+   "place": "Nigeria",
+   "title": "Laravel Full-Stack Developer",
+   "dates": "Jan 2023 – May 2024",
+   "tags": [
+    "fullstack",
+    "backend"
+   ],
+   "points": [
+    "Worked on FindHouse, a Laravel full-stack product, including Google Places integration and DigitalOcean Spaces for file storage."
+   ]
+  },
+  {
+   "id": "thinkshifts",
+   "kind": "software",
+   "company": "Thinkshifts",
+   "place": "United Kingdom",
+   "title": "Full Stack Developer",
+   "dates": "Nov 2021 – Jun 2024",
+   "tags": [
+    "fullstack"
+   ],
+   "points": [
+    "Built a real-estate web application on a Laravel + Vue 3 full stack, handling property data at scale.",
+    "Worked as a Vue 3 developer on the Carelly app for a three-month client engagement.",
+    "Managed client websites with 100% customer satisfaction."
+   ],
+   "engagement": "Part-time"
+  },
+  {
+   "id": "spokesman-lead",
+   "kind": "software",
+   "company": "Spokesman Communication Ministries",
+   "place": "Nigeria",
+   "title": "Team Lead",
+   "dates": "Jun 2020 – Aug 2021",
+   "tags": [
+    "fullstack",
+    "teaching"
+   ],
+   "points": [
+    "Worked directly with the President to run IT operations for the ministry.",
+    "Led a team of 6 for livestreaming and photography across a year of church media, recruiting and training team members.",
+    "Built the ministry website (Filament admin panel, Laravel APIs, Next.js frontend) and the annual International Leadership Conference website.",
+    "Migrated the ministry's asthma and chest care website from WordPress to a custom Laravel CMS with zero data loss."
+   ],
+   "highlight": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "spokesman-dev",
+   "kind": "software",
+   "company": "Spokesman Communication Ministries",
+   "place": "Nigeria",
+   "title": "Software Developer",
+   "dates": "May 2017 – Jun 2019",
+   "tags": [
+    "fullstack",
+    "backend"
+   ],
+   "points": [
+    "Built a membership portal with Laravel, HTML, CSS, Bootstrap, and JavaScript.",
+    "Used Laravel-Excel to import and export the church database, speeding up collation.",
+    "Helped oversee team activities as the team grew."
+   ]
+  },
+  {
+   "id": "iqube",
+   "kind": "software",
+   "company": "iQube Labs",
+   "place": "Nigeria",
+   "title": "Software Developer",
+   "dates": "Jan 2015 – Nov 2018",
+   "tags": [
+    "backend",
+    "fullstack"
+   ],
+   "points": [
+    "Advanced TradeWorkflow, a cargo-shipping app, from 40% to 80% complete using CakePHP.",
+    "Built and managed RedBank, a Laravel app connecting blood donors with people in need, for 6 months.",
+    "Managed Medifix, a WordPress healthcare-client site, for 3 months."
+   ]
+  },
+  {
+   "id": "doravid",
+   "kind": "teaching",
+   "company": "Doravid",
+   "place": "Nigeria",
+   "title": "Computer Science & Data Processing Teacher",
+   "dates": "2026 (from May)",
+   "tags": [
+    "teaching"
+   ],
+   "points": [
+    "Taught Data Processing to senior classes and Computer Science to junior classes."
+   ]
+  },
+  {
+   "id": "ebenezer",
+   "kind": "teaching",
+   "company": "Ebenezer",
+   "place": "Nigeria",
+   "title": "Mathematics Teacher",
+   "dates": "Jan 2025 – Mar 2026",
+   "tags": [
+    "teaching"
+   ],
+   "points": [
+    "Taught Mathematics to junior classes."
+   ]
+  },
+  {
+   "id": "gfcollege",
+   "kind": "teaching",
+   "company": "Grace Filled College",
+   "place": "Nigeria",
+   "title": "Computer Science Teacher",
+   "dates": "Jan 2024 – Jul 2024",
+   "tags": [
+    "teaching"
+   ],
+   "points": [
+    "Taught Computer Science to junior classes."
+   ]
+  },
+  {
+   "id": "soughtout",
+   "kind": "teaching",
+   "company": "Sought Out",
+   "place": "Nigeria",
+   "title": "Data Processing Teacher",
+   "dates": "2023",
+   "tags": [
+    "teaching"
+   ],
+   "points": [
+    "Taught Data Processing to senior classes."
+   ]
+  },
+  {
+   "id": "hisbanners",
+   "kind": "teaching",
+   "company": "His Banners College",
+   "place": "Nigeria",
+   "title": "Mathematics & Computer Science Teacher",
+   "dates": "2022",
+   "tags": [
+    "teaching"
+   ],
+   "points": [
+    "Taught Mathematics to senior classes and Computer Science to junior classes."
+   ]
+  },
+  {
+   "id": "kingswill",
+   "kind": "teaching",
+   "company": "Kings Will",
+   "place": "Nigeria",
+   "title": "Primary School Teacher",
+   "dates": "2021 – 2022",
+   "tags": [
+    "teaching"
+   ],
+   "points": [
+    "Taught all subjects at the primary level."
+   ]
+  },
+  {
+   "id": "eclat",
+   "kind": "teaching",
+   "company": "Eclat British Academy",
+   "place": "Nigeria",
+   "title": "Teacher (NYSC)",
+   "dates": "Jun 2019 – Jun 2020",
+   "tags": [
+    "teaching"
+   ],
+   "points": [
+    "Completed Nigeria's mandatory National Youth Service Corps, teaching the children and making lessons feel like playtime.",
+    "Led the Red House team to the school's first-ever interhouse sports championship."
+   ]
+  }
+ ],
+ "skills": {
+  "Backend": "PHP 8, Laravel (Eloquent, queues, Horizon, migrations, Policies & Gates, Livewire, Inertia), Node.js (NestJS, Express.js), Go, Python/FastAPI, CakePHP",
+  "Frontend": "React, Next.js, Vue 3, TypeScript, JavaScript, Tailwind CSS, Alpine.js, Livewire, Angular (personal project), HTML, CSS; Figma-to-code on several projects",
+  "Databases & Messaging": "MySQL, PostgreSQL, MongoDB, Redis, RabbitMQ, Laravel Horizon, event broadcasting, Pusher / Laravel Echo / Socket.io",
+  "APIs & Integrations": "REST, GraphQL, webhooks, OAuth, OpenAPI/Swagger, Stripe, Paystack, Flutterwave, WooCommerce, Facebook Lead Ads, Pinterest and LinkedIn APIs, Google Places, DigitalOcean Spaces",
+  "Applied AI": "Gemini, Hugging Face, TogetherAI, Vertex AI, Cloudflare Agents, Agnes AI, Laravel AI package; daily use of AI coding assistants (Cursor, Claude Code)",
+  "Testing & DevOps": "PHPUnit, Pest, Docker, Docker Compose, Git, GitHub, GitLab, Jira, CI/CD, DigitalOcean, Nginx, Linux",
+  "Admin Tooling": "Filament, Laravel Nova",
+  "Teaching": "Mathematics (junior, senior, Further Mathematics), Computer Science, Data Processing, primary school (all subjects)",
+  "Soft Skills": "Communication, problem solving, design thinking, leadership, critical thinking, self-motivation, adaptability, attention to detail, teamwork, time management",
+  "Technical": "PHP/Laravel, Go, Node.js, Python, React; Microsoft Word and Excel",
+  "Other": "Microsoft Word and Excel, music (songwriting, guitar), customer service"
+ },
+ "projects": {
+  "qset": {
+   "name": "Qset",
+   "meta": "Founder, solo · Sep 2025 – Present · Laravel, React, MySQL, Redis · qset.amowogbaje.com",
+   "points": [
+    "Exam-generation platform for teachers: searchable question bank, exam-set builder, and Word (docx) export; also designed as a marketplace for exam-question resources.",
+    "Integrated AI-assisted question generation with Laravel's AI package; upgraded the app from Laravel 11 to 13 and containerized it with Docker."
+   ]
+  },
+  "craft": {
+   "name": "CraftProfessor Story Engine",
+   "meta": "Laravel 13, Gemini, Vertex AI, Hugging Face, TogetherAI, Pinterest API · craftprofessor.amowogbaje.com",
+   "points": [
+    "AI-assisted content pipeline for writers and bookstores: a story goes in, AI generates image and video options across several providers, I review and approve them, and the system publishes to Pinterest (with LinkedIn and Facebook also supported).",
+    "Reported result: one Pinterest account grew from about 100 to 115K+ monthly views in roughly 60 days (October 2026) with no manual posting."
+   ]
+  },
+  "storyverse": {
+   "name": "Storyverse",
+   "meta": "Laravel, React, PostgreSQL/MySQL · storyverse.amowogbaje.com",
+   "points": [
+    "Serialized-fiction platform with guest reading, an author studio, episode-based access tiers, AI-assisted search, a badge/reward system, analytics, and subscriptions across Stripe, Paystack and Flutterwave with per-country pricing."
+   ]
+  },
+  "tax": {
+   "name": "Nigeria Tax Calculator",
+   "meta": "Laravel, React, MySQL · tax.amowogbaje.com",
+   "points": [
+    "Live personal income tax estimator (NGN) with pension, health, and life-insurance deduction handling."
+   ]
+  },
+  "gostream": {
+   "name": "Go Streaming Backend",
+   "meta": "In progress · Go, PostgreSQL, Redis, Docker",
+   "points": [
+    "Local MVP with auth, billing, catalog, creators, playback and analytics modules, and a storage adapter so the provider can be swapped; aimed at web, mobile and Smart TV."
+   ]
+  },
+  "dbrepo": {
+   "name": "database-repository",
+   "meta": "Open-source Composer package · PHP, Laravel · packagist.org/packages/amowogbaje/database-repository",
+   "points": [
+    "Automates database backups tied to Laravel's migration lifecycle; grew from a personal backup script."
+   ]
+  },
+  "citriage": {
+   "name": "CI Triage Bot",
+   "meta": "Personal project · Python",
+   "points": [
+    "Analyses failed CI runs and comments on the pull request with a plain-English explanation of the likely cause."
+   ]
+  }
+ },
+ "filters": {
+  "backend": {
+   "label": "Backend",
+   "headline": "Backend Developer — Laravel, Go, NestJS, FastAPI · APIs & Integrations",
+   "profile": "Backend-leaning developer with 8+ years of professional experience, primarily in PHP/Laravel, with production work in Go, Node.js/NestJS and Python/FastAPI. Track record in integration-heavy systems (webhooks, OAuth token reconciliation, multi-gateway payments, e-commerce syncing), applied AI integration (Gemini, Hugging Face, TogetherAI, Vertex AI), and end-to-end ownership in fully remote, distributed teams.",
+   "skills": [
+    "Backend",
+    "Databases & Messaging",
+    "APIs & Integrations",
+    "Applied AI",
+    "Testing & DevOps"
+   ],
+   "projects": [
+    "storyverse",
+    "craft",
+    "qset",
+    "dbrepo",
+    "gostream",
+    "citriage"
+   ],
+   "extras": []
+  },
+  "fullstack": {
+   "label": "Full-stack",
+   "headline": "Full Stack Developer — Laravel, React, Next.js, Vue 3",
+   "profile": "Full stack developer with 8+ years of professional experience, primarily in PHP/Laravel, with React, Next.js and Vue 3 on the frontend. End-to-end ownership from Figma to deployment, admin tooling with Filament and Nova, integration-heavy systems (webhooks, multi-gateway payments, e-commerce syncing), and several of my own products built and run in production, in fully remote, distributed teams.",
+   "skills": [
+    "Backend",
+    "Frontend",
+    "Databases & Messaging",
+    "APIs & Integrations",
+    "Admin Tooling",
+    "Testing & DevOps"
+   ],
+   "projects": [
+    "storyverse",
+    "qset",
+    "craft",
+    "tax"
+   ],
+   "extras": []
+  },
+  "teaching": {
+   "label": "Teaching",
+   "headline": "Teacher & Software Developer — Mathematics, Computer Science, Data Processing",
+   "profile": "Classroom teacher of Mathematics, Computer Science and Data Processing across six-plus schools, and a software developer with 8+ years of professional experience. Team Lead who has recruited and trained a team of 6. Built Qset, an exam-generation platform for teachers.",
+   "skills": [
+    "Teaching",
+    "Soft Skills",
+    "Technical",
+    "Other"
+   ],
+   "projects": [
+    "qset"
+   ],
+   "extras": [
+    "trcn"
+   ]
+  },
+  "complete": {
+   "label": "Complete",
+   "headline": "Full Stack Software Developer & Educator — Laravel, Go, Node.js, Python, React, AI Integrations",
+   "profile": "Full stack developer with 8+ years of professional experience, primarily in PHP/Laravel, with production work in Node.js/NestJS, Go and Python/FastAPI, and React, Next.js and Vue 3 on the frontend. Track record in integration-heavy systems (webhooks, OAuth token reconciliation, multi-gateway payments, e-commerce syncing), applied AI integration (Gemini, Hugging Face, TogetherAI, Vertex AI), and end-to-end ownership from Figma to deployment, in fully remote, distributed teams. Also a classroom teacher of Mathematics, Computer Science and Data Processing across six-plus schools, a product builder, and a Team Lead who has recruited and trained a team of 6.",
+   "skills": [
+    "Backend",
+    "Frontend",
+    "Databases & Messaging",
+    "APIs & Integrations",
+    "Applied AI",
+    "Testing & DevOps",
+    "Admin Tooling",
+    "Teaching",
+    "Soft Skills",
+    "Other"
+   ],
+   "projects": [
+    "qset",
+    "craft",
+    "storyverse",
+    "tax",
+    "gostream",
+    "dbrepo",
+    "citriage"
+   ],
+   "extras": [
+    "trcn",
+    "volunteering"
+   ]
+  }
+ },
+ "education": [
+  "B.Sc. Computer Engineering — Obafemi Awolowo University, Ile-Ife",
+  "Web Mobile Development · PHP Certificate · HNG Finalist Certificate · SQL Advanced · JavaScript (Intermediate) · Leadership Training"
+ ],
+ "volunteering": [
+  "Acting Assistant IT Head — Sanctuary of Hope Church, Nigeria (Jun 2017 – Jul 2019)",
+  "Assistant Music Director — Christ Apostolic Church Youth Fellowship, Nigeria (May 2015 – Apr 2016)",
+  "Songwriting and guitar; writes Christian songs and articles."
+ ],
+ "trcn": "TRCN (Teachers Registration Council of Nigeria): not yet registered"
+}
