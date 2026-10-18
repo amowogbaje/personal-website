@@ -4,7 +4,7 @@ const commits = [
     hash: '7c1a04e',
     title: 'Backend Development',
     body:
-      'Laravel, Go and NestJS by trade. Database design, system architecture, and a stubborn insistence on documentation — the parts of the job that keep the lights on after launch day.',
+      'PHP, Go and Node.js by trade. Database design, system architecture, and a stubborn insistence on documentation — the parts of the job that keep the lights on after launch day.',
     accent: 'border-gold/50 text-gold',
     dot: 'bg-gold',
   },

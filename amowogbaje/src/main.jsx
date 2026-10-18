@@ -6,6 +6,7 @@ import Services from './components/Services.jsx'
 import About from './components/About.jsx'
 import CaseStudy from './components/CaseStudy.jsx'
 import { getCaseStudy } from './data/caseStudies.js'
+import WorkPage from './components/WorkPage.jsx'
 import ExperiencePage from './components/ExperiencePage.jsx'
 import Writing from './components/Writing.jsx'
 import Article, { getPost } from './components/Article.jsx'
@@ -25,6 +26,7 @@ const Page =
   path === '/services' ? Services :
   path === '/about' ? About :
   path === '/fundme' ? FundMe :
+  path === '/work' ? WorkPage :
   path === '/experience' ? ExperiencePage :
   path === '/writing' ? Writing :
   path.startsWith('/writing/') && slug && getPost(slug) ? Article :
@@ -36,6 +38,6 @@ loadAnalytics()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Page slug={slug} />
-    {(Page === App || Page === Services || Page === About || Page === CaseStudy || Page === Writing || Page === ExperiencePage || Page === Article) && <ChatWidget />}
+    {(Page === App || Page === Services || Page === About || Page === CaseStudy || Page === Writing || Page === ExperiencePage || Page === WorkPage || Page === Article) && <ChatWidget />}
   </React.StrictMode>,
 )

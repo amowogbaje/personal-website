@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { ArrowLeft, Calendar } from 'lucide-react'
 import { marked } from 'marked'
+import ImageSlot from './ImageSlot.jsx'
 import posts from '../data/writing.json'
 
 const files = import.meta.glob('../content/writing/*.md', { query: '?raw', import: 'default', eager: true })
@@ -42,6 +43,7 @@ export default function Article({ slug }) {
             </a>
           </p>
         )}
+        <ImageSlot src={`/images/writing/${post.slug}.webp`} alt="" className="mt-8 w-full rounded-2xl border border-paper/10 object-cover" />
         <article className="article mt-10" dangerouslySetInnerHTML={{ __html: html }} />
         <div className="mt-14 rounded-2xl border border-gold/30 bg-gold/5 p-6 flex flex-wrap items-center justify-between gap-4">
           <p className="text-paper/80 max-w-md leading-relaxed">Building something with AI workflows or a Laravel backend? Let's talk.</p>

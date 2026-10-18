@@ -57,7 +57,7 @@ const more = [
 
 export default function Services() {
   useEffect(() => {
-    document.title = 'Services — Laravel, API, E-Commerce & AI Integrations | Gideon Amowogbaje'
+    document.title = 'Services — Fullstack Development, APIs, E-Commerce & AI Integrations | Gideon Amowogbaje'
     const desc = document.querySelector('meta[name="description"]')
     if (desc) desc.setAttribute(
       'content',

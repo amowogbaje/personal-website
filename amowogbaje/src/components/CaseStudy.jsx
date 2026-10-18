@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { ArrowLeft, Calendar, Mail } from 'lucide-react'
+import ImageSlot from './ImageSlot.jsx'
 import { getCaseStudy } from '../data/caseStudies.js'
 
 export default function CaseStudy({ slug }) {
@@ -29,6 +30,12 @@ export default function CaseStudy({ slug }) {
         <p className="font-mono text-xs uppercase tracking-widebit text-sage mb-4">{c.kind}</p>
         <h1 className="font-display text-3xl md:text-5xl font-medium leading-tight">{c.title}</h1>
 
+        {c.cover && (
+          <div className="mt-8 overflow-hidden rounded-2xl border border-paper/10">
+            <ImageSlot src={c.cover} alt={`${c.title} screenshot`} className="w-full object-cover object-top" />
+          </div>
+        )}
+
         <dl className="mt-8 grid sm:grid-cols-3 gap-4 font-mono text-xs border-y border-paper/10 py-5">
           <div><dt className="text-slate">role</dt><dd className="mt-1 text-paper/80">{c.role}</dd></div>
           <div><dt className="text-slate">when</dt><dd className="mt-1 text-paper/80">{c.dates}</dd></div>
@@ -55,6 +62,12 @@ export default function CaseStudy({ slug }) {
             )}
           </section>
         ))}
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          {[1, 2, 3].map((n) => (
+            <ImageSlot key={n} src={`/images/work/${c.slug}/${n}.webp`} alt={`${c.title} screenshot ${n}`} className="w-full rounded-xl border border-paper/10 object-cover object-top" />
+          ))}
+        </div>
 
         {c.link && (
           <p className="mt-8">

@@ -13,7 +13,7 @@
 
   # Pre-rendered /services page (see scripts/prerender.mjs) so crawlers get real content
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-  RewriteRule ^(services|about|experience|writing|work/[a-z0-9-]+|writing/[a-z0-9-]+)/?$ /$1.html [L]
+  RewriteRule ^(services|about|experience|writing|work|work/[a-z0-9-]+|writing/[a-z0-9-]+)/?$ /$1.html [L]
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

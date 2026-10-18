@@ -1,7 +1,7 @@
 # Gideon Amowogbaje — full profile
 
 Website: https://www.amowogbaje.com/
-Role: Laravel and API-integration engineer (full-stack): Laravel, Go, Node.js/NestJS, Python/FastAPI, React/Next.js. Specializes in API & CRM integrations, e-commerce, AI-powered automation, admin tools, and full-stack SaaS builds. Also teaches Mathematics, Computer Science and Data Processing.
+Role: Fullstack developer (React/Next.js, Laravel, Go, Node.js/NestJS, Python/FastAPI). Specializes in API & CRM integrations, e-commerce, AI-powered automation, admin tools, and full-stack SaaS builds. Also teaches Mathematics, Computer Science and Data Processing.
 Experience: 8+ years of professional experience.
 Location: Open to fully remote roles and freelance/contract work, and comfortable in cross-timezone teams. Willing to relocate quickly for the right role.
 Education: B.Sc. Computer Engineering, Obafemi Awolowo University, Ile-Ife.
@@ -124,6 +124,7 @@ Last updated: October 2026
 - Storyverse (serialized-fiction platform, Stripe/Paystack/Flutterwave with per-country pricing): https://www.amowogbaje.com/work/storyverse-payments
 - Qset (exam-generation platform for teachers): https://www.amowogbaje.com/work/qset-exam-platform
 - Writing: https://www.amowogbaje.com/writing — "Building a Human-in-the-Loop AI Content Pipeline: Lessons from CraftProfessor": https://www.amowogbaje.com/writing/human-in-the-loop-ai-content-pipeline
+- All work and projects: https://www.amowogbaje.com/work
 - Experience (backend / full-stack / teaching tabs, with CVs): https://www.amowogbaje.com/experience
 - About: https://www.amowogbaje.com/about
 - Project brief form: https://www.amowogbaje.com/#contact

@@ -5,6 +5,8 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { caseStudies } from '../src/data/caseStudies.js'
 import { ABOUT_DESC } from '../src/components/aboutMeta.js'
 import { EXPERIENCE_DESC } from '../src/components/experienceMeta.js'
+import { allProjects } from '../src/data/projects.js'
+import { WORK_DESC } from '../src/components/workMeta.js'
 const exp = JSON.parse(readFileSync('src/data/experience.json', 'utf8'))
 import { marked } from 'marked'
 
@@ -19,10 +21,10 @@ const wrap = (inner) => `<main class="max-w-3xl mx-auto px-6 py-24">\n      ${in
 const pages = [
   {
     path: 'services',
-    title: 'Services — Laravel, API, E-Commerce & AI Integrations | Gideon Amowogbaje',
+    title: 'Services — Fullstack Development, APIs, E-Commerce & AI Integrations | Gideon Amowogbaje',
     description:
       'API integrations, CRM automation, WooCommerce, AI-powered automation, admin panels, and full-stack Laravel/FastAPI/Go builds — hire Gideon Amowogbaje for remote contract work.',
-    body: wrap(`<h1 class="font-display text-4xl font-medium">Services — Gideon Amowogbaje, Laravel &amp; API-Integration Engineer</h1>
+    body: wrap(`<h1 class="font-display text-4xl font-medium">Services — Gideon Amowogbaje, Fullstack Developer</h1>
       <p class="mt-4 text-paper/80">Tell me what you need built, not what tech stack it needs. 8+ years shipping Laravel, FastAPI and Go systems for real businesses: CRMs, e-commerce, admin tools and AI pipelines.</p>
       <h2 class="mt-10 font-display text-2xl">Core services</h2>
       <ul class="mt-3 space-y-2 text-paper/80 list-disc pl-5">
@@ -51,7 +53,17 @@ const pages = [
     title: 'About | Gideon Amowogbaje',
     description: ABOUT_DESC,
     body: wrap(`<h1 class="font-display text-4xl font-medium">About Gideon Amowogbaje</h1>
-      <p class="mt-4 text-paper/80">Backend-leaning full-stack developer with 8+ years across Laravel, Go and NestJS, working with remote teams in the US, UK and Nigeria. I connect products to the CRMs, payment gateways and AI services they depend on, and I rescue stalled backends. I also build and run my own products, and I teach Mathematics, Computer Science and Data Processing in schools.</p>
+      <p class="mt-4 text-paper/80">Fullstack developer with 8+ years building web products, APIs and integrations across PHP, Go, Node.js, Python and React, working with remote teams in the US, UK and Nigeria. I connect products to the CRMs, payment gateways and AI services they depend on, and I rescue stalled projects. I also build and run my own products, and I teach Mathematics, Computer Science and Data Processing in schools.</p>
+      ${CONTACT}`),
+  },
+  {
+    path: 'work',
+    title: 'Work | Gideon Amowogbaje',
+    description: WORK_DESC,
+    body: wrap(`<h1 class="font-display text-4xl font-medium">Work — Gideon Amowogbaje</h1>
+      <ul class="mt-6 space-y-4 text-paper/80">${allProjects
+        .map((p) => `<li><strong>${esc(p.title)}</strong> (${esc(p.status)}) — ${esc(p.summary)}${p.caseStudy ? ` <a href="${p.caseStudy}">Case study</a>` : ''}</li>`)
+        .join('')}</ul>
       ${CONTACT}`),
   },
   {

@@ -1,198 +1,106 @@
-const projects = [
-  {
-    "status": "shipped",
-    "statusColor": "bg-sage/15 text-sage border-sage/30",
-    "title": "Qset",
-    "href": "https://qset.amowogbaje.com",
-    "linkLabel": "qset.amowogbaje.com",
-    "caseStudy": "/work/qset-exam-platform",
-    "stack": ["Laravel", "Reactjs", "MySQL", "TailwindCSS"],
-    "summary": "A platform for teachers to generate exams in minutes. Users can search a question bank, select questions, add them to new or existing exam sets, review and reorder, then export to Word (docx)",
-    "pr": "#01"
-  },
-  {
-    "status": "shipped",
-    "statusColor": "bg-sage/15 text-sage border-sage/30",
-    "title": "Tax",
-    "href": "https://tax.amowogbaje.com",
-    "linkLabel": "tax.amowogbaje.com",
-    "stack": ["Laravel", "Reactjs", "MySQL", "TailwindCSS"],
-    "summary": "Live personal income tax calculator for Nigeria (NGN). Users input annual income, rent, and optional deductions (pension, health, life insurance) to estimate tax liability.",
-    "pr": "#02"
-  },
-  {
-    "status": "experimenting",
-    "statusColor": "bg-amber-500/10 text-amber-400 border-amber-500/30",
-    "title": "Jobs",
-    "href": "https://jobs.amowogbaje.com",
-    "linkLabel": "jobs.amowogbaje.com",
-    "stack": ["Laravel", "Reactjs", "MySQL", "TailwindCSS"],
-    // TODO: confirm/replace this summary — placeholder based on the site's existing project pattern.
-    "summary": "A job board and application tracker — browse curated listings, save roles you're watching, and keep every application's status in one place instead of scattered tabs.",
-    "pr": "#03"
-  },
-  {
-    "status": "in-production",
-    "statusColor": "bg-violet-500/10 text-violet-400 border-violet-500/30",
-    "title": "CraftProfessor Story Engine",
-    "href": "https://craftprofessor.amowogbaje.com/",
-    "linkLabel": "Craft Professor",
-    "caseStudy": "/work/craftprofessor-story-engine",
-    "stack": ["Laravel", "Generative AI", "Pinterest API"],
-    "summary": "The core engine behind CraftProfessor. An automated publishing pipeline built in Laravel that orchestrates generative AI — text-to-text, text-to-image, and text/image-to-video — to produce and sync narrative content to Pinterest.",
-    "metrics": [
-      { "label": "Pinterest · Account 1 · monthly views, ~60 days", "from": "100", "to": "115K+", "diff": "+114,900" },
-      { "label": "Pinterest · Account 2 · monthly views", "from": "500", "to": "44K+", "diff": "+43,500" }
-    ],
-    "pr": "#04"
-  },
-  {
-   "status": "in-production",
-    "statusColor": "bg-violet-500/10 text-violet-400 border-violet-500/30",
-    "title": "Storyverse",
-    "href": "https://storyverse.amowogbaje.com",
-    "linkLabel": "storyverse.amowogbaje.com",
-    "caseStudy": "/work/storyverse-payments",
-    "stack": ["Laravel", "Reactjs", "PostgreSQL/MySQL", "TailwindCSS"],
-    "summary": "A serialized-fiction reading platform with a full author studio — episode-based access tiers, AI-assisted search, a badge/reward system, and multi-gateway subscriptions (Stripe, Paystack, Flutterwave) with per-country pricing.",
-    "pr": "#05"
-  },
-  {
-    "status": "draft",
-    "statusColor": "bg-paper/10 text-paper/50 border-paper/20",
-    "title": "AI Video Generator",
-    "href": "https://github.com/amowogbaje/aivideogenerator",
-    "linkLabel": "github.com/amowogbaje/aivideogenerator",
-    "stack": ["FastApi", "AI/ML"],
-    "summary": "In-progress AI video generation tool built with FastAPI and ML. Actively developed with recent commits on story text and prompt features.",
-    "pr": "#06"
-  },
-  {
-    "status": "draft",
-    "statusColor": "bg-paper/10 text-paper/50 border-paper/20",
-    "title": "HelpBoard",
-    "href": "https://github.com/amowogbaje/HelpBoardFullstackAmowogbaje",
-    "linkLabel": "github.com/amowogbaje/HelpBoardFullstackAmowogbaje",
-    "stack": ["Express.js", "React + Vite"],
-    "summary": "Full-stack support board built with Express.js and React + Vite, designed to help users raise, track, and manage support requests through a centralized platform.",
-    "pr": "#07"
-  }
-]
+import { ArrowRight } from 'lucide-react'
+import { allProjects, FEATURED } from '../data/projects.js'
+import ProjectImage from './ProjectImage.jsx'
+import Reveal from './Reveal.jsx'
 
-export default function Work() {
+function WorkCard({ p, clamp }) {
   return (
-    <section id="work" className="px-6 md:px-10 py-28 md:py-36 bg-inkdeep">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-baseline justify-between flex-wrap gap-4 mb-14">
-          <h2 className="font-display text-4xl md:text-5xl font-medium text-paper">
-            Work
-          </h2>
-          <p className="font-mono text-xs text-slate uppercase tracking-widebit">
-            {projects.length} pull requests · open to review
-          </p>
-        </div>
+    <article className="group min-w-0 h-full flex flex-col border border-paper/10 rounded-2xl overflow-hidden hover:border-gold/40 hover:-translate-y-1 transition-all duration-300 bg-ink/60">
+      <div className="relative aspect-[16/10] bg-inkdeep overflow-hidden border-b border-paper/10">
+        <ProjectImage src={p.image} title={p.title} />
+        <span className={`absolute top-3 left-3 font-mono text-[10px] uppercase tracking-widebit border rounded-full px-2.5 py-1 backdrop-blur ${p.statusColor}`}>
+          {p.status}
+        </span>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-          {projects.map((p) => (
-            <article
-              key={p.pr}
-              className="group min-w-0 h-full flex flex-col border border-paper/10 rounded-2xl p-5 sm:p-7 hover:border-gold/40 transition-colors bg-ink/60"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="font-mono text-xs text-slate">{p.pr}</span>
-                <span
-                  className={`font-mono text-[10px] uppercase tracking-widebit border rounded-full px-2.5 py-1 ${p.statusColor}`}
-                >
-                  {p.status}
-                </span>
-              </div>
+      <div className="p-5 sm:p-6 flex flex-col flex-1">
+        <h3 className="font-display text-xl sm:text-2xl text-paper mb-3 break-words group-hover:text-gold transition-colors">{p.title}</h3>
+        <p className={`text-paper/65 leading-relaxed mb-5 break-words ${clamp ? 'line-clamp-4' : ''}`}>{p.summary}</p>
 
-              <h3 className="font-display text-xl sm:text-2xl text-paper mb-3 break-words group-hover:text-gold transition-colors">
-                {p.title}
-              </h3>
-
-              <p className="text-paper/65 leading-relaxed mb-5 break-words">{p.summary}</p>
-
-              {p.metrics && (
-                <div className="mb-5 rounded-lg border border-sage/20 bg-sage/[0.04] px-4 py-3 font-mono text-[11px] space-y-2">
-                  {p.metrics.map((m) => (
-                    <div key={m.label}>
-                      <div className="text-paper/45 mb-0.5 break-words">{m.label}</div>
-                      <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                        <span className="text-paper/70">
-                          {m.from} <span className="text-paper/30">→</span> {m.to}{' '}
-                          <span className="text-paper/40">views</span>
-                        </span>
-                        <span className="text-sage font-medium whitespace-nowrap">
-                          {m.diff}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+        {p.metrics && (
+          <div className="mb-5 rounded-lg border border-sage/20 bg-sage/[0.04] px-4 py-3 font-mono text-[11px] space-y-2">
+            {p.metrics.map((m) => (
+              <div key={m.label}>
+                <div className="text-paper/45 mb-0.5 break-words">{m.label}</div>
+                <div className="flex items-baseline justify-between gap-3 flex-wrap">
+                  <span className="text-paper/70">
+                    {m.from} <span className="text-paper/30">→</span> {m.to} <span className="text-paper/40">views</span>
+                  </span>
+                  <span className="text-sage font-medium whitespace-nowrap">{m.diff}</span>
                 </div>
-              )}
-
-              <div className="mt-auto pt-2 flex flex-col gap-4">
-                <ul className="flex flex-wrap gap-2 font-mono text-[11px] text-sage">
-                  {p.stack.map((s) => (
-                    <li
-                      key={s}
-                      className="border border-sage/25 rounded-full px-2.5 py-1"
-                    >
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-
-                {p.caseStudy && (
-                  <a
-                    href={p.caseStudy}
-                    className="font-mono text-[11px] text-sage hover:text-paper transition-colors block mb-2"
-                  >
-                    read the case study →
-                  </a>
-                )}
-
-                {p.href && (
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-mono text-[11px] text-gold hover:text-goldsoft transition-colors break-all"
-                  >
-                    {p.linkLabel} ↗
-                  </a>
-                )}
               </div>
-            </article>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
-        <div className="mt-14 pt-10 border-t border-paper/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="font-mono text-xs text-slate uppercase tracking-widebit">
-            Want the full picture?
-          </p>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="/resume.pdf" data-umami-event="cv-open"
-              target="_blank"
-              rel="noreferrer"
-              className="font-mono text-xs uppercase tracking-widebit border border-gold/40 text-gold rounded-full px-5 py-2.5 hover:bg-gold/10 hover:border-gold transition-colors"
-            >
-              Download résumé ↓
-            </a>
-            <a
-              href="https://www.linkedin.com/in/amowogbaje"
-              target="_blank"
-              rel="noreferrer"
-              className="font-mono text-xs uppercase tracking-widebit border border-paper/20 text-paper/80 rounded-full px-5 py-2.5 hover:border-sage/40 hover:text-sage transition-colors"
-            >
-              LinkedIn profile ↗
-            </a>
+        <div className="mt-auto pt-2 flex flex-col gap-3">
+          <ul className="flex flex-wrap gap-2 font-mono text-[11px] text-sage">
+            {p.stack.map((s) => (
+              <li key={s} className="border border-sage/25 rounded-full px-2.5 py-1">{s}</li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            {p.caseStudy && (
+              <a href={p.caseStudy} className="font-mono text-[11px] text-sage hover:text-paper transition-colors">
+                read the case study →
+              </a>
+            )}
+            {p.href && (
+              <a href={p.href} target="_blank" rel="noreferrer" className="font-mono text-[11px] text-gold hover:text-goldsoft transition-colors break-all">
+                {p.linkLabel} ↗
+              </a>
+            )}
           </div>
         </div>
+      </div>
+    </article>
+  )
+}
 
+export function WorkAll() {
+  const live = allProjects.filter((p) => p.status !== 'draft')
+  const wip = allProjects.filter((p) => p.status === 'draft')
+  return (
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {live.map((p) => (
+          <WorkCard key={p.slug} p={p} />
+        ))}
+      </div>
+      {wip.length > 0 && (
+        <>
+          <h2 className="mt-16 mb-6 font-display text-2xl text-paper">In progress</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {wip.map((p) => (
+              <WorkCard key={p.slug} p={p} />
+            ))}
+          </div>
+        </>
+      )}
+    </>
+  )
+}
+
+export default function Work() {
+  const featured = FEATURED.map((s) => allProjects.find((p) => p.slug === s))
+  return (
+    <section id="work" className="px-6 md:px-10 py-24 md:py-32 bg-inkdeep">
+      <div className="max-w-6xl mx-auto">
+        <Reveal>
+          <div className="flex items-baseline justify-between flex-wrap gap-4 mb-12">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-paper">Selected work</h2>
+            <a href="/work" className="inline-flex items-center gap-2 font-mono text-xs text-gold uppercase tracking-widebit hover:text-goldsoft transition-colors">
+              view all work <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {featured.map((p, i) => (
+            <Reveal key={p.slug} delay={i * 90} className="h-full">
+              <WorkCard p={p} clamp />
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   )

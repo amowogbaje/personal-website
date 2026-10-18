@@ -2,8 +2,11 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="grain relative min-h-screen flex flex-col justify-center px-6 md:px-10 pt-24 pb-16 overflow-hidden"
+      className="grain relative min-h-[88vh] flex flex-col justify-center px-6 md:px-10 pt-24 pb-16 overflow-hidden"
     >
+      {/* soft drifting glows (disabled for reduced-motion) */}
+      <div aria-hidden="true" className="glow glow-gold" />
+      <div aria-hidden="true" className="glow glow-sage" />
       {/* faint trunk line easing the eye toward the Domains signature below */}
       <div
         aria-hidden="true"
@@ -12,6 +15,13 @@ export default function Hero() {
 
       <div className="max-w-6xl w-full mx-auto relative grid md:grid-cols-[1.3fr_0.7fr] gap-12 md:gap-8 items-center">
         <div>
+          <p className="inline-flex items-center gap-2 rounded-full border border-sage/30 bg-sage/10 px-3 py-1.5 font-mono text-[11px] uppercase tracking-widebit text-sage mb-6">
+            <span className="relative flex h-2 w-2">
+              <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-sage opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
+            </span>
+            Available for remote work
+          </p>
           <p className="font-mono text-sm text-sage mb-6">
             <span className="text-slate">$</span> whoami
           </p>
@@ -23,11 +33,11 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 font-mono text-sm md:text-base uppercase tracking-widebit text-sage">
-            Laravel &amp; API-Integration Engineer
+            Fullstack Developer — APIs &amp; AI Integrations
           </p>
 
           <p className="mt-6 max-w-xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
-            I connect your product to the CRMs, payment gateways and AI services it depends on — and rescue stalled backends. 8+ years across Laravel, Go and NestJS, in remote teams spanning the US, UK and Nigeria.
+            I build the products, APIs and integrations your business runs on — web apps, CRMs, payment gateways, AI-powered workflows — and rescue stalled projects. 8+ years across the full stack, in remote teams spanning the US, UK and Nigeria.
           </p>
 
           <p className="mt-4 max-w-xl text-base md:text-lg text-paper/60 leading-relaxed font-light">
@@ -63,13 +73,13 @@ export default function Hero() {
 
           <div className="mt-16 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-slate">
             <span>
-              focus: APIs · CRM &amp; payment integrations · AI automation
+              focus: fullstack products · APIs · integrations · AI automation
             </span>
 
             <span className="hidden sm:inline">·</span>
 
             <span>
-              stack: Laravel · Go · NestJS · React · Next.js · FastAPI
+              stack: React · Next.js · Laravel · Go · NestJS · FastAPI
             </span>
 
             <span className="hidden sm:inline">·</span>

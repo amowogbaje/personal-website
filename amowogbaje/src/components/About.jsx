@@ -39,7 +39,7 @@ export default function About() {
           <div>
             <h1 className="font-display text-4xl md:text-5xl font-medium">About</h1>
             <p className="mt-6 text-paper/75 leading-relaxed">
-              I'm Gideon, a backend-leaning full-stack developer based in Ile-Ife, Nigeria, with 8+ years across Laravel, Go and NestJS. I have worked with remote teams in the US, UK and Nigeria. I connect products to the CRMs, payment gateways and AI services they depend on, and I rescue stalled backends.
+              I'm Gideon, a fullstack developer based in Ile-Ife, Nigeria, with 8+ years building web products, APIs and integrations across PHP, Go, Node.js, Python and React. I have worked with remote teams in the US, UK and Nigeria. I build the products and connect them to the CRMs, payment gateways and AI services they depend on, and I rescue stalled projects.
             </p>
             <p className="mt-4 text-paper/75 leading-relaxed">
               I also build and run my own products (Storyverse, Qset, CraftProfessor), and I teach Mathematics, Computer Science and Data Processing in schools.

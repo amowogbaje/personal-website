@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { ArrowLeft } from 'lucide-react'
+import ImageSlot from './ImageSlot.jsx'
 import posts from '../data/writing.json'
 
 export const WRITING_DESC =
@@ -28,7 +29,9 @@ export default function Writing() {
         <p className="mt-4 text-paper/70 leading-relaxed">On AI workflows and backend engineering, drawn from production work.</p>
         <ul className="mt-10 space-y-6">
           {sorted.map((p) => (
-            <li key={p.slug} className="border border-paper/10 rounded-2xl p-6 bg-ink/60">
+            <li key={p.slug} className="border border-paper/10 rounded-2xl overflow-hidden bg-ink/60">
+              <ImageSlot src={`/images/writing/${p.slug}.webp`} alt="" className="w-full aspect-[16/7] object-cover" />
+              <div className="p-6">
               <p className="font-mono text-xs text-slate">
                 {fmt(p.date)} · {p.tags.join(' · ')}
               </p>
@@ -36,6 +39,7 @@ export default function Writing() {
                 <a href={`/writing/${p.slug}`} className="hover:text-goldsoft transition-colors">{p.title}</a>
               </h2>
               <p className="mt-2 text-paper/70 leading-relaxed">{p.description}</p>
+              </div>
             </li>
           ))}
         </ul>

@@ -87,6 +87,7 @@ export const caseStudies = [
   },
   {
     slug: 'craftprofessor-story-engine',
+    cover: '/images/projects/craftprofessor.webp',
     title: 'CraftProfessor: an AI story-to-Pinterest pipeline that grew an account to 115K+ monthly views',
     description:
       'Case study: CraftProfessor Story Engine by Gideon Amowogbaje — a Laravel 13 pipeline that turns a story into AI-generated images and video, then publishes to Pinterest. One account grew from about 100 to 115K+ monthly views in roughly 60 days.',
@@ -124,6 +125,7 @@ export const caseStudies = [
   },
   {
     slug: 'qset-exam-platform',
+    cover: '/images/projects/qset.webp',
     title: 'Qset: an exam-generation platform for teachers',
     description:
       'Case study: Qset, a solo-built exam-generation platform for teachers with a searchable question bank, an exam-set builder, Word export and AI-assisted question generation. Laravel, React, MySQL, Redis.',
@@ -159,6 +161,7 @@ export const caseStudies = [
   },
   {
     slug: 'storyverse-payments',
+    cover: '/images/projects/storyverse.webp',
     title: 'Storyverse: a serialized-fiction platform with multi-gateway payments',
     description:
       'Case study: Storyverse, a live serialized-fiction platform built by Gideon Amowogbaje with Laravel and React, supporting Stripe, Paystack and Flutterwave with per-country pricing.',

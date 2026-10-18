@@ -33,7 +33,12 @@ const services = [
   },
 ]
 
+import Reveal from './Reveal.jsx'
+
+const TOP = ['API & CRM Integrations', 'AI-Powered Automation', 'SaaS & Full-Stack Builds']
+
 export default function ServicesTeaser() {
+  const top = TOP.map((t) => services.find((s) => s.title === t)).filter(Boolean)
   return (
     <section id="services" className="px-6 md:px-10 py-28 md:py-36 bg-ink">
       <div className="max-w-6xl mx-auto">
@@ -42,15 +47,16 @@ export default function ServicesTeaser() {
             Services
           </h2>
           <p className="font-mono text-xs text-slate uppercase tracking-widebit">
-            6 ways to put me to work
+            What I do best
           </p>
         </div>
         <p className="text-paper/65 max-w-xl leading-relaxed mb-14">
           Tell me the outcome you need — not the tech stack — and I'll figure out how to get you there.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {services.map((s) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+          {top.map((s, i) => (
+            <Reveal key={s.title} delay={i * 90} className="h-full">
             <a
               key={s.title}
               href="/services"
@@ -64,12 +70,13 @@ export default function ServicesTeaser() {
               </h3>
               <p className="text-paper/60 text-sm leading-relaxed break-words">{s.summary}</p>
             </a>
+            </Reveal>
           ))}
         </div>
 
         <div className="mt-14 pt-10 border-t border-paper/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="font-mono text-xs text-slate uppercase tracking-widebit">
-            10+ services, all outcome-based
+            More services: admin panels, e-commerce, legacy rescue and more
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <a
