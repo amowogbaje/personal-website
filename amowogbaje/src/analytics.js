@@ -1,6 +1,6 @@
 // Umami Cloud analytics. Paste your Website ID (Umami → Websites → your site → Settings) below.
 // Left empty, nothing loads, so local builds and previews send no data.
-const UMAMI_WEBSITE_ID = '77d1131f-6183-4598-ab60-2423d0ba1a70'
+const UMAMI_WEBSITE_ID = ''
 
 export function loadAnalytics() {
   if (!UMAMI_WEBSITE_ID || typeof document === 'undefined') return

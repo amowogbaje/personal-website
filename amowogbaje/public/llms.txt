@@ -9,7 +9,7 @@
 - [All work](https://www.amowogbaje.com/work): every project with status and case studies.
 - [Experience](https://www.amowogbaje.com/experience): roles filtered by backend, full-stack and teaching, with a CV for each.
 - [Writing](https://www.amowogbaje.com/writing): articles on AI workflows and backend engineering, e.g. [Human-in-the-loop AI content pipelines](https://www.amowogbaje.com/writing/human-in-the-loop-ai-content-pipeline).
-- Case studies: [Africred CRM](https://www.amowogbaje.com/work/africred-crm-integrations), [Dayout Laravel-to-Go](https://www.amowogbaje.com/work/dayout-laravel-to-go-migration), [CraftProfessor](https://www.amowogbaje.com/work/craftprofessor-story-engine), [Storyverse](https://www.amowogbaje.com/work/storyverse-payments), [Qset](https://www.amowogbaje.com/work/qset-exam-platform).
+- Case studies: [Africred CRM](https://www.amowogbaje.com/work/africred-crm-integrations), [KOC project rescue](https://www.amowogbaje.com/work/koc-project-rescue), [Dayout Laravel-to-Go](https://www.amowogbaje.com/work/dayout-laravel-to-go-migration), [CraftProfessor](https://www.amowogbaje.com/work/craftprofessor-story-engine), [Storyverse](https://www.amowogbaje.com/work/storyverse-payments), [Qset](https://www.amowogbaje.com/work/qset-exam-platform).
 - [Full profile in plain text](https://www.amowogbaje.com/llms-full.txt): skills, experience, projects and contact details in one document.
 
 ## Live projects

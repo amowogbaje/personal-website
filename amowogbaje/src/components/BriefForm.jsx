@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { track } from '../analytics.js'
 
+// Brief API lives on the jobs server. Override with VITE_BRIEF_API_URL (see .env.example).
+const BRIEF_API_URL =
+  import.meta.env.VITE_BRIEF_API_URL || 'https://jobs.amowogbaje.com/api/amowogbajewebsite/send-brief'
+
 const field =
   'w-full bg-inkdeep border border-paper/15 rounded-lg px-4 py-3 text-paper placeholder:text-paper/40 focus:border-gold outline-none'
 
@@ -13,13 +17,15 @@ export default function BriefForm() {
     e.preventDefault()
     setState('sending')
     try {
-      const res = await fetch('/api/brief.php', {
+      const res = await fetch(BRIEF_API_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(v),
       })
-      setState(res.ok ? 'sent' : 'error')
-      if (res.ok) track('brief-sent')
+      const data = await res.json().catch(() => ({}))
+      const ok = res.ok && data.ok !== false
+      setState(ok ? 'sent' : 'error')
+      if (ok) track('brief-sent')
     } catch {
       setState('error')
     }
@@ -78,7 +84,8 @@ export default function BriefForm() {
       </button>
       {state === 'error' && (
         <p className="text-sm text-rust" role="alert">
-          That didn't go through. Please email me directly or book a call instead.
+          That didn't go through. Please email{' '}
+          <a href="mailto:hello@amowogbaje.com" className="underline">hello@amowogbaje.com</a> directly or book a call instead.
         </p>
       )}
     </form>

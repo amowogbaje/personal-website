@@ -2,12 +2,12 @@ import { ArrowRight } from 'lucide-react'
 import posts from '../data/writing.json'
 import Reveal from './Reveal.jsx'
 
-const employers = ['Dayout (US)', 'Africred', 'KOC', 'Televerse', 'Thinkshifts (UK)']
+const employers = ['Africred', 'KOC', 'Televerse', 'Thinkshifts (UK)']
 
 export default function HomeMore() {
   const latest = [...posts].sort((a, b) => b.date.localeCompare(a.date))[0]
   return (
-    <section className="px-6 md:px-10 py-16 md:py-20 bg-ink">
+    <section className="px-6 md:px-10 py-12 md:py-16 bg-inkdeep">
       <div className="max-w-6xl mx-auto grid gap-6 md:grid-cols-2">
         <Reveal className="h-full">
           <a href="/experience" className="group block h-full border border-paper/10 rounded-2xl p-6 bg-inkdeep/60 hover:border-gold/40 transition-colors">

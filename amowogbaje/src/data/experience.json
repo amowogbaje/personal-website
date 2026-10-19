@@ -54,7 +54,8 @@
     "Integrated transactional email and WooCommerce syncing, and built role-based permissions with Laravel Policies and Gates.",
     "Built a Notion-style, block-based blogging interface with Editor.js, improving content flexibility and the admin publishing workflow."
    ],
-   "engagement": "Contract"
+   "engagement": "Contract",
+   "caseStudy": "/work/koc-project-rescue"
   },
   {
    "id": "africred",

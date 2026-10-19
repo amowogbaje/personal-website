@@ -35,12 +35,12 @@ const services = [
 
 import Reveal from './Reveal.jsx'
 
-const TOP = ['API & CRM Integrations', 'AI-Powered Automation', 'SaaS & Full-Stack Builds']
+const TOP = ['API & CRM Integrations', 'E-Commerce & WooCommerce', 'AI-Powered Automation', 'SaaS & Full-Stack Builds']
 
 export default function ServicesTeaser() {
   const top = TOP.map((t) => services.find((s) => s.title === t)).filter(Boolean)
   return (
-    <section id="services" className="px-6 md:px-10 py-28 md:py-36 bg-ink">
+    <section id="services" className="px-6 md:px-10 py-16 md:py-24 bg-ink">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-baseline justify-between flex-wrap gap-4 mb-4">
           <h2 className="font-display text-4xl md:text-5xl font-medium text-paper">
@@ -50,11 +50,11 @@ export default function ServicesTeaser() {
             What I do best
           </p>
         </div>
-        <p className="text-paper/65 max-w-xl leading-relaxed mb-14">
+        <p className="text-paper/65 max-w-xl leading-relaxed mb-10">
           Tell me the outcome you need — not the tech stack — and I'll figure out how to get you there.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {top.map((s, i) => (
             <Reveal key={s.title} delay={i * 90} className="h-full">
             <a
@@ -76,7 +76,7 @@ export default function ServicesTeaser() {
 
         <div className="mt-14 pt-10 border-t border-paper/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="font-mono text-xs text-slate uppercase tracking-widebit">
-            More services: admin panels, e-commerce, legacy rescue and more
+            More services: admin panels, legacy rescue and more
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <a

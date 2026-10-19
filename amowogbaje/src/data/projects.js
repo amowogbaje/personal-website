@@ -89,5 +89,5 @@ export const SLUG = {
   HelpBoard: 'helpboard',
 }
 // Homepage shows only these, in this order. Everything else lives on /work.
-export const FEATURED = ['storyverse', 'craftprofessor', 'qset']
+export const FEATURED = ['storyverse', 'craftprofessor', 'jobs']
 export const allProjects = projects.map((p) => ({ ...p, slug: SLUG[p.title], image: `/images/projects/${SLUG[p.title]}.webp` }))

@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="grain px-6 md:px-10 py-28 md:py-36 bg-inkdeep"
+      className="grain px-6 md:px-10 py-20 md:py-28 bg-ink"
     >
       <div className="max-w-4xl mx-auto">
         <h2 className="font-display text-4xl md:text-5xl font-medium text-paper mb-4">
@@ -23,7 +23,7 @@ export default function Contact() {
           <div className="space-y-4">
             <a 
               href="mailto:hello@amowogbaje.com" data-umami-event="email-click"
-              className="flex items-center gap-4 p-5 rounded-2xl border border-paper/10 bg-ink/70 hover:border-gold/50 transition-all duration-300 group"
+              className="flex items-center gap-4 p-5 rounded-2xl border border-paper/10 bg-inkdeep/70 hover:border-gold/50 transition-all duration-300 group"
             >
               <div className="p-3 rounded-xl bg-paper/5 text-gold group-hover:bg-gold/10 transition-colors">
                 <Mail className="w-6 h-6" />
@@ -36,7 +36,7 @@ export default function Contact() {
 
             <a 
               href="tel:+2347026305945"
-              className="flex items-center gap-4 p-5 rounded-2xl border border-paper/10 bg-ink/70 hover:border-gold/50 transition-all duration-300 group"
+              className="flex items-center gap-4 p-5 rounded-2xl border border-paper/10 bg-inkdeep/70 hover:border-gold/50 transition-all duration-300 group"
             >
               <div className="p-3 rounded-xl bg-paper/5 text-gold group-hover:bg-gold/10 transition-colors">
                 <Phone className="w-6 h-6" />
@@ -52,7 +52,7 @@ export default function Contact() {
               target="_blank"
               rel="noreferrer"
               aria-label="Chat on WhatsApp"
-              className="flex items-center gap-4 p-5 rounded-2xl border border-paper/10 bg-ink/70 hover:border-gold/50 transition-all duration-300 group"
+              className="flex items-center gap-4 p-5 rounded-2xl border border-paper/10 bg-inkdeep/70 hover:border-gold/50 transition-all duration-300 group"
             >
               <div className="p-3 rounded-xl bg-paper/5 text-gold group-hover:bg-gold/10 transition-colors">
                 <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -67,7 +67,7 @@ export default function Contact() {
           </div>
 
           {/* Booking & Social Network Links */}
-          <div className="flex flex-col justify-between p-6 rounded-2xl border border-paper/10 bg-ink/70">
+          <div className="flex flex-col justify-between p-6 rounded-2xl border border-paper/10 bg-inkdeep/70">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-paper/40 mb-3">Schedule a Meeting</p>
               <a 

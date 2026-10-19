@@ -84,7 +84,7 @@ export function WorkAll() {
 export default function Work() {
   const featured = FEATURED.map((s) => allProjects.find((p) => p.slug === s))
   return (
-    <section id="work" className="px-6 md:px-10 py-24 md:py-32 bg-inkdeep">
+    <section id="work" className="px-6 md:px-10 py-16 md:py-24 bg-inkdeep">
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="flex items-baseline justify-between flex-wrap gap-4 mb-12">

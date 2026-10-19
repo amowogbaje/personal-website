@@ -3,6 +3,39 @@
 // real numbers. Pages stay honest without them. Role/dates/bullets mirror src/data/experience.json.
 export const caseStudies = [
   {
+    slug: 'koc-project-rescue',
+    title: 'Rescuing a stalled project: from Figma design to production-ready product',
+    description:
+      'Case study: Gideon Amowogbaje at KOC — took a stalled project from a Figma design to a working, production-ready product on a tight deadline, with WooCommerce syncing, transactional email and role-based permissions.',
+    kind: 'Contract work · KOC',
+    role: 'Full Stack Developer (contract)',
+    dates: 'Sep 2025 – May 2026',
+    stack: ['Laravel', 'WooCommerce', 'Editor.js', 'Figma-to-code'],
+    sections: [
+      {
+        h: 'Context',
+        p: ['The project had stalled. I was brought in to get it finished, working from a Figma design.'],
+      },
+      {
+        h: 'What I built',
+        ul: [
+          'Turned the Figma design into a working, production-ready product from scratch, under a tight deadline, then iterated to final delivery.',
+          'WooCommerce syncing and transactional email.',
+          'Role-based permissions with Laravel Policies and Gates.',
+          'A Notion-style, block-based blogging interface with Editor.js, improving content flexibility and the admin publishing workflow.',
+        ],
+      },
+      {
+        h: 'Result',
+        p: ['A stalled project became a working, production-ready product, delivered to a tight deadline and refined through to final delivery.'],
+      },
+      {
+        h: 'If you have a similar problem',
+        p: ['A half-finished or stuck build, a design that never made it to production, or an inherited codebase that needs finishing: I take those on and ship them.'],
+      },
+    ],
+  },
+  {
     slug: 'africred-crm-integrations',
     title: 'Feeding Facebook leads into a live CRM — without rewriting it',
     description:

@@ -4,3 +4,10 @@
     Require all denied
   </Files>
 </IfModule>
+
+# Keep library internals and logs out of direct web access
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(log|example\.php)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>

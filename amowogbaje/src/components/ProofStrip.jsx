@@ -4,7 +4,7 @@ import Reveal from './Reveal.jsx'
 const proofs = [
   { n: 115, suffix: 'K+', text: 'monthly Pinterest views on one account, from an AI content pipeline I built', href: '/work/craftprofessor-story-engine', tag: 'CraftProfessor' },
   { n: 3, suffix: ' gateways', text: 'Stripe, Paystack and Flutterwave in one product, with per-country pricing', href: '/work/storyverse-payments', tag: 'Storyverse' },
-  { stat: 'Laravel → Go', text: 'core backend services rewritten in a live US team', href: '/work/dayout-laravel-to-go-migration', tag: 'Dayout' },
+  { stat: 'Rescued', text: 'a stalled project taken from Figma to a production-ready product on a tight deadline', href: '/work/koc-project-rescue', tag: 'KOC' },
   { stat: 'Live CRM', text: 'Facebook leads flowing into production, with tokens refreshed automatically', href: '/work/africred-crm-integrations', tag: 'Africred' },
 ]
 
@@ -37,7 +37,7 @@ function CountUp({ to, suffix }) {
 
 export default function ProofStrip() {
   return (
-    <section aria-label="Selected results" className="px-6 md:px-10 pb-16 md:pb-24">
+    <section aria-label="Selected results" className="px-6 md:px-10 py-12 md:py-14 bg-inkdeep border-y border-paper/5">
       <div className="max-w-6xl mx-auto grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {proofs.map((p, i) => (
           <Reveal key={p.tag} delay={i * 80} className="h-full">

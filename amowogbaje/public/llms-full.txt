@@ -119,6 +119,7 @@ Last updated: October 2026
 
 ## Case studies and pages
 - Africred CRM integrations (Facebook Instant Forms webhooks, automated token refresh, additive changes on a live CRM): https://www.amowogbaje.com/work/africred-crm-integrations
+- KOC: rescuing a stalled project, from Figma design to production-ready product: https://www.amowogbaje.com/work/koc-project-rescue
 - Dayout: Laravel to Go migration and the Eloquent decision: https://www.amowogbaje.com/work/dayout-laravel-to-go-migration
 - CraftProfessor Story Engine (AI story-to-Pinterest pipeline; 115K+ monthly views on one account, self-reported): https://www.amowogbaje.com/work/craftprofessor-story-engine
 - Storyverse (serialized-fiction platform, Stripe/Paystack/Flutterwave with per-country pricing): https://www.amowogbaje.com/work/storyverse-payments
