@@ -3,11 +3,11 @@
 // real numbers. Pages stay honest without them. Role/dates/bullets mirror src/data/experience.json.
 export const caseStudies = [
   {
-    slug: 'koc-project-rescue',
+    slug: 'stalled-project-rescue',
     title: 'Rescuing a stalled project: from Figma design to production-ready product',
     description:
-      'Case study: Gideon Amowogbaje at KOC — took a stalled project from a Figma design to a working, production-ready product on a tight deadline, with WooCommerce syncing, transactional email and role-based permissions.',
-    kind: 'Contract work · KOC',
+      'Case study: Gideon Amowogbaje for an undisclosed client — took a stalled project from a Figma design to a working, production-ready product on a tight deadline, with WooCommerce syncing, transactional email and role-based permissions.',
+    kind: 'Contract work · Undisclosed client',
     role: 'Full Stack Developer (contract)',
     dates: 'Sep 2025 – May 2026',
     stack: ['Laravel', 'WooCommerce', 'Editor.js', 'Figma-to-code'],

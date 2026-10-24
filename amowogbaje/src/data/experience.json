@@ -40,9 +40,9 @@
    "engagement": "Part-time"
   },
   {
-   "id": "koc",
+   "id": "undisclosed-client",
    "kind": "software",
-   "company": "KOC",
+   "company": "Undisclosed client",
    "place": "Nigeria",
    "title": "Full Stack Developer",
    "dates": "Sep 2025 – May 2026",
@@ -55,7 +55,7 @@
     "Built a Notion-style, block-based blogging interface with Editor.js, improving content flexibility and the admin publishing workflow."
    ],
    "engagement": "Contract",
-   "caseStudy": "/work/koc-project-rescue"
+   "caseStudy": "/work/stalled-project-rescue"
   },
   {
    "id": "africred",

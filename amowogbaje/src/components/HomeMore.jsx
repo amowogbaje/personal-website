@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import posts from '../data/writing.json'
 import Reveal from './Reveal.jsx'
 
-const employers = ['Africred', 'KOC', 'Televerse', 'Thinkshifts (UK)']
+const employers = ['Africred', 'Undisclosed client', 'Televerse', 'Thinkshifts (UK)']
 
 export default function HomeMore() {
   const latest = [...posts].sort((a, b) => b.date.localeCompare(a.date))[0]

@@ -28,7 +28,7 @@ const featured = [
     icon: ShoppingCart,
     title: 'E-Commerce & WooCommerce',
     summary: 'WooCommerce sync, custom storefronts, and Laravel-powered e-commerce backends that handle real transactions reliably.',
-    proof: 'Integrated WooCommerce syncing into a live production app at KOC.',
+    proof: 'Integrated WooCommerce syncing into a live production app for an undisclosed client.',
   },
   {
     icon: Layers,
@@ -40,7 +40,7 @@ const featured = [
     icon: Wrench,
     title: 'Legacy Rescue & Troubleshooting',
     summary: 'Inherited a stalled, broken, or half-finished app? I step in, diagnose fast, and get it shipped.',
-    proof: 'Took over a stalled project at KOC and shipped a production-ready product from a bare Figma file, under deadline.',
+    proof: 'Took over a stalled project for an undisclosed client and shipped a production-ready product from a bare Figma file, under deadline.',
   },
 ]
 

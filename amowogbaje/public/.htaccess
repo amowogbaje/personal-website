@@ -11,6 +11,9 @@
 
   RewriteRule ^index\.html$ - [L]
 
+  # Old case-study URL -> renamed slug
+  RewriteRule ^work/koc-project-rescue/?$ /work/stalled-project-rescue [R=301,L]
+
   # Pre-rendered /services page (see scripts/prerender.mjs) so crawlers get real content
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(services|about|experience|writing|work|work/[a-z0-9-]+|writing/[a-z0-9-]+)/?$ /$1.html [L]

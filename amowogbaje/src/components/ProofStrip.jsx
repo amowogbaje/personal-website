@@ -4,7 +4,7 @@ import Reveal from './Reveal.jsx'
 const proofs = [
   { n: 115, suffix: 'K+', text: 'monthly Pinterest views on one account, from an AI content pipeline I built', href: '/work/craftprofessor-story-engine', tag: 'CraftProfessor' },
   { n: 3, suffix: ' gateways', text: 'Stripe, Paystack and Flutterwave in one product, with per-country pricing', href: '/work/storyverse-payments', tag: 'Storyverse' },
-  { stat: 'Rescued', text: 'a stalled project taken from Figma to a production-ready product on a tight deadline', href: '/work/koc-project-rescue', tag: 'KOC' },
+  { stat: 'Rescued', text: 'a stalled project taken from Figma to a production-ready product on a tight deadline', href: '/work/stalled-project-rescue', tag: 'Undisclosed client' },
   { stat: 'Live CRM', text: 'Facebook leads flowing into production, with tokens refreshed automatically', href: '/work/africred-crm-integrations', tag: 'Africred' },
 ]
 
