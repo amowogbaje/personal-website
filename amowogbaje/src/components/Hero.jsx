@@ -93,13 +93,13 @@ export default function Hero() {
 
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-paper/15 bg-inkdeep">
             <picture>
-              <source srcSet="/profile.webp" type="image/webp" />
+              <source srcSet="/profile.webp?v=2" type="image/webp" />
 
               <img
-                src="/profile-fallback.jpg"
+                src="/profile-fallback.jpg?v=2"
                 alt="Gideon Amowogbaje"
-                width="640"
-                height="640"
+                width="800"
+                height="800"
                 fetchpriority="high"
                 decoding="async"
                 className="w-full h-full object-cover"

@@ -61,8 +61,8 @@ export default function About() {
           </div>
           <div className="aspect-square rounded-3xl overflow-hidden border border-paper/15 bg-inkdeep">
             <picture>
-              <source srcSet="/profile.webp" type="image/webp" />
-              <img src="/profile-fallback.jpg" alt="Gideon Amowogbaje" width="480" height="480" decoding="async" className="w-full h-full object-cover" />
+              <source srcSet="/profile.webp?v=2" type="image/webp" />
+              <img src="/profile-fallback.jpg?v=2" alt="Gideon Amowogbaje" width="480" height="480" decoding="async" className="w-full h-full object-cover" />
             </picture>
           </div>
         </section>
