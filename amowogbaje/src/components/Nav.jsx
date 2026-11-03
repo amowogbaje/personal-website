@@ -17,11 +17,21 @@ export default function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink/70 border-b border-paper/10">
       <nav className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <a
-          href="#top"
+          href="/"
           onClick={close}
-          className="font-mono text-sm text-goldsoft tracking-tight hover:text-gold transition-colors"
+          aria-label="Gideon Amowogbaje — home"
+          className="flex items-center gap-2.5 group"
         >
-          ~/gideon
+          <img
+            src="/logo-mark-gold.svg"
+            alt=""
+            width="30"
+            height="30"
+            className="h-[30px] w-[30px] object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+          />
+          <span className="font-mono text-sm text-goldsoft tracking-tight group-hover:text-gold transition-colors">
+            amowogbaje
+          </span>
         </a>
         <ul className="hidden sm:flex items-center gap-8 font-mono text-xs uppercase tracking-widebit text-slate">
           {links.map((l) => (

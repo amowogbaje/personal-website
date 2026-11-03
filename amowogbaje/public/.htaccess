@@ -50,3 +50,6 @@
 </IfModule>
 
 AddType "text/plain; charset=UTF-8" .txt
+
+# Web app manifest MIME type
+AddType application/manifest+json .webmanifest
