@@ -13,3 +13,5 @@ $('#cb').hidden=false;add('b','Hi, I’m the HAV assistant. Ask me about our ser
 ['What services do you offer?','I want to discuss a project','Do you build homes?'].forEach(s=>{const b=document.createElement('button');b.type='button';b.textContent=s;b.onclick=()=>ask(s);$('#sg').append(b)});
 $('#ct').onclick=()=>{const o=$('#pn').hidden;$('#pn').hidden=!o;$('#ct').setAttribute('aria-expanded',o);if(o)$('#ci').focus()};
 $('#cf').onsubmit=e=>{e.preventDefault();const v=$('#ci').value;$('#ci').value='';ask(v)};
+
+(function(){var v=document.querySelector(".hero .im video");if(!v)return;v.muted=true;if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();return}var p=v.play();if(p&&p.catch)p.catch(function(){})})();
