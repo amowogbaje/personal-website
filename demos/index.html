@@ -122,8 +122,8 @@ a.thumb:hover img{transform:scale(1.04)}
 .hero .price{margin:16px 0 0;font-weight:600;color:var(--ink);font-size:1rem}
 .me{padding:clamp(56px,8vw,110px) 0 0}
 .me .wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(28px,5vw,80px);align-items:center}
-.me .ph{position:relative;aspect-ratio:4/5;border-radius:22px;background:var(--ink);color:var(--white);display:grid;place-items:center;font:400 5rem var(--serif);overflow:hidden}
-.me .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.me .ph{position:relative;aspect-ratio:1/1;border-radius:22px;background:var(--ink);color:var(--white);display:grid;place-items:center;font:400 5rem var(--serif);overflow:hidden}
+.me .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .me p{color:var(--muted);max-width:34rem}
 .me .lnk{font-weight:600;color:var(--cobalt);text-decoration:none;border-bottom:1.5px solid var(--cobalt)}
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:880px;margin:0 auto 34px;text-align:left}
@@ -145,7 +145,7 @@ footer a:hover{color:var(--ink)}
   .hero .wrap,.craft .wrap{grid-template-columns:1fr}
   .collage .col:last-child{margin-top:0}
 }
-@media (max-width:1000px){.me .wrap,.plans{grid-template-columns:1fr}.me .ph{max-width:320px}}
+@media (max-width:1000px){.me .wrap,.plans{grid-template-columns:1fr}.me .ph{max-width:420px}}
 @media (max-width:640px){
   .grid{column-count:1}
   nav a:not(.btn){display:none}
@@ -183,7 +183,7 @@ footer a:hover{color:var(--ink)}
           <a class="btn" href="#work">See the demos</a>
           <a class="btn ghost" href="#contact">See pricing</a>
         </div>
-        <div class="by"><span class="av">GA<img src="images/gideon.jpg" alt="Gideon Amowogbaje" onerror="this.remove()"></span><p><b>Gideon Amowogbaje</b>, fullstack developer. Recent client: <a href="havprojects/1/index.html">Projects by HAV</a>.</p></div>
+        <div class="by"><span class="av">GA<img src="images/gideon-avatar.jpg" alt="Gideon Amowogbaje" onerror="this.remove()"></span><p><b>Gideon Amowogbaje</b>, fullstack developer. Recent client: <a href="havprojects/1/index.html">Projects by HAV</a>.</p></div>
         <p class="price">Sites from ₦180,000. Booking systems from ₦350,000.</p>
       </div>
       <div class="collage" aria-hidden="true">
