@@ -17,7 +17,7 @@ if (f) {
   if (!f.item.value && q.get('area')) f.item.value = q.get('area');
   f.addEventListener('submit', e => {
     e.preventDefault(); const d = new FormData(f);
-    const m = `Hello Regent, I’d like to book.\nName: ${d.get('name')}\nService: ${d.get('type')}\nFrom: ${d.get('from')}\nTo: ${d.get('to')}\nCar or apartment: ${d.get('item') || '-'}\nDriver: ${d.get('driver')}\nNotes: ${d.get('notes') || '-'}`;
+    const m = `Hello Tunde, I’d like to book.\nName: ${d.get('name')}\nService: ${d.get('type')}\nFrom: ${d.get('from')}\nTo: ${d.get('to')}\nCar or apartment: ${d.get('item') || '-'}\nDriver: ${d.get('driver')}\nNotes: ${d.get('notes') || '-'}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`, '_blank', 'noopener');
   });
 }

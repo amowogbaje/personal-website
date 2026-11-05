@@ -5,7 +5,7 @@ if (f) {
   if (p) f.pkg.value = p;
   f.addEventListener('submit', e => {
     e.preventDefault(); const d = new FormData(f);
-    const m = `Hello Aurelia, I’d like to plan an event.\nName: ${d.get('name')}\nEvent: ${d.get('type')}\nDate: ${d.get('date')}\nGuests: ${d.get('guests')}\nVenue: ${d.get('venue') || '-'}\nPackage: ${d.get('pkg')}\nNotes: ${d.get('notes') || '-'}`;
+    const m = `Hello Temi, I’d like to plan an event.\nName: ${d.get('name')}\nEvent: ${d.get('type')}\nDate: ${d.get('date')}\nGuests: ${d.get('guests')}\nVenue: ${d.get('venue') || '-'}\nPackage: ${d.get('pkg')}\nNotes: ${d.get('notes') || '-'}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`, '_blank', 'noopener');
   });
 }

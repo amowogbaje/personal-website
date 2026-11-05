@@ -6,7 +6,7 @@ if (f) {
   f.addEventListener('submit', e => {
     e.preventDefault();
     const d = new FormData(f);
-    const msg = `Hello Halo Table, I’d like a catering quote.\nName: ${d.get('name')}\nCompany: ${d.get('company') || '-'}\nDate: ${d.get('date')}\nGuests: ${d.get('guests')}\nPackage: ${d.get('pkg')}\nNotes: ${d.get('notes') || '-'}`;
+    const msg = `Hello Labake, I’d like a catering quote.\nName: ${d.get('name')}\nCompany: ${d.get('company') || '-'}\nDate: ${d.get('date')}\nGuests: ${d.get('guests')}\nPackage: ${d.get('pkg')}\nNotes: ${d.get('notes') || '-'}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
   });
 }

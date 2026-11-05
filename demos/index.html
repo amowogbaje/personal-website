@@ -115,6 +115,21 @@ a.thumb:hover img{transform:scale(1.04)}
 .craft li p{margin:0;color:var(--muted)}
 
 /* contact */
+.by{display:flex;align-items:center;gap:14px;margin-top:34px}
+.av{position:relative;flex:none;width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font:600 .95rem var(--sans);overflow:hidden}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .by p{margin:0;font-size:.97rem;color:var(--ink);max-width:26rem}
+.hero .price{margin:16px 0 0;font-weight:600;color:var(--ink);font-size:1rem}
+.me{padding:clamp(56px,8vw,110px) 0 0}
+.me .wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(28px,5vw,80px);align-items:center}
+.me .ph{position:relative;aspect-ratio:4/5;border-radius:22px;background:var(--ink);color:var(--white);display:grid;place-items:center;font:400 5rem var(--serif);overflow:hidden}
+.me .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.me p{color:var(--muted);max-width:34rem}
+.me .lnk{font-weight:600;color:var(--cobalt);text-decoration:none;border-bottom:1.5px solid var(--cobalt)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:880px;margin:0 auto 34px;text-align:left}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:30px}
+.plan h3{font:400 1.7rem var(--serif);margin-bottom:4px}.plan .amt{font:400 2.6rem/1.1 var(--serif);color:var(--cobalt);margin:0 0 12px}.plan .amt small{font:500 .95rem var(--sans);color:var(--muted)}
+.plan ul{margin:0;padding:0;list-style:none}.plan li{padding:9px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.97rem}
 .contact{padding:clamp(72px,10vw,140px) 0;text-align:center}
 .contact h2{font-size:clamp(2.8rem,7vw,6rem);line-height:.96;max-width:14ch;margin:0 auto 30px}
 .contact p{color:var(--muted);max-width:30rem;margin:0 auto 32px}
@@ -130,6 +145,7 @@ footer a:hover{color:var(--ink)}
   .hero .wrap,.craft .wrap{grid-template-columns:1fr}
   .collage .col:last-child{margin-top:0}
 }
+@media (max-width:1000px){.me .wrap,.plans{grid-template-columns:1fr}.me .ph{max-width:320px}}
 @media (max-width:640px){
   .grid{column-count:1}
   nav a:not(.btn){display:none}
@@ -151,6 +167,7 @@ footer a:hover{color:var(--ink)}
     <nav aria-label="Main">
       <a href="#work">Demos</a>
       <a href="#craft">What I build</a>
+      <a href="#me">About me</a>
       <a class="btn" href="#contact">Start a project</a>
     </nav>
   </div>
@@ -164,8 +181,10 @@ footer a:hover{color:var(--ink)}
         <p>I’m Gideon, a fullstack developer. I design and build business websites, quote and booking flows, and AI chat assistants. Every demo here is a working site you can click through.</p>
         <div class="actions">
           <a class="btn" href="#work">See the demos</a>
-          <a class="btn ghost" href="#contact">Get one for your business</a>
+          <a class="btn ghost" href="#contact">See pricing</a>
         </div>
+        <div class="by"><span class="av">GA<img src="images/gideon.jpg" alt="Gideon Amowogbaje" onerror="this.remove()"></span><p><b>Gideon Amowogbaje</b>, fullstack developer. Recent client: <a href="havprojects/1/index.html">Projects by HAV</a>.</p></div>
+        <p class="price">Sites from ₦180,000. Booking systems from ₦350,000.</p>
       </div>
       <div class="collage" aria-hidden="true">
         <div class="col">
@@ -225,11 +244,26 @@ footer a:hover{color:var(--ink)}
     </div>
   </section>
 
+  <section class="me" id="me">
+    <div class="wrap">
+      <div class="ph">GA<img src="images/gideon.jpg" alt="Gideon Amowogbaje" onerror="this.remove()"></div>
+      <div>
+        <h2>Hi, I’m Gideon.</h2>
+        <p style="margin:16px 0 14px">I’m a fullstack developer. I build business websites, booking flows, APIs and AI integrations for Nigerian businesses. <span id="exp"></span></p>
+        <p style="margin:0 0 20px">Recent client work: <a class="lnk" href="havprojects/1/index.html">Projects by HAV</a>, a construction company’s multi-page website.</p>
+        <a class="lnk" href="https://wa.me/2347026305945" target="_blank" rel="noopener">Message me on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="wrap">
-      <h2>Want one for your business?</h2>
-      <p>Tell me what you do and who you sell to. I’ll send back a short example made for your business.</p>
-      <a class="btn big" href="https://wa.me/2347026305945" target="_blank" rel="noopener">Message me on WhatsApp</a>
+      <h2>Clear pricing, no surprises.</h2>
+      <div class="plans">
+        <div class="plan"><h3>Business website</h3><p class="amt">from ₦180,000</p><ul><li>Up to 5 pages, built for phones</li><li>WhatsApp enquiry and quote form</li><li>Your photos and copy, set up properly</li><li>Live on your own domain</li></ul></div>
+        <div class="plan"><h3>Booking system</h3><p class="amt">from ₦350,000</p><ul><li>Everything in a business website</li><li>Online bookings with a calendar</li><li>Admin page to manage requests</li><li>Email or WhatsApp alerts</li></ul></div>
+      </div>
+      <a class="btn big" href="https://wa.me/2347026305945" target="_blank" rel="noopener">Tell me about your business</a>
     </div>
   </section>
 </main>
@@ -246,18 +280,22 @@ footer a:hover{color:var(--ink)}
 const demos = [
   { status:"live", title:"Nicole Marie Salon", kw:"salon hair beauty barber stylist booking", tag:"Hair salon, one page with booking", ratio:"3/4",
     img:"nicole/assets/img/caramel-balayage-waves.jpg", links:[["View demo","nicole/index.html"]] },
-  { status:"live", title:"Halo Table Catering", img:"catering/images/hero-boardroom-lunch.jpg", kw:"catering food menu chef restaurant bakery smallchops quote", tag:"Corporate catering, 5 pages with quote form", ratio:"1/1", tint:"var(--t1)", links:[["View demo","catering/index.html"]] },
+  { status:"live", title:"Labake Catering", img:"catering/images/hero-boardroom-lunch.jpg", kw:"catering food menu chef restaurant bakery smallchops quote", tag:"Corporate catering, 5 pages with quote form", ratio:"1/1", tint:"var(--t1)", links:[["View demo","catering/index.html"]] },
   { status:"live", title:"Projects by HAV", kw:"construction building engineering contractor roads homes", tag:"Construction and engineering, multi-page", ratio:"4/3",
     img:"havprojects/1/assets/images/project-glass-courtyard-house.jpg",
     links:[["Version 1","havprojects/1/index.html"],["Version 2","havprojects/2/index.html"]] },
-  { status:"live", title:"Aurelia Events and Decor", img:"events/images/wedding-aisle.jpg", kw:"events decor wedding planner party portfolio birthday corporate gala", tag:"Weddings and events, 5 pages with enquiry form", ratio:"4/5", tint:"var(--t2)", links:[["View demo","events/index.html"]] },
-  { status:"live", title:"Northlight Studio", img:"photo/images/wedding-couple.jpg", kw:"photo video photography film studio gallery wedding videographer", tag:"Photo and video, 5 pages with lightbox", ratio:"4/3", tint:"var(--t3)", links:[["View demo","photo/index.html"]] },
-  { status:"live", title:"Regent Drive and Stay", img:"cars/images/hero-car.jpg", kw:"car hire chauffeur shortlet apartment rental fleet airport driver", tag:"Car hire and shortlets, 5 pages with booking bar", ratio:"1/1", tint:"var(--t4)", links:[["View demo","cars/index.html"]] },
-  { status:"live", title:"Halcyon Gardens and Lounge", img:"venues/images/hero-venue.jpg", kw:"venue lounge hall event center garden wedding terrace capacity", tag:"Event venue, 5 pages with space finder", ratio:"3/4", tint:"var(--t5)", links:[["View demo","venues/index.html"]] },
-  { status:"live", title:"Bow &amp; Co. Corporate Gifts", img:"gifts/images/hero-hamper.jpg", kw:"gifts hampers corporate gifting branding bulk christmas", tag:"Corporate gifts, 5 pages with hamper builder", ratio:"4/3", tint:"var(--t6)", links:[["View demo","gifts/index.html"]] },
-  { status:"live", title:"Kestrel Business Solutions", img:"business/images/hero-office.jpg", kw:"business consulting services corporate company startup professional new business advisory procurement", tag:"Corporate website for new businesses, 5 pages", ratio:"4/5", tint:"#DCE3F8", links:[["View demo","business/index.html"]] }
+  { status:"live", title:"Temi Events and Decor", img:"events/images/wedding-aisle.jpg", kw:"events decor wedding planner party portfolio birthday corporate gala", tag:"Weddings and events, 5 pages with enquiry form", ratio:"4/5", tint:"var(--t2)", links:[["View demo","events/index.html"]] },
+  { status:"live", title:"Ayo Studios", img:"photo/images/wedding-couple.jpg", kw:"photo video photography film studio gallery wedding videographer", tag:"Photo and video, 5 pages with lightbox", ratio:"4/3", tint:"var(--t3)", links:[["View demo","photo/index.html"]] },
+  { status:"live", title:"Tunde Drive and Stay", img:"cars/images/hero-car.jpg", kw:"car hire chauffeur shortlet apartment rental fleet airport driver", tag:"Car hire and shortlets, 5 pages with booking bar", ratio:"1/1", tint:"var(--t4)", links:[["View demo","cars/index.html"]] },
+  { status:"live", title:"Ireti Gardens and Lounge", img:"venues/images/hero-venue.jpg", kw:"venue lounge hall event center garden wedding terrace capacity", tag:"Event venue, 5 pages with space finder", ratio:"3/4", tint:"var(--t5)", links:[["View demo","venues/index.html"]] },
+  { status:"live", title:"Tolu Corporate Gifts", img:"gifts/images/hero-hamper.jpg", kw:"gifts hampers corporate gifting branding bulk christmas", tag:"Corporate gifts, 5 pages with hamper builder", ratio:"4/3", tint:"var(--t6)", links:[["View demo","gifts/index.html"]] },
+  { status:"live", title:"Adeyemi Business Solutions", img:"business/images/hero-office.jpg", kw:"business consulting services corporate company startup professional new business advisory procurement", tag:"Corporate website for new businesses, 5 pages", ratio:"4/5", tint:"#DCE3F8", links:[["View demo","business/index.html"]] },
+  { status:"live", title:"Hillcrest International School", img:"school/images/hero-campus.jpg", kw:"school nursery primary secondary academy admissions education children teacher parents portal fees calendar application", tag:"School website, 10 pages with online application", ratio:"4/3", tint:"#FBE3E6", links:[["View demo","school/index.html"]] }
 ];
 
+/* Fill in to show on the page, for example "6 years". Leave empty to hide the line. */
+const EXPERIENCE = "";
+if (EXPERIENCE) document.getElementById('exp').textContent = `I’ve been building for the web for ${EXPERIENCE}.`;
 const grid = document.getElementById('grid');
 function card(d){
   if(d.status === 'live'){

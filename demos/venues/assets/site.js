@@ -5,7 +5,7 @@ if (f) {
   ['date', 'guests', 'space'].forEach(k => { if (q.get(k)) f[k].value = q.get(k); });
   f.addEventListener('submit', e => {
     e.preventDefault(); const d = new FormData(f);
-    const m = `Hello Halcyon, I’d like to enquire about a venue.\nName: ${d.get('name')}\nEvent: ${d.get('type')}\nDate: ${d.get('date')}\nGuests: ${d.get('guests')}\nSpace: ${d.get('space')}\nNotes: ${d.get('notes') || '-'}`;
+    const m = `Hello Ireti, I’d like to enquire about a venue.\nName: ${d.get('name')}\nEvent: ${d.get('type')}\nDate: ${d.get('date')}\nGuests: ${d.get('guests')}\nSpace: ${d.get('space')}\nNotes: ${d.get('notes') || '-'}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`, '_blank', 'noopener');
   });
 }

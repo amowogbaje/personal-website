@@ -7,7 +7,7 @@ if (f) {
   [['hamper', 'hamper'], ['qty', 'qty'], ['budget', 'budget'], ['date', 'date']].forEach(([k, n]) => { if (q.get(k)) f[n].value = q.get(k); });
   f.addEventListener('submit', e => {
     e.preventDefault(); const d = new FormData(f);
-    const m = `Hello Bow & Co., I’d like a corporate gifting quote.\nName: ${d.get('name')}\nCompany: ${d.get('company')}\nQuantity: ${d.get('qty')}\nBudget per gift: ${d.get('budget') || '-'}\nNeeded by: ${d.get('date')}\nHamper: ${d.get('hamper') || '-'}\nBranding: ${d.get('brand')}\nNotes: ${d.get('notes') || '-'}`;
+    const m = `Hello Tolu, I’d like a corporate gifting quote.\nName: ${d.get('name')}\nCompany: ${d.get('company')}\nQuantity: ${d.get('qty')}\nBudget per gift: ${d.get('budget') || '-'}\nNeeded by: ${d.get('date')}\nHamper: ${d.get('hamper') || '-'}\nBranding: ${d.get('brand')}\nNotes: ${d.get('notes') || '-'}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`, '_blank', 'noopener');
   });
 }

@@ -2,7 +2,7 @@ const WHATSAPP = '2347026305945'; /* swap for the client's number */
 const f = document.getElementById('qf');
 if (f) f.addEventListener('submit', e => {
   e.preventDefault(); const d = new FormData(f);
-  const m = `Hello Northlight, I’d like to book a shoot.\nName: ${d.get('name')}\nShoot: ${d.get('type')}\nDate: ${d.get('date')}\nLocation: ${d.get('loc') || '-'}\nBudget: ${d.get('budget')}\nNotes: ${d.get('notes') || '-'}`;
+  const m = `Hello Ayo, I’d like to book a shoot.\nName: ${d.get('name')}\nShoot: ${d.get('type')}\nDate: ${d.get('date')}\nLocation: ${d.get('loc') || '-'}\nBudget: ${d.get('budget')}\nNotes: ${d.get('notes') || '-'}`;
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`, '_blank', 'noopener');
 });
 const chips = document.querySelectorAll('.chip');
