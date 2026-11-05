@@ -62,7 +62,7 @@ h1 em{font-style:italic}
 .shot img{width:100%;height:100%;object-fit:cover}
 .s-a{aspect-ratio:3/4.1}
 .s-b{aspect-ratio:4/3}
-.s-c{aspect-ratio:1/1;background:var(--t1);display:flex;align-items:flex-end;padding:20px;font:400 1.7rem/1.05 var(--serif)}
+.s-c{position:relative;aspect-ratio:1/1;background:var(--t1);display:flex;align-items:flex-end;padding:20px;font:400 1.7rem/1.05 var(--serif)}
 @keyframes rise{to{opacity:1;transform:none}}
 
 /* work */
@@ -83,7 +83,8 @@ a.thumb:hover img{transform:scale(1.04)}
 .tile{display:flex;flex-direction:column;justify-content:space-between;padding:26px}
 .tile b{font:400 2.1rem/1.02 var(--serif);letter-spacing:-.01em;max-width:11ch}
 .tile span{font-size:.92rem;max-width:20ch;opacity:.8}
-.badge{position:absolute;top:16px;left:16px;font:600 .8rem var(--sans);padding:6px 13px;border-radius:999px;background:var(--white);color:var(--ink)}
+.tile img{position:absolute;inset:0;z-index:1}
+.badge{z-index:2;position:absolute;top:16px;left:16px;font:600 .8rem var(--sans);padding:6px 13px;border-radius:999px;background:var(--white);color:var(--ink)}
 .meta{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 4px 0}
 .meta h3{font:600 1.05rem/1.3 var(--sans);margin:0}
 .meta p{margin:2px 0 0;color:var(--muted);font-size:.92rem}
@@ -169,11 +170,11 @@ footer a:hover{color:var(--ink)}
       <div class="collage" aria-hidden="true">
         <div class="col">
           <div class="shot s-a"><img src="nicole/assets/img/caramel-balayage-waves.jpg" alt=""></div>
-          <div class="shot s-c" style="background:var(--t3)">Corporate gifts, now live</div>
+          <div class="shot s-c" style="background:var(--t6)">Corporate gifts, now live<img src="gifts/images/hero-hamper.jpg" alt="" onerror="this.remove()" style="position:absolute;inset:0"></div>
         </div>
         <div class="col">
           <div class="shot s-b"><img src="havprojects/1/assets/images/project-glass-courtyard-house.jpg" alt=""></div>
-          <div class="shot s-c">Catering, now live</div>
+          <div class="shot s-c">Catering, now live<img src="catering/images/hero-boardroom-lunch.jpg" alt="" onerror="this.remove()" style="position:absolute;inset:0"></div>
         </div>
       </div>
     </div>
@@ -245,24 +246,26 @@ footer a:hover{color:var(--ink)}
 const demos = [
   { status:"live", title:"Nicole Marie Salon", kw:"salon hair beauty barber stylist booking", tag:"Hair salon, one page with booking", ratio:"3/4",
     img:"nicole/assets/img/caramel-balayage-waves.jpg", links:[["View demo","nicole/index.html"]] },
-  { status:"live", title:"Halo Table Catering", kw:"catering food menu chef restaurant bakery smallchops quote", tag:"Corporate catering, 5 pages with quote form", ratio:"1/1", tint:"var(--t1)", links:[["View demo","catering/index.html"]] },
+  { status:"live", title:"Halo Table Catering", img:"catering/images/hero-boardroom-lunch.jpg", kw:"catering food menu chef restaurant bakery smallchops quote", tag:"Corporate catering, 5 pages with quote form", ratio:"1/1", tint:"var(--t1)", links:[["View demo","catering/index.html"]] },
   { status:"live", title:"Projects by HAV", kw:"construction building engineering contractor roads homes", tag:"Construction and engineering, multi-page", ratio:"4/3",
     img:"havprojects/1/assets/images/project-glass-courtyard-house.jpg",
     links:[["Version 1","havprojects/1/index.html"],["Version 2","havprojects/2/index.html"]] },
-  { status:"live", title:"Aurelia Events and Decor", kw:"events decor wedding planner party portfolio birthday corporate gala", tag:"Weddings and events, 5 pages with enquiry form", ratio:"4/5", tint:"var(--t2)", links:[["View demo","events/index.html"]] },
-  { status:"live", title:"Northlight Studio", kw:"photo video photography film studio gallery wedding videographer", tag:"Photo and video, 5 pages with lightbox", ratio:"4/3", tint:"var(--t3)", links:[["View demo","photo/index.html"]] },
-  { status:"live", title:"Regent Drive and Stay", kw:"car hire chauffeur shortlet apartment rental fleet airport driver", tag:"Car hire and shortlets, 5 pages with booking bar", ratio:"1/1", tint:"var(--t4)", links:[["View demo","cars/index.html"]] },
-  { status:"live", title:"Halcyon Gardens and Lounge", kw:"venue lounge hall event center garden wedding terrace capacity", tag:"Event venue, 5 pages with space finder", ratio:"3/4", tint:"var(--t5)", links:[["View demo","venues/index.html"]] },
-  { status:"live", title:"Bow &amp; Co. Corporate Gifts", kw:"gifts hampers corporate gifting branding bulk christmas", tag:"Corporate gifts, 5 pages with hamper builder", ratio:"4/3", tint:"var(--t6)", links:[["View demo","gifts/index.html"]] }
+  { status:"live", title:"Aurelia Events and Decor", img:"events/images/wedding-aisle.jpg", kw:"events decor wedding planner party portfolio birthday corporate gala", tag:"Weddings and events, 5 pages with enquiry form", ratio:"4/5", tint:"var(--t2)", links:[["View demo","events/index.html"]] },
+  { status:"live", title:"Northlight Studio", img:"photo/images/wedding-couple.jpg", kw:"photo video photography film studio gallery wedding videographer", tag:"Photo and video, 5 pages with lightbox", ratio:"4/3", tint:"var(--t3)", links:[["View demo","photo/index.html"]] },
+  { status:"live", title:"Regent Drive and Stay", img:"cars/images/hero-car.jpg", kw:"car hire chauffeur shortlet apartment rental fleet airport driver", tag:"Car hire and shortlets, 5 pages with booking bar", ratio:"1/1", tint:"var(--t4)", links:[["View demo","cars/index.html"]] },
+  { status:"live", title:"Halcyon Gardens and Lounge", img:"venues/images/hero-venue.jpg", kw:"venue lounge hall event center garden wedding terrace capacity", tag:"Event venue, 5 pages with space finder", ratio:"3/4", tint:"var(--t5)", links:[["View demo","venues/index.html"]] },
+  { status:"live", title:"Bow &amp; Co. Corporate Gifts", img:"gifts/images/hero-hamper.jpg", kw:"gifts hampers corporate gifting branding bulk christmas", tag:"Corporate gifts, 5 pages with hamper builder", ratio:"4/3", tint:"var(--t6)", links:[["View demo","gifts/index.html"]] },
+  { status:"live", title:"Kestrel Business Solutions", img:"business/images/hero-office.jpg", kw:"business consulting services corporate company startup professional new business advisory procurement", tag:"Corporate website for new businesses, 5 pages", ratio:"4/5", tint:"#DCE3F8", links:[["View demo","business/index.html"]] }
 ];
 
 const grid = document.getElementById('grid');
 function card(d){
   if(d.status === 'live'){
     const first = d.links[0][1];
-    const inner = d.img ? `<img src="${d.img}" alt="${d.title} website preview" loading="lazy">` : `<b>${d.title}</b><span>${d.tag}</span>`;
+    const photo = d.img ? `<img src="${d.img}" alt="${d.title} website preview" loading="lazy"${d.tint ? ' onerror="this.remove()"' : ''}>` : '';
+    const inner = d.tint ? `<b>${d.title}</b><span>${d.tag}</span>${photo}` : photo;
     return `<article class="card" data-s="live">
-      <a class="thumb${d.img ? '' : ' tile'}" href="${first}" style="aspect-ratio:${d.ratio}${d.img ? '' : ';background:' + d.tint}" aria-label="Open ${d.title} demo">
+      <a class="thumb${d.tint ? ' tile' : ''}" href="${first}" style="aspect-ratio:${d.ratio}${d.tint ? ';background:' + d.tint : ''}" aria-label="Open ${d.title} demo">
         ${inner}<span class="badge">Live</span>
       </a>
       <div class="meta"><div><h3>${d.title}</h3><p>${d.tag}</p></div>
@@ -278,6 +281,7 @@ grid.innerHTML = demos.map(card).join('');
 
 const cards = [...grid.querySelectorAll('.card')];
 cards.forEach((c, i) => c.dataset.text = [demos[i].title, demos[i].tag, demos[i].note, demos[i].kw].join(' ').toLowerCase());
+if (!cards.some(c => c.dataset.s === 'soon')) document.querySelector('.chip[data-f="soon"]').remove();
 const q = document.getElementById('q'), empty = document.getElementById('empty');
 let filter = 'all';
 function apply(){

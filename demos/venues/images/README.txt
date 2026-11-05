@@ -3,7 +3,7 @@ Until a photo exists the page shows a labelled colour block.
 
 hero-venue.jpg            Hero: the venue at dusk or the main hall fully set (landscape)
 space-hall.jpg            The Grand Hall
-space-garden.jpg          The Garden Lawn
+space-garden.jpg          The Garden Lawn  -- stopped here
 space-lounge.jpg          The Lounge
 space-terrace.jpg         The Terrace
 gallery-wedding-hall.jpg  Wedding reception in the hall
