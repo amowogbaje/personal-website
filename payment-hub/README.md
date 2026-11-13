@@ -1,66 +1,137 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# payments.amowogbaje.com: central payment hub
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Platforms (craftprofessor, qset, storyverse, ...) never talk to gateways directly.
 
-## About Laravel
+```
+Platform --initiate--> HUB --initialize--> Gateway (Paystack / Flutterwave / ...)
+Customer pays at gateway
+Gateway --webhook--> HUB /api/webhook/{gateway}
+HUB verifies with the gateway, looks up tx_ref -> platform
+HUB --signed callback--> Platform webhook_url   (retried with backoff)
+```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The hub generates its own `tx_ref` for every payment and sends that to the gateway as the reference.
+That is how it knows which platform an incoming gateway webhook belongs to.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## No queue worker: how work gets done on cPanel
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Work | When it runs |
+|---|---|
+| Gateway webhook processing (verify + update payment) | Right after the 200 response is sent to the gateway (same request, via Laravel's terminating callbacks) |
+| First callback to the platform | Right after the response of whatever request marked the payment paid |
+| Callback retries, and any first attempt that did not go out | `deliveries:run` cron, every minute |
+| Missed webhooks, stale pending payments | `payments:reconcile` cron, every 5 minutes |
 
-## Learning Laravel
+`QUEUE_CONNECTION=sync` (set in `.env`), so there are no jobs, no `jobs` table and no worker to keep alive.
+The only moving part is one cron line.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Setup on cPanel (PHP 8.2+)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **PHP version:** cPanel > *Select PHP Version* (or *MultiPHP Manager*), choose 8.2 or newer for `payments.amowogbaje.com`.
+   Enable extensions: `mbstring`, `openssl`, `pdo_mysql`, `curl`, `fileinfo`, `tokenizer`, `xml`, `ctype`, `json`, `bcmath`.
+2. **Subdomain:** create `payments.amowogbaje.com` and set its **document root to `.../payments-hub/public`**
+   (cPanel > Domains / Subdomains > Document Root). Do not leave the project root web-accessible.
+3. **Create a MySQL database + user** in cPanel and note the credentials.
+4. **Project files:** build it once locally (or in cPanel Terminal):
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+   ```bash
+   composer create-project laravel/laravel payments-hub
+   cd payments-hub
+   # copy this zip's contents over the project (replaces bootstrap/app.php, routes/*, Controller.php)
+   composer install --no-dev --optimize-autoloader
+   ```
 
-## Laravel Sponsors
+   Upload the folder (including `vendor/`) to e.g. `/home/USER/payments-hub` if you did not build it on the server.
+5. **.env:** copy `.env.example` to `.env`, then add the values from `.env.hub.example`, set `DB_*`, and run:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+   ```bash
+   php artisan key:generate
+   php artisan migrate --force
+   php artisan config:cache && php artisan route:cache
+   ```
 
-### Premium Partners
+   Keep `APP_KEY` safe and unchanged: platform webhook secrets are stored encrypted with it.
+6. **Folder permissions:** `storage/` and `bootstrap/cache/` must be writable (775).
+7. **Cron job:** cPanel > *Cron Jobs* > add, every minute (`* * * * *`):
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+   ```
+   /usr/local/bin/php /home/USER/payments-hub/artisan schedule:run >> /dev/null 2>&1
+   ```
 
-## Contributing
+   Use the PHP path cPanel shows on that page (it may be `/opt/cpanel/ea-php82/root/usr/bin/php`).
+   That single line drives both `deliveries:run` and `payments:reconcile` (see `routes/console.php`).
+   If you prefer separate cron entries instead of the scheduler:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```
+   * * * * *    /usr/local/bin/php /home/USER/payments-hub/artisan deliveries:run >> /dev/null 2>&1
+   */5 * * * *  /usr/local/bin/php /home/USER/payments-hub/artisan payments:reconcile >> /dev/null 2>&1
+   ```
 
-## Code of Conduct
+   (If you use these two, do not also add the `schedule:run` line.)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+After changing `.env` or config later, run `php artisan config:cache` again (or `config:clear`).
 
-## Security Vulnerabilities
+## Gateway dashboard settings
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+| Gateway | Webhook URL | Notes |
+|---|---|---|
+| Paystack | `https://payments.amowogbaje.com/api/webhook/paystack` | Signature uses your secret key, nothing extra to set |
+| Flutterwave | `https://payments.amowogbaje.com/api/webhook/flutterwave` | Set "Secret hash" in dashboard = `FLW_SECRET_HASH` |
 
-## License
+Use test keys for staging. Each payment records `livemode`, and platforms receive it in the callback.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Register a platform
+
+```bash
+php artisan platform:create "CraftProfessor" https://craftprofessor.com/api/payments/callback --gateway=paystack
+```
+
+It prints `PAYMENTS_HUB_API_KEY` and `PAYMENTS_HUB_WEBHOOK_SECRET` once. Put them in that platform's env.
+See `docs/PLATFORM_INTEGRATION.md` for what the platform needs to implement.
+
+## API
+
+| Method | Path | Auth | Purpose |
+|---|---|---|---|
+| POST | `/api/payments/initiate` | Platform API key | Create payment, returns `checkout_url` |
+| GET | `/api/payments/{tx_ref or your reference}` | Platform API key | Status. Add `?verify=1` to force a gateway check |
+| POST | `/api/webhook/{gateway}` | Gateway signature | Inbound gateway webhooks |
+| GET | `/payments/return/{tx_ref}` | none | Customer return, verifies then redirects to the platform's `redirect_url` |
+
+Amounts are in major units on the API (`5000.00`) and stored in minor units (kobo/cents).
+
+## Operations
+
+```bash
+php artisan deliveries:run              # normally cron; send due callbacks now
+php artisan payments:reconcile          # normally cron; re-verify pending, expire stale
+php artisan deliveries:resend 42        # reset one callback; cron sends it within a minute
+php artisan deliveries:resend --failed  # reset all permanently failed callbacks
+```
+
+Payment statuses: `pending`, `successful`, `failed`, `abandoned`, `refunded`, `review`.
+`review` means the gateway reported success but amount/currency did not match: no callback is sent,
+look at `payments.notes` and resolve by hand.
+
+Callback retries: 1m, 5m, 30m, 2h, 12h after a failed attempt (rounded up to the next cron minute),
+then marked `failed` (see `webhook_deliveries`).
+
+If callbacks stop flowing, check first that the cron job is running (`webhook_deliveries` rows stuck in
+`pending` with an old `next_retry_at` mean it is not).
+
+## Adding another gateway
+
+1. Create `app/Gateways/XyzGateway.php` implementing `GatewayInterface`
+2. Add it to `config/gateways.php` under `drivers`
+3. Point the gateway's webhook at `/api/webhook/xyz`
+
+Nothing else changes.
+
+## Known limits (v1)
+
+- Refunds/chargebacks are not handled yet (`Refunded` status and event exist but nothing sets them).
+- Amounts assume 2-decimal currencies (NGN, USD, GHS, ...). Zero-decimal currencies need a small change.
+- One set of gateway credentials for all platforms. Per-platform gateway accounts would need a credentials table.
+- "After the response" work depends on PHP finishing the request after the reply is flushed (PHP-FPM/LiteSpeed do this).
+  If your host does not, the work still runs, just before the client gets its response, and cron is the safety net.
+- Not run against live gateway sandboxes yet: test with sandbox keys before going live.

@@ -281,6 +281,8 @@ const demos = [
   { status:"live", title:"Nicole Marie Salon", kw:"salon hair beauty barber stylist booking", tag:"Hair salon, one page with booking", ratio:"3/4",
     img:"nicole/assets/img/caramel-balayage-waves.jpg", links:[["View demo","nicole/index.html"]] },
   { status:"live", title:"Labake Catering", img:"catering/images/hero-boardroom-lunch.jpg", kw:"catering food menu chef restaurant bakery smallchops quote", tag:"Corporate catering, 5 pages with quote form", ratio:"1/1", tint:"var(--t1)", links:[["View demo","catering/index.html"]] },
+  { status:"live", title:"Dr. Amina Bello", img:"lecturer/images/portrait.jpg", kw:"lecturer academic professor researcher university staff profile publications cv scholar orcid counselling psychology mental health", tag:"Lecturer website, 4 pages with CV download", ratio:"4/5", tint:"#DCE3F8", links:[["View demo","lecturer/index.html"]] },
+  { status:"live", title:"Dr. Kayode Adebanjo", img:"lecturer-2/images/portrait.jpg", kw:"lecturer academic professor researcher university staff profile publications cv scholar orcid science education physics teaching", tag:"Lecturer website, 4 pages with publications", ratio:"4/5", tint:"#DCE3F8", links:[["View demo","lecturer-2/index.html"]] },
   { status:"live", title:"Projects by HAV", kw:"construction building engineering contractor roads homes", tag:"Construction and engineering, multi-page", ratio:"4/3",
     img:"havprojects/1/assets/images/project-glass-courtyard-house.jpg",
     links:[["Version 1","havprojects/1/index.html"],["Version 2","havprojects/2/index.html"]] },
@@ -337,7 +339,7 @@ document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () =
 }));
 q.addEventListener('input', apply);
 const tryRow = document.getElementById('try');
-['Salon','Construction','Catering','Wedding','Photography','Car hire','Venue','Gifts'].forEach(w => {
+['Lecturer','Salon','Construction','Catering','Wedding','Photography','Car hire','Venue','Gifts'].forEach(w => {
   const b = document.createElement('button'); b.type = 'button'; b.textContent = w;
   b.addEventListener('click', () => { q.value = w; apply(); q.focus(); });
   tryRow.appendChild(b);
