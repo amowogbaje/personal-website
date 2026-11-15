@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AthleteBridge | Sports Agency &amp; Talent Management</title>
+<meta name="description" content="Connecting talent, representation and opportunity. Demo concept by Amowogbaje.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,700..800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="wrap"><a class="brand" href="#">Athlete<span>Bridge</span></a>
+<nav><a href="#athletes">Our athletes</a><a href="#services">Services</a><a href="#pathway">Pathway</a><a href="#apply">Talent application</a></nav>
+<a class="btn" href="#apply">Partner with us</a></div></header>
+
+<div class="hero"><svg class="pitch" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><rect x="20" y="20" width="760" height="460"/><path d="M400 20v460"/><circle cx="400" cy="250" r="70"/><rect x="20" y="130" width="130" height="240"/><rect x="650" y="130" width="130" height="240"/><rect x="20" y="190" width="45" height="120"/><rect x="735" y="190" width="45" height="120"/></svg>
+<div class="wrap"><div><h1>Where African talent meets the clubs that are looking.</h1>
+<p>AthleteBridge represents players, advises families and connects clubs and brands with verified talent across Nigeria, Ghana, the UK and Europe.</p>
+<div class="btns"><a class="btn" href="#athletes">Browse the roster</a><a class="btn ghost" href="#apply">Submit a player</a></div></div>
+<div class="stack" aria-hidden="true">
+<div class="pcard"><div class="av" style="--c1:#1d6b4f;--c2:#0b2a21">DM</div><b>Daniel Mensah</b><small>Central midfielder, Ghana</small><span class="badge">Open to enquiries</span></div>
+<div class="pcard"><div class="av" style="--c1:#c9a227;--c2:#5a4510">CO</div><b>Chidi Okafor</b><small>Striker, Nigeria</small><span class="badge">Open to enquiries</span></div>
+<div class="pcard"><div class="av" style="--c1:#2b5f8a;--c2:#0c2236">KA</div><b>Kwame Asante</b><small>Left back, Ghana</small><span class="badge">Trials Jan</span></div></div></div></div>
+
+<div class="facts"><div class="wrap"><div><strong>38</strong><span>athletes on the active roster</span></div><div><strong>6</strong><span>countries across our club network</span></div><div><strong>4</strong><span>development pathways, from academy to first team</span></div></div></div>
+
+<section><div class="wrap"><h2>One agency, four audiences.</h2><p class="lead">Players, clubs, scouts and brands each get a clear route in, so no enquiry ends up in a generic inbox.</p>
+<div class="who"><div><h3>Players</h3><p>Apply for representation and track your application.</p></div><div><h3>Clubs</h3><p>Describe the profile you need and get a shortlist from the roster.</p></div><div><h3>Brands</h3><p>Enquire about endorsements, appearances and campaigns.</p></div><div><h3>Parents</h3><p>See how we protect, develop and advise young players.</p></div></div></div></section>
+
+<section class="dir" id="athletes"><div class="wrap"><h2>Find the right player in seconds.</h2><p class="lead">Every profile is approved by the player and the agency. Statistics are verified before they are published.</p>
+<div class="tools"><input id="q" type="search" placeholder="Search by name or club" aria-label="Search athletes">
+<select id="pos" aria-label="Position"><option value="">All positions</option><option>Goalkeeper</option><option>Defender</option><option>Midfielder</option><option>Forward</option></select>
+<select id="cty" aria-label="Country"><option value="">All countries</option><option>Ghana</option><option>Nigeria</option><option>Uganda</option></select>
+<select id="age" aria-label="Age"><option value="">Any age</option><option value="u20">Under 20</option><option value="20">20 and over</option></select></div>
+<div class="grid" id="grid"></div><p class="empty" id="empty">No athletes match those filters. Clear a filter or try another position.</p></div></section>
+
+<section id="services"><div class="wrap"><h2>Representation is only the start.</h2>
+<div class="svc"><article><h3>Player representation</h3><p>Contracts, transfers and negotiations handled by licensed, verified agents.</p></article><article><h3>Scouting and assessment</h3><p>Structured trials and reports so clubs see more than highlight clips.</p></article><article><h3>Commercial partnerships</h3><p>Endorsements, boot deals and appearances matched to each athlete's brand.</p></article><article><h3>Welfare and development</h3><p>Education, nutrition, mentoring and planning for life after football.</p></article></div></div></section>
+
+<section id="pathway" style="padding-top:0"><div class="wrap"><h2>A clear route from talent to contract.</h2>
+<div class="path"><div><h3>Scouting</h3><p>Referred by scouts, academies or applications.</p></div><div><h3>Assessment</h3><p>Video review, data check and live trial.</p></div><div><h3>Representation</h3><p>Written agreement and a named agent.</p></div><div><h3>Career growth</h3><p>Placements, branding and ongoing support.</p></div></div></div></section>
+
+<section class="apply" id="apply"><div class="wrap"><div><h2>Tell us about the player.</h2><p class="lead">Submit a player for review. Our scouting team replies within seven working days. Clubs and brands can use the same form.</p></div>
+<form onsubmit="event.preventDefault();this.innerHTML='<p class=full>Application received. We will contact you within seven working days.</p>'">
+<div><label for="n">Full name</label><input id="n" required></div><div><label for="e">Email</label><input id="e" type="email" required></div>
+<div><label for="i">I am a</label><select id="i"><option>Player</option><option>Club</option><option>Brand</option><option>Parent</option></select></div><div><label for="p">Position</label><input id="p"></div>
+<div class="full"><label for="v">Highlight video link</label><input id="v" type="url"></div><div class="full"><label for="m">Playing history</label><textarea id="m" rows="3"></textarea></div>
+<button class="btn full" type="submit">Send application</button></form></div></section>
+
+<footer><div class="wrap"><span>AthleteBridge is a fictional agency created as a demo by Amowogbaje.</span><span>Lagos &middot; Accra &middot; London</span></div></footer>
+
+<script>
+const P=[["Daniel Mensah","Midfielder","Ghana",22,"Accra Union",31,6,9,"#1d6b4f","#0b2a21"],["Chidi Okafor","Forward","Nigeria",19,"Lagos Stars",24,15,4,"#c9a227","#5a4510"],["Kwame Asante","Defender","Ghana",21,"Kumasi Rovers",28,2,5,"#2b5f8a","#0c2236"],["Tunde Bello","Goalkeeper","Nigeria",24,"Ibadan FC",30,0,0,"#7a3b8c","#26102e"],["Samuel Lumasa","Midfielder","Uganda",18,"Kampala Youth",22,5,8,"#b5472f","#3d140b"],["Emeka Eze","Forward","Nigeria",23,"Enugu City",33,18,6,"#2e7d7a","#0b2b2a"]];
+const g=document.getElementById("grid");
+P.forEach(p=>g.insertAdjacentHTML("beforeend",`<article class="pl" data-n="${p[0]} ${p[4]}" data-pos="${p[1]}" data-c="${p[2]}" data-a="${p[3]}"><div class="av" style="--c1:${p[8]};--c2:${p[9]}">${p[0].split(" ").map(w=>w[0]).join("")}</div><h3>${p[0]}</h3><div class="meta">${p[1]} &middot; ${p[3]} &middot; ${p[2]}</div><div class="meta">${p[4]}</div><div class="nums"><div><b>${p[5]}</b>apps</div><div><b>${p[6]}</b>goals</div><div><b>${p[7]}</b>assists</div></div></article>`));
+const cards=[...g.children],f=()=>{const q=Q.value.toLowerCase(),a=A.value;let n=0;cards.forEach(c=>{const ok=(!q||(c.dataset.n).toLowerCase().includes(q))&&(!S.value||c.dataset.pos==S.value)&&(!C.value||c.dataset.c==C.value)&&(!a||(a=="u20"?+c.dataset.a<20:+c.dataset.a>=20));c.hidden=!ok;n+=ok});E.style.display=n?"none":"block"};
+const Q=q,S=pos,C=cty,A=age,E=empty;[Q,S,C,A].forEach(x=>x.addEventListener("input",f));
+</script></body></html>

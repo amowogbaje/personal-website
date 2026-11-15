@@ -1,288 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gideon Amowogbaje — Websites built to fit the business</title>
-<meta name="description" content="Live website demos by Gideon Amowogbaje, fullstack developer for business websites, booking flows and AI integrations.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#F1F2EE;
-  --white:#FBFBF9;
-  --ink:#1E2330;
-  --muted:#5E6472;
-  --line:#D8DAD3;
-  --cobalt:#2F44D6;
-  --cobalt-deep:#2336B0;
-  --t1:#D9E5CF; --t2:#DDD8EE; --t3:#D3E3EE; --t4:#EEE6C4; --t5:#EBD6DA; --t6:#D5E8E1;
-  --serif:'Instrument Serif', Georgia, serif;
-  --sans:'Hanken Grotesk', system-ui, sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-[hidden]{display:none!important}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:6px}
-.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
-
-/* header */
-header{padding:26px 0}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.mark{font:400 1.6rem/1 var(--serif);text-decoration:none;letter-spacing:-.01em}
-nav{display:flex;align-items:center;gap:30px;font-weight:500;font-size:.95rem}
-nav a{text-decoration:none;color:var(--muted)}
-nav a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:999px;background:var(--ink);color:var(--white);font-weight:600;font-size:.95rem;text-decoration:none;border:0;cursor:pointer;transition:background .2s}
-.btn:hover{background:var(--cobalt)}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:var(--white)}
-nav .btn{color:var(--white);padding:10px 20px}
-nav .btn:hover{color:var(--white)}
-
-/* hero */
-.hero{padding:clamp(36px,6vw,84px) 0 clamp(56px,8vw,110px)}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:end}
-h1{font:400 clamp(3.2rem,8.4vw,7.4rem)/.94 var(--serif);letter-spacing:-.025em;margin:0 0 28px}
-h1 em{font-style:italic}
-.hero p{max-width:34rem;color:var(--muted);font-size:1.1rem;margin:0 0 34px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-
-.collage{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-.collage .col{display:grid;gap:14px}
-.collage .col:last-child{margin-top:-44px}
-.shot{border-radius:22px;overflow:hidden;background:var(--line);opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
-.shot:nth-child(2){animation-delay:.12s}
-.collage .col:last-child .shot:first-child{animation-delay:.24s}
-.collage .col:last-child .shot:last-child{animation-delay:.36s}
-.shot img{width:100%;height:100%;object-fit:cover}
-.s-a{aspect-ratio:3/4.1}
-.s-b{aspect-ratio:4/3}
-.s-c{position:relative;aspect-ratio:1/1;background:var(--t1);display:flex;align-items:flex-end;padding:20px;font:400 1.7rem/1.05 var(--serif)}
-@keyframes rise{to{opacity:1;transform:none}}
-
-/* work */
-.work{padding:20px 0 clamp(64px,9vw,120px)}
-.work-head{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px}
-h2{font:400 clamp(2.2rem,4.6vw,3.6rem)/1 var(--serif);letter-spacing:-.02em;margin:0}
-.work-head p{margin:10px 0 0;color:var(--muted);max-width:30rem}
-.chips{display:flex;gap:8px}
-.chip{font:500 .9rem var(--sans);padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
-.chip:hover{border-color:var(--ink);color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--white)}
-
-.grid{column-count:3;column-gap:22px}
-.card{break-inside:avoid;margin:0 0 34px;display:block}
-.thumb{position:relative;display:block;border-radius:22px;overflow:hidden;background:var(--line)}
-.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-a.thumb:hover img{transform:scale(1.04)}
-.tile{display:flex;flex-direction:column;justify-content:space-between;padding:26px}
-.tile b{font:400 2.1rem/1.02 var(--serif);letter-spacing:-.01em;max-width:11ch}
-.tile span{font-size:.92rem;max-width:20ch;opacity:.8}
-.tile img{position:absolute;inset:0;z-index:1}
-.badge{z-index:2;position:absolute;top:16px;left:16px;font:600 .8rem var(--sans);padding:6px 13px;border-radius:999px;background:var(--white);color:var(--ink)}
-.meta{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 4px 0}
-.meta h3{font:600 1.05rem/1.3 var(--sans);margin:0}
-.meta p{margin:2px 0 0;color:var(--muted);font-size:.92rem}
-.links{display:flex;gap:14px;font-weight:600;font-size:.92rem;white-space:nowrap}
-.links a{color:var(--cobalt);text-decoration:none;border-bottom:1.5px solid transparent}
-.links a:hover{border-color:var(--cobalt)}
-.soon-note{color:var(--muted);font-size:.92rem;white-space:nowrap}
-
-.tools{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
-.search{position:relative;flex:1 1 320px;max-width:460px}
-.search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
-.search input{width:100%;font:400 1rem var(--sans);color:var(--ink);padding:13px 20px 13px 48px;border-radius:999px;border:1.5px solid var(--line);background:var(--white)}
-.search input::placeholder{color:var(--muted)}
-.search input:focus{outline:none;border-color:var(--cobalt)}
-.try{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:34px;color:var(--muted);font-size:.92rem}
-.try button{font:500 .88rem var(--sans);padding:6px 14px;border-radius:999px;border:0;background:var(--white);color:var(--ink);cursor:pointer;box-shadow:inset 0 0 0 1px var(--line)}
-.try button:hover{background:var(--ink);color:var(--white)}
-.empty{padding:48px 0;text-align:center;color:var(--muted)}
-.empty b{display:block;font:400 1.9rem/1.1 var(--serif);color:var(--ink);margin-bottom:6px}
-
-/* what I do */
-.craft{background:var(--white);padding:clamp(64px,9vw,120px) 0}
-.craft .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,100px)}
-.craft ul{list-style:none;margin:0;padding:0}
-.craft li{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;padding:28px 0;border-top:1px solid var(--line)}
-.craft li:last-child{border-bottom:1px solid var(--line)}
-.craft h3{font:400 1.7rem/1.1 var(--serif);margin:0}
-.craft li p{margin:0;color:var(--muted)}
-
-/* contact */
-.by{display:flex;align-items:center;gap:14px;margin-top:34px}
-.av{position:relative;flex:none;width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font:600 .95rem var(--sans);overflow:hidden}
-.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .by p{margin:0;font-size:.97rem;color:var(--ink);max-width:26rem}
-.hero .price{margin:16px 0 0;font-weight:600;color:var(--ink);font-size:1rem}
-.me{padding:clamp(56px,8vw,110px) 0 0}
-.me .wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(28px,5vw,80px);align-items:center}
-.me .ph{position:relative;aspect-ratio:1/1;border-radius:22px;background:var(--ink);color:var(--white);display:grid;place-items:center;font:400 5rem var(--serif);overflow:hidden}
-.me .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.me p{color:var(--muted);max-width:34rem}
-.me .lnk{font-weight:600;color:var(--cobalt);text-decoration:none;border-bottom:1.5px solid var(--cobalt)}
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:880px;margin:0 auto 34px;text-align:left}
-.plan{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:30px}
-.plan h3{font:400 1.7rem var(--serif);margin-bottom:4px}.plan .amt{font:400 2.6rem/1.1 var(--serif);color:var(--cobalt);margin:0 0 12px}.plan .amt small{font:500 .95rem var(--sans);color:var(--muted)}
-.plan ul{margin:0;padding:0;list-style:none}.plan li{padding:9px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.97rem}
-.contact{padding:clamp(72px,10vw,140px) 0;text-align:center}
-.contact h2{font-size:clamp(2.8rem,7vw,6rem);line-height:.96;max-width:14ch;margin:0 auto 30px}
-.contact p{color:var(--muted);max-width:30rem;margin:0 auto 32px}
-.btn.big{padding:17px 34px;font-size:1.05rem;background:var(--cobalt)}
-.btn.big:hover{background:var(--cobalt-deep)}
-footer{border-top:1px solid var(--line);padding:26px 0 34px;color:var(--muted);font-size:.9rem}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer a{text-decoration:none}
-footer a:hover{color:var(--ink)}
-
-@media (max-width:1000px){
-  .grid{column-count:2}
-  .hero .wrap,.craft .wrap{grid-template-columns:1fr}
-  .collage .col:last-child{margin-top:0}
-}
-@media (max-width:1000px){.me .wrap,.plans{grid-template-columns:1fr}.me .ph{max-width:420px}}
-@media (max-width:640px){
-  .grid{column-count:1}
-  nav a:not(.btn){display:none}
-  .craft li{grid-template-columns:1fr;gap:8px}
-  .meta{flex-direction:column;gap:6px}
-}
-@media (prefers-reduced-motion:reduce){
-  .shot{animation:none;opacity:1;transform:none}
-  .thumb img{transition:none}
-  html{scroll-behavior:auto}
-}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="wrap">
-    <a class="mark" href="#top">Gideon Amowogbaje</a>
-    <nav aria-label="Main">
-      <a href="#work">Demos</a>
-      <a href="#craft">What I build</a>
-      <a href="#me">About me</a>
-      <a class="btn" href="#contact">Start a project</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <h1>Websites made to fit the business, <em>not a template.</em></h1>
-        <p>I’m Gideon, a fullstack developer. I design and build business websites, quote and booking flows, and AI chat assistants. Every demo here is a working site you can click through.</p>
-        <div class="actions">
-          <a class="btn" href="#work">See the demos</a>
-          <a class="btn ghost" href="#contact">See pricing</a>
-        </div>
-        <div class="by"><span class="av">GA<img src="images/gideon-avatar.jpg" alt="Gideon Amowogbaje" onerror="this.remove()"></span><p><b>Gideon Amowogbaje</b>, fullstack developer. Recent client: <a href="havprojects/1/index.html">Projects by HAV</a>.</p></div>
-        <p class="price">Sites from ₦180,000. Booking systems from ₦350,000.</p>
-      </div>
-      <div class="collage" aria-hidden="true">
-        <div class="col">
-          <div class="shot s-a"><img src="nicole/assets/img/caramel-balayage-waves.jpg" alt=""></div>
-          <div class="shot s-c" style="background:var(--t6)">Corporate gifts, now live<img src="gifts/images/hero-hamper.jpg" alt="" onerror="this.remove()" style="position:absolute;inset:0"></div>
-        </div>
-        <div class="col">
-          <div class="shot s-b"><img src="havprojects/1/assets/images/project-glass-courtyard-house.jpg" alt=""></div>
-          <div class="shot s-c">Catering, now live<img src="catering/images/hero-boardroom-lunch.jpg" alt="" onerror="this.remove()" style="position:absolute;inset:0"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="work" id="work">
-    <div class="wrap">
-      <div class="work-head">
-        <div>
-          <h2>Demos</h2>
-          <p>Built for real kinds of business. New ones appear here as I finish them.</p>
-        </div>
-      </div>
-      <div class="tools">
-        <label class="search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="q" type="search" placeholder="Search by business type, e.g. salon" aria-label="Search demos" autocomplete="off">
-        </label>
-        <div class="chips" role="group" aria-label="Filter demos">
-          <button class="chip" data-f="all" aria-pressed="true">All</button>
-          <button class="chip" data-f="live" aria-pressed="false">Live</button>
-          <button class="chip" data-f="soon" aria-pressed="false">Coming soon</button>
-        </div>
-      </div>
-      <div class="try" id="try"><span>Try:</span></div>
-      <div class="grid" id="grid"></div>
-      <div class="empty" id="empty" hidden><b>No demo for that yet</b>Tell me the business type and I’ll build one. Message me below.</div>
-    </div>
-  </section>
-
-  <section class="craft" id="craft">
-    <div class="wrap">
-      <h2>What I build</h2>
-      <ul>
-        <li>
-          <h3>Business websites</h3>
-          <p>Fast, mobile-first sites with clear services, galleries and proof of work, so a new customer can trust you in a few seconds.</p>
-        </li>
-        <li>
-          <h3>Quotes and bookings</h3>
-          <p>Request-a-quote forms, booking links and WhatsApp handoff, so enquiries reach you at any hour, not only when you’re online.</p>
-        </li>
-        <li>
-          <h3>AI assistants and integrations</h3>
-          <p>Chat assistants that answer questions about your services, and API connections to the tools you already use.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="me" id="me">
-    <div class="wrap">
-      <div class="ph">GA<img src="images/gideon.jpg" alt="Gideon Amowogbaje" onerror="this.remove()"></div>
-      <div>
-        <h2>Hi, I’m Gideon.</h2>
-        <p style="margin:16px 0 14px">I’m a fullstack developer. I build business websites, booking flows, APIs and AI integrations for Nigerian businesses. <span id="exp"></span></p>
-        <p style="margin:0 0 20px">Recent client work: <a class="lnk" href="havprojects/1/index.html">Projects by HAV</a>, a construction company’s multi-page website.</p>
-        <a class="lnk" href="https://wa.me/2347026305945" target="_blank" rel="noopener">Message me on WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <h2>Clear pricing, no surprises.</h2>
-      <div class="plans">
-        <div class="plan"><h3>Business website</h3><p class="amt">from ₦180,000</p><ul><li>Up to 5 pages, built for phones</li><li>WhatsApp enquiry and quote form</li><li>Your photos and copy, set up properly</li><li>Live on your own domain</li></ul></div>
-        <div class="plan"><h3>Booking system</h3><p class="amt">from ₦350,000</p><ul><li>Everything in a business website</li><li>Online bookings with a calendar</li><li>Admin page to manage requests</li><li>Email or WhatsApp alerts</li></ul></div>
-      </div>
-      <a class="btn big" href="https://wa.me/2347026305945" target="_blank" rel="noopener">Tell me about your business</a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>© 2026 Gideon Amowogbaje</span>
-    <a href="https://amowogbaje.com">amowogbaje.com</a>
-  </div>
-</footer>
-
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AMOWOGBAJE Web Solutions — Websites for professionals, athletes and businesses</title>
+<meta name="description" content="Gideon Amowogbaje builds professional websites and custom digital platforms for lecturers, athletes, schools and businesses. Click through live demos.">
+<meta property="og:title" content="AMOWOGBAJE Web Solutions"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#060f24;--bg2:#0a1a3a;--card:#0d2147;--ink:#fff;--mu:#9fb0d0;--ln:#ffffff1f;--b:#2f6bff;--b2:#1f55e0;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}[hidden]{display:none!important}:focus-visible{outline:2px solid var(--b);outline-offset:3px}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+header{position:sticky;top:0;z-index:30;background:#060f24ee;backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px;line-height:1.1}.logo svg{width:38px;height:38px}.logo b{display:block;font-size:1.12rem;letter-spacing:.14em}.logo small{display:block;font-size:.62rem;letter-spacing:.3em;color:var(--mu)}
+nav{display:flex;align-items:center;gap:30px;font-size:.92rem;font-weight:500}nav a:not(.btn){color:#dfe7f8}nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:10px;background:var(--b);color:#fff;font-weight:600;font-size:.95rem;border:1.5px solid var(--b);cursor:pointer;transition:.2s}.btn:hover{background:var(--b2)}.btn.ghost{background:transparent;border-color:#ffffff55}.btn.ghost:hover{border-color:#fff;background:#ffffff12}
+.hero{background:radial-gradient(900px 500px at 78% 30%,#1b4ad655,transparent),var(--bg);padding:clamp(40px,6vw,84px) 0 60px}.hero .hw{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ey{color:#5f8dff;font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin:0 0 18px}
+h1{font:700 clamp(2.6rem,5.6vw,4.6rem)/1.05 var(--sans);letter-spacing:-.03em;margin:0 0 22px}h1 span{color:var(--b)}.hero p.lead{color:#c7d3ee;max-width:34rem;font-size:1.08rem;margin:0 0 30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}.by{margin-top:30px;color:var(--mu);font-size:.92rem}.by b{color:#fff}
+.dev{position:relative;padding:0 70px 30px 0}.lap{border:8px solid #1a2438;border-bottom-width:14px;border-radius:16px;background:#fff;overflow:hidden;aspect-ratio:16/10;box-shadow:0 30px 70px #0008}.lap img{width:100%;height:100%;object-fit:cover}
+.phn{position:absolute;right:0;bottom:0;width:32%;aspect-ratio:9/18;border:6px solid #1a2438;border-radius:26px;overflow:hidden;background:var(--card);box-shadow:0 24px 50px #000a}.phn img{width:100%;height:100%;object-fit:cover}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}.cat{background:#0b1c40;border:1px solid var(--ln);border-radius:16px;padding:26px 22px;transition:.25s}.cat:hover{border-color:var(--b);transform:translateY(-4px)}
+.cat i{font-style:normal;color:#5f8dff;font-weight:700;font-size:.85rem}.cat h3{margin:8px 0 8px;font-size:1.1rem}.cat p{margin:0 0 14px;color:var(--mu);font-size:.9rem}.cat span{color:#6f9aff;font-size:.88rem;font-weight:600}
+.built{background:#e9eef9;color:#0b1c40;text-align:center;padding:26px 0}.built p{margin:0 0 8px;font-size:.72rem;letter-spacing:.22em;font-weight:600;color:#4b5a7d}.built div{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;font-weight:700;letter-spacing:.05em}
+.stats{background:#dfe6f4;color:#0b1c40}.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:30px 0}.stats b{display:block;font-size:2.1rem;line-height:1.1}.stats span{font-size:.88rem;color:#4b5a7d}
+.work{padding:clamp(60px,8vw,110px) 0}h2{font:700 clamp(2rem,4.2vw,3.2rem)/1.05 var(--sans);letter-spacing:-.025em;margin:0}.sub{color:var(--mu);margin:10px 0 30px;max-width:34rem}
+.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:34px}.search{position:relative;flex:1 1 300px;max-width:420px}.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--mu)}
+.search input{width:100%;padding:13px 18px 13px 46px;border-radius:10px;border:1.5px solid var(--ln);background:var(--card);color:#fff;font:inherit}.search input:focus{outline:none;border-color:var(--b)}
+.chip{font:500 .9rem var(--sans);padding:10px 18px;border-radius:999px;border:1.5px solid var(--ln);background:transparent;color:var(--mu);cursor:pointer}.chip:hover{color:#fff;border-color:#fff}.chip[aria-pressed=true]{background:var(--b);border-color:var(--b);color:#fff}
+.grid{column-count:3;column-gap:22px}.card{break-inside:avoid;margin:0 0 34px;display:block}.thumb{position:relative;display:block;border-radius:18px;overflow:hidden;background:var(--card);border:1px solid var(--ln)}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .7s}a.thumb:hover img{transform:scale(1.04)}.tile{display:flex;flex-direction:column;justify-content:space-between;padding:26px}.tile b{font-size:1.7rem;line-height:1.05;max-width:11ch}.tile span{font-size:.9rem;max-width:20ch;opacity:.8}.tile img{position:absolute;inset:0;z-index:1}
+.badge{z-index:2;position:absolute;top:14px;left:14px;font:600 .75rem var(--sans);padding:5px 12px;border-radius:999px;background:#fff;color:#0b1c40}
+.meta{padding:14px 4px 0}.meta h3{margin:0;font-size:1.05rem}.meta p{margin:2px 0 8px;color:var(--mu);font-size:.9rem}.links{display:flex;flex-wrap:wrap;gap:6px 16px;font-weight:600;font-size:.9rem}.links a{color:#6f9aff}.links a:hover{text-decoration:underline}
+.empty{padding:48px 0;text-align:center;color:var(--mu)}.empty b{display:block;font-size:1.5rem;color:#fff}
+.offers{background:var(--bg2);padding:clamp(60px,8vw,110px) 0}.og{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.of{background:var(--card);border:1px solid var(--ln);border-radius:18px;padding:30px}.of small{color:#6f9aff;font-weight:700;letter-spacing:.12em}.of h3{margin:8px 0 4px;font-size:1.3rem}.of .amt{font-size:1.9rem;font-weight:700;color:#fff;margin:6px 0 14px}.of .amt small{font-size:.85rem;color:var(--mu);letter-spacing:0;font-weight:500}.of ul{list-style:none;margin:0;padding:0}.of li{border-top:1px solid var(--ln);padding:9px 0;color:var(--mu);font-size:.93rem}
+.me{padding:clamp(60px,8vw,100px) 0}.me .wrap{display:grid;grid-template-columns:.6fr 1.4fr;gap:50px;align-items:center}.ph{position:relative;aspect-ratio:1;border-radius:20px;background:var(--b);display:grid;place-items:center;font-size:4.5rem;font-weight:700;overflow:hidden}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.me p{color:#c7d3ee;max-width:36rem}.lnk{color:#6f9aff;font-weight:600;border-bottom:1.5px solid #6f9aff}
+.contact{padding:clamp(60px,9vw,120px) 0;text-align:center;background:radial-gradient(700px 300px at 50% 100%,#1b4ad644,transparent)}.contact h2{font-size:clamp(2.4rem,6vw,4.6rem);max-width:15ch;margin:0 auto 26px}.contact p{color:var(--mu);margin:0 auto 28px;max-width:30rem}
+footer{border-top:1px solid var(--ln);padding:26px 0;color:var(--mu);font-size:.9rem}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:1000px){.hero .hw,.me .wrap{grid-template-columns:1fr}.grid{column-count:2}.cats,.stats .wrap{grid-template-columns:1fr 1fr}.og{grid-template-columns:1fr}.dev{max-width:560px}}
+@media(max-width:640px){.grid{column-count:1}nav a:not(.btn){display:none}.cats{grid-template-columns:1fr}.dev{padding-right:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.thumb img,.cat{transition:none}}</style></head><body>
+<header><div class="wrap"><a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 3 37h8.5L20 19l8.5 18H37z" fill="#2f6bff"/><path d="M20 19l-4.2 9h8.4z" fill="#060f24"/></svg><span><b>AMOWOGBAJE</b><small>WEB SOLUTIONS</small></span></a>
+<nav aria-label="Main"><a href="#work">Demos</a><a href="#offers">Services</a><a href="#me">About</a><a class="btn" href="#contact">Start a project</a></nav></div></header>
+<main id="top"><section class="hero"><div class="wrap hw"><div><p class="ey">Websites · Digital platforms · Custom systems</p>
+<h1>Digital experiences that help people and businesses <span>move forward.</span></h1>
+<p class="lead">I design and develop professional websites and custom digital platforms for businesses, professionals and organisations. Every demo below is a working site you can click through.</p>
+<div class="actions"><a class="btn" href="#work">Explore what I build →</a><a class="btn ghost" href="#contact">Start a project</a></div>
+<p class="by"><b>Gideon Amowogbaje</b> · Web Developer &amp; Digital Solutions Specialist</p></div>
+<div class="dev"><div class="lap"><img src="lecturer/images/banner.jpg" alt="Website demo preview" onerror="this.remove()"></div><div class="phn"><img src="lecturer-2/images/portrait.jpg" alt="Mobile demo preview" onerror="this.remove()"></div></div></div>
+<div class="wrap"><div class="cats">
+<a class="cat" href="#work" data-q="business"><i>01</i><h3>Business websites</h3><p>Trust, enquiries, quotes and bookings.</p><span>See demos →</span></a>
+<a class="cat" href="#work" data-q="lecturer"><i>02</i><h3>Personal websites</h3><p>Lecturers and professionals with CV, publications and profile.</p><span>See demos →</span></a>
+<a class="cat" href="#work" data-q="athlete"><i>03</i><h3>Athlete profiles</h3><p>Stats, highlights, sponsorship and media kit.</p><span>See demos →</span></a>
+<a class="cat" href="#contact"><i>04</i><h3>Custom systems</h3><p>Dashboards, CRM integrations, AI assistants and APIs.</p><span>Talk to me →</span></a></div></div></section>
+<div class="built"><div class="wrap"><p>BUILT FOR</p><div><span>LECTURERS</span><span>FOOTBALLERS</span><span>BASKETBALLERS</span><span>BOXERS</span><span>RUNNERS</span><span>SCHOOLS</span><span>CATERERS</span><span>VENUES</span></div></div></div>
+<div class="stats"><div class="wrap"><div><b id="s1"></b><span>Live demos</span></div><div><b>4</b><span>Athlete sports covered</span></div><div><b>100%</b><span>Mobile-first layouts</span></div><div><b>Yours</b><span>Own domain, you own the site</span></div></div></div>
+<section class="work" id="work"><div class="wrap"><h2>Demos</h2><p class="sub">Lecturers and athletes alongside business, school and event sites. New ones appear here as I finish them.</p>
+<div class="tools"><label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search, e.g. lecturer, footballer or salon" aria-label="Search demos" autocomplete="off"></label>
+<button class="chip" data-q="" aria-pressed="true">All</button><button class="chip" data-q="lecturer" aria-pressed="false">Lecturers</button><button class="chip" data-q="athlete" aria-pressed="false">Athletes</button><button class="chip" data-q="school" aria-pressed="false">Schools</button><button class="chip" data-q="business" aria-pressed="false">Business</button></div>
+<div class="grid" id="grid"></div><div class="empty" id="empty" hidden><b>No demo for that yet</b>Tell me the type and I’ll build one. Message me below.</div></div></section>
+<section class="offers" id="offers"><div class="wrap"><h2>How I can help</h2><p class="sub">Three ways to work together, from a first online presence to custom systems.</p><div class="og">
+<div class="of"><small>01</small><h3>Professional online presence</h3><p class="amt">from ₦180,000</p><ul><li>Profile, biography, achievements or publications</li><li>Gallery, portfolio and media kit</li><li>Contact and enquiry forms</li><li>Mobile-friendly, on your own domain</li></ul></div>
+<div class="of"><small>02</small><h3>Business growth platforms</h3><p class="amt">from ₦350,000</p><ul><li>Booking and availability systems</li><li>Quote requests and online registration</li><li>Service catalogues, payment integration</li><li>Admin page and WhatsApp alerts</li></ul></div>
+<div class="of"><small>03</small><h3>Custom digital systems</h3><p class="amt">Custom quote</p><ul><li>Dashboards and management systems</li><li>CRM and API integrations</li><li>AI-powered assistants</li><li>Custom workflows and automation</li></ul></div></div></div></section>
+<section class="me" id="me"><div class="wrap"><div class="ph">GA<img src="images/gideon.jpg" alt="Gideon Amowogbaje" onerror="this.remove()"></div><div><h2>Hi, I’m Gideon.</h2><p style="margin:16px 0">I’m a web developer and digital solutions specialist. I build professional websites, booking flows, APIs and AI integrations, and I can build the working system behind the page, not just the design.</p><p>Recent client work: <a class="lnk" href="havprojects/1/index.html">Projects by HAV</a>, a construction company’s multi-page website.</p><p><a class="lnk" href="https://wa.me/2347026305945" target="_blank" rel="noopener">Message me on WhatsApp</a></p></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><h2>Let’s build your online presence.</h2><p>Tell me what you do and who you want to reach. I’ll reply with a plan and a clear price.</p><a class="btn" href="https://wa.me/2347026305945" target="_blank" rel="noopener">Tell me about your project</a></div></section></main>
+<footer><div class="wrap"><span>© 2026 AMOWOGBAJE Web Solutions</span><a href="https://amowogbaje.com">amowogbaje.com</a></div></footer>
 <script>
-/* To add a demo: copy one object into this list. status "live" needs img + links; "soon" needs tint + note. */
+/* To add a demo: copy one object into this list. */
 const demos = [
   { status:"live", title:"Nicole Marie Salon", kw:"salon hair beauty barber stylist booking", tag:"Hair salon, one page with booking", ratio:"3/4",
     img:"nicole/assets/img/caramel-balayage-waves.jpg", links:[["View demo","nicole/index.html"]] },
   { status:"live", title:"Labake Catering", img:"catering/images/hero-boardroom-lunch.jpg", kw:"catering food menu chef restaurant bakery smallchops quote", tag:"Corporate catering, 5 pages with quote form", ratio:"1/1", tint:"var(--t1)", links:[["View demo","catering/index.html"]] },
-  { status:"live", title:"Dr. Amina Bello", img:"lecturer/images/portrait.jpg", kw:"lecturer academic professor researcher university staff profile publications cv scholar orcid counselling psychology mental health", tag:"Lecturer website, 4 pages with CV download", ratio:"4/5", tint:"#DCE3F8", links:[["View demo","lecturer/index.html"]] },
-  { status:"live", title:"Dr. Kayode Adebanjo", img:"lecturer-2/images/portrait.jpg", kw:"lecturer academic professor researcher university staff profile publications cv scholar orcid science education physics teaching", tag:"Lecturer website, 4 pages with publications", ratio:"4/5", tint:"#DCE3F8", links:[["View demo","lecturer-2/index.html"]] },
+  { status:"live", title:"Lecturer websites", img:"lecturer/images/portrait.jpg", kw:"lecturer academic professor researcher university staff profile publications cv scholar orcid counselling psychology science education", tag:"Academic portfolios with publications and CV download", ratio:"4/5", tint:"#12307a", links:[["Counselling","lecturer/index.html"],["Science ed.","lecturer-2/index.html"]] },
+  { status:"live", title:"Athlete websites", img:"footballer/images/highlight-2.jpg", kw:"athlete sports footballer football basketball boxer boxing runner track sprinter player coach sponsorship media kit stats highlights", tag:"Profiles with stats, highlights and sponsor enquiries", ratio:"4/5", tint:"#0b1b3f", links:[["Football","footballer/index.html"],["Basketball","basketballer/index.html"],["Boxing","boxer/index.html"],["Track","runner/index.html"]] },
   { status:"live", title:"Projects by HAV", kw:"construction building engineering contractor roads homes", tag:"Construction and engineering, multi-page", ratio:"4/3",
     img:"havprojects/1/assets/images/project-glass-courtyard-house.jpg",
     links:[["Version 1","havprojects/1/index.html"],["Version 2","havprojects/2/index.html"]] },
@@ -294,56 +82,15 @@ const demos = [
   { status:"live", title:"Adeyemi Business Solutions", img:"business/images/hero-office.jpg", kw:"business consulting services corporate company startup professional new business advisory procurement", tag:"Corporate website for new businesses, 5 pages", ratio:"4/5", tint:"#DCE3F8", links:[["View demo","business/index.html"]] },
   { status:"live", title:"Hillcrest International School", img:"school/images/hero-campus.jpg", kw:"school nursery primary secondary academy admissions education children teacher parents portal fees calendar application", tag:"School website, 10 pages with online application", ratio:"4/3", tint:"#FBE3E6", links:[["View demo","school/index.html"]] }
 ];
-
-/* Fill in to show on the page, for example "6 years". Leave empty to hide the line. */
-const EXPERIENCE = "";
-if (EXPERIENCE) document.getElementById('exp').textContent = `I’ve been building for the web for ${EXPERIENCE}.`;
-const grid = document.getElementById('grid');
-function card(d){
-  if(d.status === 'live'){
-    const first = d.links[0][1];
-    const photo = d.img ? `<img src="${d.img}" alt="${d.title} website preview" loading="lazy"${d.tint ? ' onerror="this.remove()"' : ''}>` : '';
-    const inner = d.tint ? `<b>${d.title}</b><span>${d.tag}</span>${photo}` : photo;
-    return `<article class="card" data-s="live">
-      <a class="thumb${d.tint ? ' tile' : ''}" href="${first}" style="aspect-ratio:${d.ratio}${d.tint ? ';background:' + d.tint : ''}" aria-label="Open ${d.title} demo">
-        ${inner}<span class="badge">Live</span>
-      </a>
-      <div class="meta"><div><h3>${d.title}</h3><p>${d.tag}</p></div>
-      <div class="links">${d.links.map(l=>`<a href="${l[1]}">${l[0]}</a>`).join('')}</div></div>
-    </article>`;
-  }
-  return `<article class="card" data-s="soon">
-    <div class="thumb tile" style="aspect-ratio:${d.ratio};background:${d.tint}"><b>${d.title}</b><span>${d.note}</span></div>
-    <div class="meta"><div><h3>${d.title}</h3></div><span class="soon-note">In the studio</span></div>
-  </article>`;
-}
-grid.innerHTML = demos.map(card).join('');
-
-const cards = [...grid.querySelectorAll('.card')];
-cards.forEach((c, i) => c.dataset.text = [demos[i].title, demos[i].tag, demos[i].note, demos[i].kw].join(' ').toLowerCase());
-if (!cards.some(c => c.dataset.s === 'soon')) document.querySelector('.chip[data-f="soon"]').remove();
-const q = document.getElementById('q'), empty = document.getElementById('empty');
-let filter = 'all';
-function apply(){
-  const terms = q.value.toLowerCase().split(/\s+/).filter(Boolean);
-  let shown = 0;
-  cards.forEach(c => {
-    const ok = (filter === 'all' || c.dataset.s === filter) && terms.every(t => c.dataset.text.includes(t));
-    c.hidden = !ok; if (ok) shown++;
-  });
-  empty.hidden = shown > 0;
-}
-document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-  filter = b.dataset.f; apply();
-}));
-q.addEventListener('input', apply);
-const tryRow = document.getElementById('try');
-['Lecturer','Salon','Construction','Catering','Wedding','Photography','Car hire','Venue','Gifts'].forEach(w => {
-  const b = document.createElement('button'); b.type = 'button'; b.textContent = w;
-  b.addEventListener('click', () => { q.value = w; apply(); q.focus(); });
-  tryRow.appendChild(b);
-});
-</script>
-</body>
-</html>
+const grid=document.getElementById('grid'),q=document.getElementById('q'),empty=document.getElementById('empty');
+function card(d){const photo=d.img?`<img src="${d.img}" alt="${d.title} website preview" loading="lazy"${d.tint?' onerror="this.remove()"':''}>`:'';
+return `<article class="card"><a class="thumb${d.tint?' tile':''}" href="${d.links[0][1]}" style="aspect-ratio:${d.ratio}${d.tint?';background:'+d.tint:''}" aria-label="Open ${d.title} demo">${d.tint?`<b>${d.title}</b><span>${d.tag}</span>${photo}`:photo}<span class="badge">Live</span></a>
+<div class="meta"><h3>${d.title}</h3><p>${d.tag}</p><div class="links">${d.links.map(l=>`<a href="${l[1]}">${l[0]}</a>`).join('')}</div></div></article>`}
+grid.innerHTML=demos.map(card).join('');document.getElementById('s1').textContent=demos.length+'';
+const cards=[...grid.querySelectorAll('.card')];cards.forEach((c,i)=>c.dataset.text=[demos[i].title,demos[i].tag,demos[i].kw].join(' ').toLowerCase());
+function apply(){const t=q.value.toLowerCase().split(/\s+/).filter(Boolean);let n=0;cards.forEach(c=>{const ok=t.every(x=>c.dataset.text.includes(x));c.hidden=!ok;if(ok)n++});empty.hidden=n>0;
+document.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.q===q.value.trim().toLowerCase())))}
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{q.value=b.dataset.q;apply()}));
+document.querySelectorAll('.cat[data-q]').forEach(a=>a.addEventListener('click',()=>{q.value=a.dataset.q;apply()}));
+q.addEventListener('input',apply);
+</script></body></html>
