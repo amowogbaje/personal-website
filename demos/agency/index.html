@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AthleteBridge | Sports Agency &amp; Talent Management</title>
+<meta name="description" content="Connecting talent, representation and opportunity. Demo concept by Amowogbaje.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,700..800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="wrap"><a class="brand" href="#">Athlete<span>Bridge</span></a>
+<nav><a href="#athletes">Our athletes</a><a href="#services">Services</a><a href="#pathway">Pathway</a><a href="#apply">Talent application</a></nav>
+<a class="btn" href="#apply">Partner with us</a></div></header>
+
+<div class="hero"><svg class="pitch" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true"><rect x="20" y="20" width="760" height="460"/><path d="M400 20v460"/><circle cx="400" cy="250" r="70"/><rect x="20" y="130" width="130" height="240"/><rect x="650" y="130" width="130" height="240"/><rect x="20" y="190" width="45" height="120"/><rect x="735" y="190" width="45" height="120"/></svg>
+<div class="wrap"><div><h1>Where African talent meets the clubs that are looking.</h1>
+<p>AthleteBridge represents players, advises families and connects clubs and brands with verified talent across football, basketball, boxing and athletics.</p>
+<div class="btns"><a class="btn" href="#athletes">Browse the roster</a><a class="btn ghost" href="#apply">Submit a player</a></div></div>
+<div class="stack" aria-hidden="true"><div class="pcard"><div class="av" style="background-image:linear-gradient(#0000 55%,#000a),url(images/ethan.jpg)"></div><b>Ethan Cole</b><small>Winger, England</small><span class="badge">Open to enquiries</span></div><div class="pcard"><div class="av" style="background-image:linear-gradient(#0000 55%,#000a),url(images/jordan.jpg)"></div><b>Jordan Reed</b><small>Point guard, USA</small><span class="badge">Open to enquiries</span></div><div class="pcard"><div class="av" style="background-image:linear-gradient(#0000 55%,#000a),url(images/marco.jpg)"></div><b>Marco Santos</b><small>Lightweight boxer, Portugal</small><span class="badge">Fight Nov 28</span></div></div></div></div>
+
+<div class="facts"><div class="wrap"><div><strong>38</strong><span>athletes on the active roster</span></div><div><strong>6</strong><span>countries across our club network</span></div><div><strong>4</strong><span>development pathways, from academy to first team</span></div></div></div>
+
+<section><div class="wrap"><h2>One agency, four audiences.</h2><p class="lead">Players, clubs, scouts and brands each get a clear route in, so no enquiry ends up in a generic inbox.</p>
+<div class="who"><div><h3>Players</h3><p>Apply for representation and track your application.</p></div><div><h3>Clubs</h3><p>Describe the profile you need and get a shortlist from the roster.</p></div><div><h3>Brands</h3><p>Enquire about endorsements, appearances and campaigns.</p></div><div><h3>Parents</h3><p>See how we protect, develop and advise young players.</p></div></div></div></section>
+
+<section class="dir" id="athletes"><div class="wrap"><h2>Find the right player in seconds.</h2><p class="lead">Every profile is approved by the player and the agency. Statistics are verified before they are published.</p>
+<div class="tools"><input id="q" type="search" placeholder="Search by name, sport or club" aria-label="Search athletes">
+<select id="pos" aria-label="Sport"><option value="">All sports</option><option>Football</option><option>Basketball</option><option>Boxing</option><option>Athletics</option></select>
+<select id="cty" aria-label="Country"><option value="">All countries</option><option>Ghana</option><option>Nigeria</option><option>Uganda</option><option>England</option><option>United States</option><option>Portugal</option><option>Canada</option></select>
+<select id="age" aria-label="Age"><option value="">Any age</option><option value="u20">Under 20</option><option value="20">20 and over</option></select></div>
+<div class="grid" id="grid"></div><p class="empty" id="empty">No athletes match those filters. Clear a filter or try another position.</p></div></section>
+
+<section id="services"><div class="wrap"><h2>Representation is only the start.</h2>
+<div class="svc"><article><h3>Player representation</h3><p>Contracts, transfers and negotiations handled by licensed, verified agents.</p></article><article><h3>Scouting and assessment</h3><p>Structured trials and reports so clubs see more than highlight clips.</p></article><article><h3>Commercial partnerships</h3><p>Endorsements, boot deals and appearances matched to each athlete's brand.</p></article><article><h3>Welfare and development</h3><p>Education, nutrition, mentoring and planning for life after football.</p></article></div></div></section>
+
+<section id="pathway" style="padding-top:0"><div class="wrap"><h2>A clear route from talent to contract.</h2>
+<div class="path"><div><h3>Scouting</h3><p>Referred by scouts, academies or applications.</p></div><div><h3>Assessment</h3><p>Video review, data check and live trial.</p></div><div><h3>Representation</h3><p>Written agreement and a named agent.</p></div><div><h3>Career growth</h3><p>Placements, branding and ongoing support.</p></div></div></div></section>
+
+<section class="apply" id="apply"><div class="wrap"><div><h2>Tell us about the player.</h2><p class="lead">Submit a player for review. Our scouting team replies within seven working days. Clubs and brands can use the same form.</p></div>
+<form onsubmit="event.preventDefault();this.innerHTML='<p class=full>Application received. We will contact you within seven working days.</p>'">
+<div><label for="n">Full name</label><input id="n" required></div><div><label for="e">Email</label><input id="e" type="email" required></div>
+<div><label for="i">I am a</label><select id="i"><option>Player</option><option>Club</option><option>Brand</option><option>Parent</option></select></div><div><label for="p">Position</label><input id="p"></div>
+<div class="full"><label for="v">Highlight video link</label><input id="v" type="url"></div><div class="full"><label for="m">Playing history</label><textarea id="m" rows="3"></textarea></div>
+<button class="btn full" type="submit">Send application</button></form></div></section>
+
+<footer><div class="wrap"><span>AthleteBridge is a fictional agency created as a demo by Amowogbaje.</span><span>Lagos &middot; Accra &middot; London</span><a href="../index.html#work">&larr; All demos</a></div></footer>
+
+<script>
+const P=[{n:"Ethan Cole",s:"Football",r:"Winger",c:"England",a:24,cl:"Northbridge FC",st:[[127,"apps"],[42,"goals"],[35,"assists"]],img:"ethan.jpg",u:"../footballer/index.html"},
+{n:"Jordan Reed",s:"Basketball",r:"Point guard",c:"United States",a:26,cl:"Harbour City Legends",st:[[24.8,"ppg"],[6.7,"apg"],[5.1,"rpg"]],img:"jordan.jpg",u:"../basketballer/index.html"},
+{n:"Marco Santos",s:"Boxing",r:"Lightweight",c:"Portugal",a:28,cl:"Southport",st:[[18,"wins"],[12,"KOs"],[2,"losses"]],img:"marco.jpg",u:"../boxer/index.html"},
+{n:"Elena Park",s:"Athletics",r:"Distance runner",c:"Canada",a:27,cl:"Riverside Running Club",st:[["17:42","5K"],["36:50","10K"],["1:21","half"]],img:"elena.jpg",u:"../runner/index.html"},
+{n:"Daniel Mensah",s:"Football",r:"Midfielder",c:"Ghana",a:22,cl:"Accra Union",st:[[31,"apps"],[6,"goals"],[9,"assists"]],k:["#1d6b4f","#0b2a21"]},
+{n:"Chidi Okafor",s:"Football",r:"Forward",c:"Nigeria",a:19,cl:"Lagos Stars",st:[[24,"apps"],[15,"goals"],[4,"assists"]],k:["#c9a227","#5a4510"]},
+{n:"Kwame Asante",s:"Football",r:"Defender",c:"Ghana",a:21,cl:"Kumasi Rovers",st:[[28,"apps"],[2,"goals"],[5,"assists"]],k:["#2b5f8a","#0c2236"]},
+{n:"Emeka Eze",s:"Football",r:"Forward",c:"Nigeria",a:23,cl:"Enugu City",st:[[33,"apps"],[18,"goals"],[6,"assists"]],k:["#2e7d7a","#0b2b2a"]}];
+const g=document.getElementById("grid");
+P.forEach(p=>g.insertAdjacentHTML("beforeend",`<article class="pl" data-n="${p.n} ${p.cl} ${p.s}" data-pos="${p.s}" data-c="${p.c}" data-a="${p.a}">${p.img?`<div class="av" style="background-image:linear-gradient(#0000 60%,#0008),url(images/${p.img})"></div>`:`<div class="av" style="--c1:${p.k[0]};--c2:${p.k[1]}">${p.n.split(" ").map(w=>w[0]).join("")}</div>`}<h3>${p.n}</h3><div class="meta">${p.s} &middot; ${p.r} &middot; ${p.a} &middot; ${p.c}</div><div class="meta">${p.cl}</div><div class="nums">${p.st.map(x=>`<div><b>${x[0]}</b>${x[1]}</div>`).join("")}</div>${p.u?`<a class="vp" href="${p.u}">View profile site &rarr;</a>`:""}</article>`));
+const cards=[...g.children],f=()=>{const q=Q.value.toLowerCase(),a=A.value;let n=0;cards.forEach(c=>{const ok=(!q||(c.dataset.n).toLowerCase().includes(q))&&(!S.value||c.dataset.pos==S.value)&&(!C.value||c.dataset.c==C.value)&&(!a||(a=="u20"?+c.dataset.a<20:+c.dataset.a>=20));c.hidden=!ok;n+=ok});E.style.display=n?"none":"block"};
+const Q=q,S=pos,C=cty,A=age,E=empty;[Q,S,C,A].forEach(x=>x.addEventListener("input",f));
+</script></body></html>
