@@ -46,10 +46,12 @@ const P=[{n:"Ethan Cole",s:"Football",r:"Winger",c:"England",a:24,cl:"Northbridg
 {n:"Jordan Reed",s:"Basketball",r:"Point guard",c:"United States",a:26,cl:"Harbour City Legends",st:[[24.8,"ppg"],[6.7,"apg"],[5.1,"rpg"]],img:"jordan.jpg",u:"../basketballer/index.html"},
 {n:"Marco Santos",s:"Boxing",r:"Lightweight",c:"Portugal",a:28,cl:"Southport",st:[[18,"wins"],[12,"KOs"],[2,"losses"]],img:"marco.jpg",u:"../boxer/index.html"},
 {n:"Elena Park",s:"Athletics",r:"Distance runner",c:"Canada",a:27,cl:"Riverside Running Club",st:[["17:42","5K"],["36:50","10K"],["1:21","half"]],img:"elena.jpg",u:"../runner/index.html"},
-{n:"Daniel Mensah",s:"Football",r:"Midfielder",c:"Ghana",a:22,cl:"Accra Union",st:[[31,"apps"],[6,"goals"],[9,"assists"]],k:["#1d6b4f","#0b2a21"]},
-{n:"Chidi Okafor",s:"Football",r:"Forward",c:"Nigeria",a:19,cl:"Lagos Stars",st:[[24,"apps"],[15,"goals"],[4,"assists"]],k:["#c9a227","#5a4510"]},
-{n:"Kwame Asante",s:"Football",r:"Defender",c:"Ghana",a:21,cl:"Kumasi Rovers",st:[[28,"apps"],[2,"goals"],[5,"assists"]],k:["#2b5f8a","#0c2236"]},
-{n:"Emeka Eze",s:"Football",r:"Forward",c:"Nigeria",a:23,cl:"Enugu City",st:[[33,"apps"],[18,"goals"],[6,"assists"]],k:["#2e7d7a","#0b2b2a"]}];
+{n:"Daniel Mensah",s:"Football",r:"Midfielder",c:"Ghana",a:22,cl:"Accra Union",st:[[31,"apps"],[6,"goals"],[9,"assists"]],img:"daniel.jpg"},
+{n:"Chidi Okafor",s:"Football",r:"Forward",c:"Nigeria",a:19,cl:"Lagos Stars",st:[[24,"apps"],[15,"goals"],[4,"assists"]],img:"chidi.jpg"},
+{n:"Kwame Asante",s:"Football",r:"Defender",c:"Ghana",a:21,cl:"Kumasi Rovers",st:[[28,"apps"],[2,"goals"],[5,"assists"]],img:"kwame.jpg"},
+{n:"Tunde Bello",s:"Football",r:"Goalkeeper",c:"Nigeria",a:24,cl:"Ibadan FC",st:[[30,"apps"],[12,"clean sheets"],[0,"goals"]],img:"tunde.jpg"},
+{n:"Samuel Lumasa",s:"Football",r:"Midfielder",c:"Uganda",a:18,cl:"Kampala Youth",st:[[22,"apps"],[5,"goals"],[8,"assists"]],img:"samuel.jpg"},
+{n:"Emeka Eze",s:"Football",r:"Forward",c:"Nigeria",a:23,cl:"Enugu City",st:[[33,"apps"],[18,"goals"],[6,"assists"]],img:"emeka.jpg"}];
 const g=document.getElementById("grid");
 P.forEach(p=>g.insertAdjacentHTML("beforeend",`<article class="pl" data-n="${p.n} ${p.cl} ${p.s}" data-pos="${p.s}" data-c="${p.c}" data-a="${p.a}">${p.img?`<div class="av" style="background-image:linear-gradient(#0000 60%,#0008),url(images/${p.img})"></div>`:`<div class="av" style="--c1:${p.k[0]};--c2:${p.k[1]}">${p.n.split(" ").map(w=>w[0]).join("")}</div>`}<h3>${p.n}</h3><div class="meta">${p.s} &middot; ${p.r} &middot; ${p.a} &middot; ${p.c}</div><div class="meta">${p.cl}</div><div class="nums">${p.st.map(x=>`<div><b>${x[0]}</b>${x[1]}</div>`).join("")}</div>${p.u?`<a class="vp" href="${p.u}">View profile site &rarr;</a>`:""}</article>`));
 const cards=[...g.children],f=()=>{const q=Q.value.toLowerCase(),a=A.value;let n=0;cards.forEach(c=>{const ok=(!q||(c.dataset.n).toLowerCase().includes(q))&&(!S.value||c.dataset.pos==S.value)&&(!C.value||c.dataset.c==C.value)&&(!a||(a=="u20"?+c.dataset.a<20:+c.dataset.a>=20));c.hidden=!ok;n+=ok});E.style.display=n?"none":"block"};

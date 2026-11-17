@@ -57,3 +57,4 @@ footer{padding:44px 0;background:#051a13;color:#8fa89b;font-size:.9rem}footer .w
 
 .av{background-size:cover;background-position:center 18%}.pl .vp{display:inline-block;margin-top:12px;font-weight:700;font-size:.92rem;color:var(--pitch);text-decoration:none}.pl .vp:hover{text-decoration:underline}
 .svc article img{width:calc(100% + 68px);max-width:none;height:170px;object-fit:cover;margin:-34px -34px 22px;border-radius:14px 14px 0 0;display:block}
+.hero{background:linear-gradient(90deg,#0f3d2ef2 0%,#0f3d2ed9 48%,#0f3d2ea6 100%),url(images/hero-bg.jpg) center/cover}.pitch{opacity:.08}
